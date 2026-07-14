@@ -37,6 +37,12 @@ Stack: Next.js 15 (App Router) · Payload CMS 3 · Postgres (Railway) · React 1
    and gitignored. The database is a Railway Postgres service — nothing DB-related
    lives in the repo except `src/migrations/`.
 8. **Respect the core / site-specific split** (see below) so template updates merge cleanly.
+9. **Content ships in code, stays editable in the admin.** This is the core working model of
+   this project — read the recipe below before building any page. Every piece of copy and
+   every image is a **field** (so the client can change it in `/admin`) whose **`defaultValue`
+   is the real design copy** (so it ships with `git push` and is live right after deploy,
+   with nothing to type in). Never hardcode client-editable text/images only in JSX, and
+   never leave a field empty expecting someone to fill it — do both at once: field + default.
 
 ## Architecture
 
@@ -106,11 +112,25 @@ Building a page from a design (copy included)? The golden rule:
 > - **Text, editable by the client** → a field with `defaultValue` = the copy. For richText
 >   use the `rich()` helper: `import { rich } from './rich'`.
 > - **Fixed layout copy** → write it straight into the route's JSX.
-> - **Images** → put the design files in `public/images/`. Render an editable slot as
->   `<Img field={c.heroImage} fallback="/images/hero.jpg" width={1200} height={800} />` —
->   the static file ships in code and shows until someone uploads a replacement in the
->   admin. Purely fixed images: `<Img fallback="/images/x.jpg" .../>` with no `field`, or
->   `next/image` directly.
+> - **Images** → put the design files in `public/uploads/` and pair **two fields**: an
+>   `upload` field (what the client replaces in the admin) plus a sibling `fallback` **text**
+>   field whose `defaultValue` is the static path (`/uploads/hero.jpg`). In the route, resolve
+>   with a tiny helper so the upload wins when present and the shipped file shows otherwise:
+>   ```tsx
+>   const img = (f: number | Media | null | undefined, fallback: string) =>
+>     f && typeof f === 'object' && f.url ? f.url : fallback
+>   // <img src={img(c.heroImage, c.heroImageFallback)} .../>
+>   ```
+>   (The core `<Img field={c.heroImage} fallback="/uploads/hero.jpg" />` helper does the same
+>   thing in one tag — use it for simple slots; use the `img()` helper for bespoke layouts
+>   where you need the raw URL. Purely fixed images: `<Img fallback="/uploads/x.jpg" />` with
+>   no `field`, or `next/image` directly.)
+>
+> Repeating blocks (cards, USPs, gallery, FAQ) → an `array` field whose `defaultValue` is the
+> list of rows from the design; render with `c.field?.map(row => …)` keyed on `row.id`.
+
+This is exactly how the 34 pages in this site are built — see any `src/content/<slug>.ts`
+(e.g. `veranda-s.ts`) + its route as the reference pattern.
 
 **Edit files directly** (don't use the interactive `npm run new:page` wizard — it blocks
 on prompts). Getting a page online is pure structure + code; no content promotion needed.
