@@ -1,24 +1,28 @@
 import React from 'react'
 import './styles.css'
 
-// Content lives in the DB, which isn't populated at build time (migrations run
-// at start, and on volume hosts the DB may not exist during build). Render at
-// request time instead of prerendering. Applies to the whole (frontend) subtree.
+// Pages render static design markup (no DB at request time), but the Payload
+// admin shares this app, so keep the frontend dynamic (no build-time DB access).
 export const dynamic = 'force-dynamic'
 
 export const metadata = {
-  description: 'Editable Next.js site powered by Payload.',
-  title: 'Site',
+  title: "Veranda Zeeland · Veranda's, tuinkamers & glaswanden in Serooskerke",
+  description:
+    "Veranda's, tuinkamers en glasschuifwanden van Duitse topkwaliteit, op maat gemaakt en gemonteerd door Veranda Zeeland in Serooskerke.",
 }
 
-export default async function RootLayout(props: { children: React.ReactNode }) {
-  const { children } = props
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        <main>{children}</main>
-      </body>
+    <html lang="nl">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Figtree:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>{children}</body>
     </html>
   )
 }

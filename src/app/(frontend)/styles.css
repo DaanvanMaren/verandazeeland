@@ -1,41 +1,22 @@
-/* Minimal base — style your own pages however you like. */
-@import 'tailwindcss';
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  font-family: system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
-  color: #1a1a1a;
-}
-
-body {
-  margin: 0;
-}
-
-main {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 2rem 1.25rem 4rem;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Example styles used by the sample home page — delete when you restyle it. */
-.hero {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-.hero h1 {
-  font-size: 2.5rem;
-  margin: 0.5rem 0;
-}
-.hero-img {
-  border-radius: 8px;
-}
+/* Global styles for the Veranda Zeeland design (fonts loaded in layout.tsx). */
+*{box-sizing:border-box}
+body{margin:0;background:#f6f0e6;font-family:'Figtree',system-ui,sans-serif;color:#082a52}
+a{color:inherit;text-decoration:none}
+.nav-a:hover{color:#0053a1}
+.btn-y:hover{background:#fbbf1a}
+.btn-n:hover{background:#0053a1}
+.menu-item{position:relative;display:flex;align-items:center}
+.menu-item>.dropdown{position:absolute;top:100%;left:-14px;padding-top:16px;display:none;z-index:40}
+.menu-item:hover>.dropdown{display:block}
+.dropdown-inner{background:#fff;border-radius:14px;box-shadow:0 20px 44px -14px rgba(8,42,82,.3);padding:10px;display:flex;flex-direction:column;gap:2px;min-width:236px}
+.dropdown-inner a{padding:11px 14px;border-radius:9px;font-size:14.5px;font-weight:600;color:#082a52;white-space:nowrap;text-decoration:none}
+.dropdown-inner a:hover{background:#f3ede1;color:#0053a1}
+.lift{transition:transform .3s,box-shadow .3s}
+.lift:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(8,42,82,.5)}
+.cat-img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.cat-card:hover .cat-img{transform:scale(1.05)}
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:96px}
+input,select,textarea{font-family:inherit;font-size:15px;width:100%;padding:13px 15px;border:1.5px solid #d9d0be;border-radius:12px;background:#fffdf9;color:#082a52}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#0053a1}
+label{font-weight:600;font-size:13.5px;margin-bottom:7px;display:block}
