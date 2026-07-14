@@ -37,7 +37,7 @@ export default async function VerandasPage() {
           <h1 style={{ fontFamily: 'Archivo', fontWeight: 900, fontSize: 56, lineHeight: 0.98, margin: '0 0 20px', letterSpacing: '-1.8px' }}>{c.heroTitle}</h1>
           {c.heroText && <p style={{ fontSize: 18, lineHeight: 1.65, color: '#42586c', margin: '0 0 28px' }}>{c.heroText}</p>}
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-            <a className="btn-n" href="/contact" style={{ background: '#082a52', color: '#fff', fontWeight: 700, fontSize: 15, padding: '15px 26px', borderRadius: 999 }}>Offerte aanvragen →</a>
+            <a className="btn-n" href="/offerte" style={{ background: '#082a52', color: '#fff', fontWeight: 700, fontSize: 15, padding: '15px 26px', borderRadius: 999 }}>Offerte aanvragen →</a>
             <a className="btn-y" href="#lijnen" style={{ background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 15, padding: '15px 26px', borderRadius: 999 }}>Bekijk de productlijnen</a>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default async function VerandasPage() {
       <div style={{ background: '#ffcf33', padding: 56, margin: '0 40px 40px', borderRadius: 26, textAlign: 'center' }}>
         <h2 style={{ fontFamily: 'Archivo', fontWeight: 900, fontSize: 38, margin: '0 0 10px', letterSpacing: '-1.4px', color: '#082a52' }}>{c.ctaTitle}</h2>
         <p style={{ fontSize: '16.5px', color: '#3a4d63', margin: '0 auto 24px', maxWidth: 520 }}>{c.ctaText}</p>
-        <a className="btn-n" href="/contact" style={{ background: '#082a52', color: '#fff', fontWeight: 800, fontSize: 16, padding: '17px 32px', borderRadius: 999, display: 'inline-block' }}>{c.ctaButton}</a>
+        <a className="btn-n" href="/offerte" style={{ background: '#082a52', color: '#fff', fontWeight: 800, fontSize: 16, padding: '17px 32px', borderRadius: 999, display: 'inline-block' }}>{c.ctaButton}</a>
       </div>
 
       <Footer />

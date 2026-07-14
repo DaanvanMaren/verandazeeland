@@ -52,10 +52,10 @@ export default async function ContactPage() {
         </div>
       </div>
 
-      {/* contact + form */}
-      <div id="offerte" style={{ display: 'grid', gridTemplateColumns: '1fr 1.15fr', gap: 0, background: '#fff', margin: '0 40px', borderRadius: 26, overflow: 'hidden' }}>
+      {/* contactgegevens + kaart */}
+      <div id="showroom" style={{ display: 'grid', gridTemplateColumns: '1fr 1.15fr', gap: 0, background: '#fff', margin: '0 40px', borderRadius: 26, overflow: 'hidden' }}>
         {/* info */}
-        <div id="showroom" style={{ background: '#082a52', color: '#fff', padding: '48px 44px' }}>
+        <div style={{ background: '#082a52', color: '#fff', padding: '48px 44px' }}>
           <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 28, margin: '0 0 24px', letterSpacing: '-.6px' }}>{c.contactHeading}</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 22, fontSize: '15.5px', lineHeight: 1.6 }}>
             <div>
@@ -75,35 +75,11 @@ export default async function ContactPage() {
               {c.hoursDays}<br />{c.hoursTime}<br /><span style={{ color: '#9fb3ca' }}>{c.hoursNote}</span>
             </div>
           </div>
-          <div style={{ marginTop: 30, borderRadius: 14, overflow: 'hidden', minHeight: 150, position: 'relative', background: '#33547d' }}>
-            <img src={img(c.contactImage, c.contactImageFallback ?? '')} alt={c.contactHeading ?? ''} style={cover} />
-          </div>
+          <a className="btn-y" href="/offerte" style={{ display: 'inline-block', marginTop: 30, background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 15, padding: '14px 26px', borderRadius: 999 }}>Vraag een offerte aan →</a>
         </div>
-        {/* form */}
-        <div style={{ padding: '48px 44px' }}>
-          <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 28, margin: '0 0 6px', letterSpacing: '-.6px' }}>{c.formHeading}</h2>
-          {c.formIntro && <p style={{ color: '#6b6152', fontSize: 15, margin: '0 0 26px' }}>{c.formIntro}</p>}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-            <div><label>{c.formFirstName}</label><input type="text" placeholder="Uw voornaam" /></div>
-            <div><label>{c.formLastName}</label><input type="text" placeholder="Uw achternaam" /></div>
-            <div><label>{c.formEmail}</label><input type="email" placeholder="naam@voorbeeld.nl" /></div>
-            <div><label>{c.formPhone}</label><input type="tel" placeholder="06 - ..." /></div>
-            <div style={{ gridColumn: 'span 2' }}>
-              <label>{c.formInterest}</label>
-              <select>
-                <option>Veranda</option>
-                <option>Tuinkamer</option>
-                <option>Schuifwanden</option>
-                <option>Zonwering</option>
-                <option>Opties</option>
-                <option>Zakelijk project</option>
-                <option>Anders / weet ik nog niet</option>
-              </select>
-            </div>
-            <div style={{ gridColumn: 'span 2' }}><label>{c.formMessage}</label><textarea rows={4} placeholder="Vertel ons over uw wensen, afmetingen of situatie..." /></div>
-          </div>
-          <button className="btn-n" style={{ marginTop: 20, background: '#082a52', color: '#fff', fontWeight: 800, fontSize: 15, padding: '15px 30px', border: 'none', borderRadius: 999, cursor: 'pointer', fontFamily: 'inherit' }}>{c.formButton}</button>
-          {c.formDisclaimer && <p style={{ fontSize: '12.5px', color: '#9a9078', margin: '14px 0 0' }}>{c.formDisclaimer}</p>}
+        {/* kaart / sfeerbeeld */}
+        <div style={{ position: 'relative', minHeight: 420, background: '#33547d' }}>
+          <img src={img(c.contactImage, c.contactImageFallback ?? '')} alt={c.contactHeading ?? ''} style={cover} />
         </div>
       </div>
 

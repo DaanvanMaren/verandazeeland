@@ -70,7 +70,7 @@ export default async function ZakelijkHorecaPage() {
       <div style={{ background: '#ffcf33', padding: 56, margin: '0 40px 40px', borderRadius: 26, textAlign: 'center' }}>
         <h2 style={{ fontFamily: 'Archivo', fontWeight: 900, fontSize: 36, margin: '0 0 10px', letterSpacing: '-1.4px', color: '#082a52' }}>{c.ctaTitle}</h2>
         <p style={{ fontSize: '16.5px', color: '#3a4d63', margin: '0 auto 24px', maxWidth: 520 }}>{c.ctaText}</p>
-        <a className="btn-n" href="/contact" style={{ background: '#082a52', color: '#fff', fontWeight: 800, fontSize: 16, padding: '17px 32px', borderRadius: 999, display: 'inline-block' }}>{c.ctaButton}</a>
+        <a className="btn-n" href="/offerte" style={{ background: '#082a52', color: '#fff', fontWeight: 800, fontSize: 16, padding: '17px 32px', borderRadius: 999, display: 'inline-block' }}>{c.ctaButton}</a>
       </div>
 
       <Footer />

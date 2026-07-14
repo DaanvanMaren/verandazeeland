@@ -23,7 +23,7 @@ const HTML = `
         <div class="menu-item"><a class="nav-a" href="/accessoires">Opties</a><div class="dropdown"><div class="dropdown-inner"><a href="/optie-wanden">Voor- en zijwanden</a><a href="/optie-dakbedekking">Dakbedekking</a><a href="/optie-ledverlichting">Ledverlichting</a><a href="/optie-fundering">Fundering</a><a href="/optie-onderhoud">Onderhoudsproducten</a></div></div></div>
         <div class="menu-item"><a class="nav-a" href="/zakelijk">Zakelijk</a><div class="dropdown" style="left:auto;right:-14px"><div class="dropdown-inner"><a href="/zakelijk-horeca">Horeca & Leisure</a><a href="/zakelijk-kantoren">Kantoren & Commercieel Vastgoed</a><a href="/zakelijk-onderwijs">Onderwijs & Scholen</a><a href="/zakelijk-vakantieparken">Vakantieparken & Recreatie</a><a href="/zakelijk-zorg">Zorginstellingen</a><a href="/zakelijk-projectbouw">Projectbouw & Ontwikkeling</a></div></div></div>
       </nav>
-      <a class="btn-n" href="/contact" style="background:#082a52;color:#fff;font-weight:700;font-size:14px;padding:13px 22px;border-radius:999px">Offerte aanvragen</a>
+      <a class="btn-n" href="/offerte" style="background:#082a52;color:#fff;font-weight:700;font-size:14px;padding:13px 22px;border-radius:999px">Offerte aanvragen</a>
     </div>
   </div>
 `
