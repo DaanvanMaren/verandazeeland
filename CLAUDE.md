@@ -59,11 +59,12 @@ scripts/
   seed.ts                 ← `npm run seed` — first admin user + home content
   new-page.mjs            ← `npm run new:page` — scaffolds a page (all 4 steps)
 docs/
-  content-fields.md       ← how to add pages & fields (the detailed guide)
   NEW-SITE.md             ← START HERE per client: copy the template into your own repo
   DEVELOPING.md           ← day-to-day local dev after the template runs on Railway
-  MAINTAINING.md          ← running this across many client sites + bug-fix flow
-  DEPLOY-RAILWAY.md       ← production deploy (Postgres service + dev/prod envs)
+  content-fields.md       ← how to add pages & fields (the detailed guide)
+  CONTENT.md              ← content model + promoting content staging → prod
+  DEPLOY-RAILWAY.md       ← the Railway setup (Postgres + Bucket + vars) and deploys
+  MAINTAINING.md          ← running this across many client sites + template fixes
 ```
 
 **How content flows:** `src/content/<slug>.ts` (fields) → registered in `globals.ts` →
@@ -79,6 +80,7 @@ docs/
 | `npm run dev` | dev-server, site op `:3000`, admin op `/admin` |
 | `npm run new:page` | nieuwe bewerkbare pagina toevoegen (interactieve wizard) |
 | `npm run migrate:create` | migratie genereren tegen het Postgres-schema (na content-veld-wijziging) — zie [docs/DEPLOY-RAILWAY.md](docs/DEPLOY-RAILWAY.md) |
+| `npm run promote` | content kopiëren tussen omgevingen (staging → prod), zonder auth-tabellen — zie [docs/CONTENT.md](docs/CONTENT.md) |
 | `npm run generate:types` | Payload-types opnieuw genereren (na content-wijziging) |
 | `npm run generate:importmap` | admin import-map herbouwen (na UI-plugin-wijziging) |
 | `npm run typecheck` | `tsc --noEmit` |
@@ -93,6 +95,48 @@ Preferred: `npm run new:page` (interactive). Manual = 4 steps, fully documented 
 The `slug` (in the content group) is what `getContent('slug')` uses; the **route folder
 name** under `(frontend)/` is the URL. They may differ (folder `nieuws/` +
 `getContent('news')` → `/nieuws`).
+
+## Snel een pagina online (mét tekst) — recept voor agents
+
+Building a page from a design (copy included)? The golden rule:
+
+> **Anything typed/uploaded in the admin lives in the database/Bucket and does NOT travel
+> with `git push`. So put the design's copy AND images in CODE — then they ship with the
+> push and are live right after the deploy.** Use both (hybrid):
+> - **Text, editable by the client** → a field with `defaultValue` = the copy. For richText
+>   use the `rich()` helper: `import { rich } from './rich'`.
+> - **Fixed layout copy** → write it straight into the route's JSX.
+> - **Images** → put the design files in `public/images/`. Render an editable slot as
+>   `<Img field={c.heroImage} fallback="/images/hero.jpg" width={1200} height={800} />` —
+>   the static file ships in code and shows until someone uploads a replacement in the
+>   admin. Purely fixed images: `<Img fallback="/images/x.jpg" .../>` with no `field`, or
+>   `next/image` directly.
+
+**Edit files directly** (don't use the interactive `npm run new:page` wizard — it blocks
+on prompts). Getting a page online is pure structure + code; no content promotion needed.
+
+1. **Fields** — create `src/content/<slug>.ts` with the design's copy as defaults:
+   ```ts
+   import { rich } from './rich'
+   // ...
+   { name: 'heroTitle', type: 'text', defaultValue: 'De kop uit het ontwerp' },
+   { name: 'intro', type: 'richText', defaultValue: rich('Alinea 1.', 'Alinea 2.') },
+   ```
+2. **Register** — add the group to `src/content/globals.ts` (the #1 forgotten step).
+3. **Route** — create `src/app/(frontend)/<url>/page.tsx`; read editable bits with
+   `getContent('<slug>')` + `<Img>`/`<Rich>` (see the table below), and hardcode fixed
+   layout copy directly in the JSX.
+4. **Types + migration:**
+   ```bash
+   npm run generate:types
+   npm run migrate:create -- add_<slug>   # against your LOCAL Postgres
+   ```
+5. **Ship:** commit + push. The deploy runs `payload migrate` → the page is live in every
+   environment, with its text (from the code defaults).
+
+Field types + copy-paste examples: [docs/content-fields.md](docs/content-fields.md).
+The text-in-code vs admin-content model, and promoting editor content (staging → prod):
+[docs/CONTENT.md](docs/CONTENT.md).
 
 ## Reading fields in a page
 
