@@ -41,6 +41,7 @@ import { zonweringUitvalschermen } from './zonwering-uitvalschermen'
 // then run `npm run generate:types`. See docs/content-fields.md.
 export const contentGlobals = [
   home,
+  //Verandas
   verandaS,
   verandaGreenline,
   verandaProfiline,
