@@ -1,0 +1,36 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# next.js
+/.next/
+/out/
+/build
+next-env.d.ts
+*.tsbuildinfo
+
+# env (secrets — never commit). Ignore every .env* except the example.
+.env
+.env.*
+!.env.example
+
+# NB: /media is intentionally NOT ignored — photos are public site assets and
+# ship with the repo. They serve from ./media on every deploy (no volume needed).
+
+# stray local SQLite (only if someone runs the old adapter) — never commit.
+payload.db
+payload.db-*
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
+
+# editors
+/.idea/*
+!/.idea/runConfigurations
+
+# vercel
+.vercel
