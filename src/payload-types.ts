@@ -328,39 +328,37 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  */
 export interface Home {
   id: number;
+  heroBadge?: string | null;
   heroTitle: string;
   heroSubtitle?: string | null;
   heroImage?: (number | null) | Media;
-  intro?: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  text2?: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  usps?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  categoriesHeading?: string | null;
+  welcomeLabel?: string | null;
+  welcomeTitle?: string | null;
+  welcomeText1?: string | null;
+  welcomeText2?: string | null;
+  welcomeCta?: string | null;
+  welcomeImage?: (number | null) | Media;
+  modelsHeading?: string | null;
+  modelsSub?: string | null;
+  reviews?:
+    | {
+        quote?: string | null;
+        author?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -369,11 +367,37 @@ export interface Home {
  * via the `definition` "home_select".
  */
 export interface HomeSelect<T extends boolean = true> {
+  heroBadge?: T;
   heroTitle?: T;
   heroSubtitle?: T;
   heroImage?: T;
-  intro?: T;
-  text2?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  usps?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  categoriesHeading?: T;
+  welcomeLabel?: T;
+  welcomeTitle?: T;
+  welcomeText1?: T;
+  welcomeText2?: T;
+  welcomeCta?: T;
+  welcomeImage?: T;
+  modelsHeading?: T;
+  modelsSub?: T;
+  reviews?:
+    | T
+    | {
+        quote?: T;
+        author?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
