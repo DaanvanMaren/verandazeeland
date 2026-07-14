@@ -8,7 +8,7 @@ export const schuifwandSteellook: GlobalConfig = {
   slug: 'schuifwand-steellook',
   label: 'Steellook schuifwanden',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Schuifwanden' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Schuifwanden' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Steellook schuifwanden' },
@@ -31,7 +31,7 @@ export const schuifwandSteellook: GlobalConfig = {
       name: 'introText',
       type: 'textarea',
       defaultValue:
-        'Steellook schuifwanden geven uw tuinkamer een stoere, industriële uitstraling met de warme charme van klassieke stalen puien — maar dan onderhoudsarm in aluminium. De slanke profielverdeling maakt er een echte blikvanger van.',
+        'Steellook schuifwanden geven uw tuinkamer een stoere, industriële uitstraling met de warme charme van klassieke stalen puien, maar dan onderhoudsarm in aluminium. De slanke profielverdeling maakt er een echte blikvanger van.',
     },
     {
       name: 'introPoints',

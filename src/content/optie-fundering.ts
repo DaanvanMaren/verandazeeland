@@ -8,7 +8,7 @@ export const optieFundering: GlobalConfig = {
   slug: 'optie-fundering',
   label: 'Fundering (optie)',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Opties & accessoires' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Opties' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Fundering' },

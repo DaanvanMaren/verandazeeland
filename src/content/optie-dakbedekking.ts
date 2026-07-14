@@ -8,7 +8,7 @@ export const optieDakbedekking: GlobalConfig = {
   slug: 'optie-dakbedekking',
   label: 'Optie: Dakbedekking',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Opties & accessoires' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Opties' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Dakbedekking' },
@@ -16,7 +16,7 @@ export const optieDakbedekking: GlobalConfig = {
       name: 'heroText',
       type: 'textarea',
       defaultValue:
-        'Kies de dakbedekking die past bij uw wensen: van helder, warmtewerend of opaal polycarbonaat tot gelaagd veiligheidsglas — elk met een eigen lichtbeleving.',
+        'Kies de dakbedekking die past bij uw wensen: van helder, warmtewerend of opaal polycarbonaat tot gelaagd veiligheidsglas, elk met een eigen lichtbeleving.',
     },
     { name: 'heroPrimaryCta', type: 'text', defaultValue: 'Offerte aanvragen →' },
     { name: 'heroSecondaryCta', type: 'text', defaultValue: 'Terug naar Opties' },

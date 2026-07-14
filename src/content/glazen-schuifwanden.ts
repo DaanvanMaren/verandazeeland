@@ -8,7 +8,7 @@ export const glazenSchuifwanden: GlobalConfig = {
   slug: 'glazen-schuifwanden',
   label: 'Glazen schuifwanden',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Schuifwanden' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Flexibel wonen buiten' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Glazen schuifwanden op maat' },

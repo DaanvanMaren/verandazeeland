@@ -8,7 +8,7 @@ export const zakelijk: GlobalConfig = {
   slug: 'zakelijk',
   label: 'Zakelijk',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Zakelijk' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Zakelijk & projecten' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Overkappingen voor uw onderneming' },

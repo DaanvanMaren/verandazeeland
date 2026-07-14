@@ -8,7 +8,7 @@ export const verandaS: GlobalConfig = {
   slug: 'veranda-s',
   label: "Veranda's (overzicht)",
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Verandas' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Onze specialiteit' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Uw veranda, op maat gemaakt' },

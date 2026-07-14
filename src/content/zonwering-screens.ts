@@ -8,7 +8,7 @@ export const zonweringScreens: GlobalConfig = {
   slug: 'zonwering-screens',
   label: 'Zonwering — Screens',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Zonwering' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Zonwering' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Screens' },

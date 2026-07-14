@@ -8,7 +8,7 @@ export const schuifwandGlas: GlobalConfig = {
   slug: 'schuifwand-glas',
   label: 'Glazen schuifwanden',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Schuifwanden' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Schuifwanden' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Glazen schuifwanden' },

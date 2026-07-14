@@ -8,7 +8,7 @@ export const optieLedverlichting: GlobalConfig = {
   slug: 'optie-ledverlichting',
   label: 'Opties — Ledverlichting',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Opties & accessoires' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Opties' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Ledverlichting' },
@@ -16,7 +16,7 @@ export const optieLedverlichting: GlobalConfig = {
       name: 'heroText',
       type: 'textarea',
       defaultValue:
-        'Sfeervolle, dimbare led-spots geïntegreerd in het dak van uw veranda. Energiezuinig en te bedienen op afstand — voor gezellige avonden buiten.',
+        'Sfeervolle, dimbare led-spots geïntegreerd in het dak van uw veranda. Energiezuinig en te bedienen op afstand, voor gezellige avonden buiten.',
     },
     { name: 'heroPrimaryCta', type: 'text', defaultValue: 'Offerte aanvragen →' },
     { name: 'heroSecondaryCta', type: 'text', defaultValue: 'Terug naar Opties' },

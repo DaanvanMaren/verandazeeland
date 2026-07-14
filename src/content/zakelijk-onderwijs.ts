@@ -8,7 +8,7 @@ export const zakelijkOnderwijs: GlobalConfig = {
   slug: 'zakelijk-onderwijs',
   label: 'Zakelijk — Onderwijs & Scholen',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Zakelijk' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Onderwijs & Scholen' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Veilig, comfortabel en inspirerend' },

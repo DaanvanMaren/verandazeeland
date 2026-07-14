@@ -8,7 +8,7 @@ export const schuifwandLamellen: GlobalConfig = {
   slug: 'schuifwand-lamellen',
   label: 'Lamellen schuifwanden',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Schuifwanden' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Schuifwanden' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Lamellen schuifwanden' },
@@ -16,7 +16,7 @@ export const schuifwandLamellen: GlobalConfig = {
       name: 'heroText',
       type: 'textarea',
       defaultValue:
-        'Verstelbare lamellen voor schaduw, privacy en ventilatie. Zet ze open voor frisse lucht en licht, of dicht voor beschutting — u regelt het zelf.',
+        'Verstelbare lamellen voor schaduw, privacy en ventilatie. Zet ze open voor frisse lucht en licht, of dicht voor beschutting. U regelt het zelf.',
     },
     { name: 'heroImage', type: 'upload', relationTo: 'media' },
     { name: 'heroFallback', type: 'text', admin: { description: 'Standaard-afbeelding (pad in /uploads)' }, defaultValue: '/uploads/Lamellen_Verasol_tegels02.jpg' },

@@ -8,7 +8,7 @@ export const optieOnderhoud: GlobalConfig = {
   slug: 'optie-onderhoud',
   label: 'Onderhoudsproducten (optie)',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Opties & accessoires' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Opties' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Onderhoudsproducten' },
@@ -16,7 +16,7 @@ export const optieOnderhoud: GlobalConfig = {
       name: 'heroText',
       type: 'textarea',
       defaultValue:
-        'Houd uw veranda jarenlang mooi met de juiste onderhoudsproducten. Speciaal voor aluminium, glas en polycarbonaat — onderhoudsarm, maar niet onderhoudsvrij.',
+        'Houd uw veranda jarenlang mooi met de juiste onderhoudsproducten. Speciaal voor aluminium, glas en polycarbonaat: onderhoudsarm, maar niet onderhoudsvrij.',
     },
     { name: 'heroPrimaryCta', type: 'text', defaultValue: 'Offerte aanvragen →' },
     { name: 'heroSecondaryCta', type: 'text', defaultValue: 'Terug naar Opties' },

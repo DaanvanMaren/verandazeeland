@@ -9,7 +9,7 @@ export const verandaGreenline: GlobalConfig = {
   slug: 'veranda-greenline',
   label: 'Greenline',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Verandas' },
   fields: [
     // hero
     { name: 'heroBadge', type: 'text', defaultValue: 'Instapmodel' },
@@ -49,7 +49,7 @@ export const verandaGreenline: GlobalConfig = {
       name: 'introText',
       type: 'textarea',
       defaultValue:
-        'De Greenline bewijst dat een hoogwaardige aluminium veranda niet duur hoeft te zijn. Door het slimme profielontwerp is er minder materiaal nodig terwijl de constructie zeer stevig blijft — met een verstevigde goot zijn zelfs overspanningen tot 7 meter op twee staanders mogelijk. De krasvaste Qualicoat-structuurlak is onderhoudsvriendelijk en milieubewust geproduceerd.',
+        'De Greenline bewijst dat een hoogwaardige aluminium veranda niet duur hoeft te zijn. Door het slimme profielontwerp is er minder materiaal nodig terwijl de constructie zeer stevig blijft, met een verstevigde goot zijn zelfs overspanningen tot 7 meter op twee staanders mogelijk. De krasvaste Qualicoat-structuurlak is onderhoudsvriendelijk en milieubewust geproduceerd.',
     },
     {
       name: 'introBullets',

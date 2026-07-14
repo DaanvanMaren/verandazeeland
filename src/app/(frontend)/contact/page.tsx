@@ -29,7 +29,7 @@ export default async function ContactPage() {
       </div>
 
       {/* hero over ons */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 44, padding: '24px 40px 56px', alignItems: 'center' }}>
+      <div id="over-ons" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 44, padding: '24px 40px 56px', alignItems: 'center' }}>
         <div>
           {c.heroBadge && (
             <span style={{ display: 'inline-block', background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 12, letterSpacing: 1, textTransform: 'uppercase', padding: '6px 13px', borderRadius: 999, marginBottom: 20 }}>
@@ -55,20 +55,20 @@ export default async function ContactPage() {
       {/* contact + form */}
       <div id="offerte" style={{ display: 'grid', gridTemplateColumns: '1fr 1.15fr', gap: 0, background: '#fff', margin: '0 40px', borderRadius: 26, overflow: 'hidden' }}>
         {/* info */}
-        <div style={{ background: '#082a52', color: '#fff', padding: '48px 44px' }}>
+        <div id="showroom" style={{ background: '#082a52', color: '#fff', padding: '48px 44px' }}>
           <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 28, margin: '0 0 24px', letterSpacing: '-.6px' }}>{c.contactHeading}</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 22, fontSize: '15.5px', lineHeight: 1.6 }}>
             <div>
               <div style={infoLabel}>{c.addressLabel}</div>
-              {c.addressLine1}<br />{c.addressLine2}
+              <a className="nav-a" href={`https://maps.google.com/?q=${encodeURIComponent(`${c.addressLine1}, ${c.addressLine2}`)}`} target="_blank" rel="noopener">{c.addressLine1}<br />{c.addressLine2}</a>
             </div>
             <div>
               <div style={infoLabel}>{c.phoneLabel}</div>
-              {c.phone}
+              <a className="nav-a" href={`tel:${(c.phone ?? '').replace(/[^0-9+]/g, '')}`}>{c.phone}</a>
             </div>
             <div>
               <div style={infoLabel}>{c.emailLabel}</div>
-              {c.email}
+              <a className="nav-a" href={`mailto:${c.email}`}>{c.email}</a>
             </div>
             <div>
               <div style={infoLabel}>{c.hoursLabel}</div>

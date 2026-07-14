@@ -47,13 +47,13 @@ export default async function AccessoiresPage() {
       </div>
 
       {/* opties & accessoires */}
-      <div style={{ padding: '56px 40px', background: '#fff' }}>
+      <div style={{ padding: '56px 40px', background: '#efe6d4' }}>
         <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 34, margin: '0 0 6px', letterSpacing: '-1px' }}>{c.optionsHeading}</h2>
         {c.optionsIntro && <p style={{ color: '#6b6152', fontSize: '16.5px', margin: '0 0 32px' }}>{c.optionsIntro}</p>}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 18 }}>
           {c.options?.map((row) => (
             <div key={row.id} className="lift" style={{ background: '#fffdf9', borderRadius: 18, padding: 26, boxShadow: '0 8px 26px -20px rgba(8,42,82,.4)' }}>
-              <div style={{ width: 44, height: 44, borderRadius: 12, background: '#ffcf33', marginBottom: 16 }} />
+              <div style={{ width: 44, height: 44, borderRadius: 12, background: '#ffcf33', marginBottom: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22, fontWeight: 900, color: '#082a52' }}>✓</div>
               <h3 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 18, margin: '0 0 8px' }}>{row.title}</h3>
               <p style={{ fontSize: '14.5px', color: '#6b6152', lineHeight: 1.6, margin: 0 }}>{row.desc}</p>
             </div>

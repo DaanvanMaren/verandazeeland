@@ -9,7 +9,7 @@ export const verandaProfiline: GlobalConfig = {
   slug: 'veranda-profiline',
   label: 'Profiline (product)',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Verandas' },
   fields: [
     // hero
     { name: 'heroBadge', type: 'text', defaultValue: 'Populair' },
@@ -19,7 +19,7 @@ export const verandaProfiline: GlobalConfig = {
       name: 'heroText',
       type: 'textarea',
       defaultValue:
-        'Onze meest veelzijdige veranda. Dankzij de extra stevige constructie bouwt u breder, dieper en ruimer — met overspanningen tot 7 meter op slechts twee staanders. Volledig op maat en uit te bouwen tot een complete tuinkamer.',
+        'Onze meest veelzijdige veranda. Dankzij de extra stevige constructie bouwt u breder, dieper en ruimer, met overspanningen tot 7 meter op slechts twee staanders. Volledig op maat en uit te bouwen tot een complete tuinkamer.',
     },
     { name: 'heroButtonPrimary', type: 'text', defaultValue: 'Offerte Profiline →' },
     { name: 'heroButtonSecondary', type: 'text', defaultValue: 'Bezoek de showroom' },
@@ -89,7 +89,7 @@ export const verandaProfiline: GlobalConfig = {
       name: 'maatText',
       type: 'textarea',
       defaultValue:
-        'Van afmeting, kleur en gootsierlijst tot geïntegreerde verlichting, verwarming, zonwering en glazen schuifwanden — de Profiline groeit mee met uw wensen.',
+        'Van afmeting, kleur en gootsierlijst tot geïntegreerde verlichting, verwarming, zonwering en glazen schuifwanden: de Profiline groeit mee met uw wensen.',
     },
     { name: 'maatCta', type: 'text', defaultValue: 'Bekijk alle opties →' },
     { name: 'maatImage', type: 'upload', relationTo: 'media' },

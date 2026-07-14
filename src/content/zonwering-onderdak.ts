@@ -8,7 +8,7 @@ export const zonweringOnderdak: GlobalConfig = {
   slug: 'zonwering-onderdak',
   label: 'Onderdakzonwering',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Zonwering' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Zonwering' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Onderdakzonwering' },

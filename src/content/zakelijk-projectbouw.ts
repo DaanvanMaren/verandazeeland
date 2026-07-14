@@ -8,7 +8,7 @@ export const zakelijkProjectbouw: GlobalConfig = {
   slug: 'zakelijk-projectbouw',
   label: 'Zakelijk — Projectbouw',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Zakelijk' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Projectbouw & Ontwikkeling' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Series op maat voor uw project' },

@@ -8,7 +8,7 @@ export const zonweringUitvalschermen: GlobalConfig = {
   slug: 'zonwering-uitvalschermen',
   label: 'Uitvalschermen',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Zonwering' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Zonwering' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Uitvalschermen' },
@@ -16,7 +16,7 @@ export const zonweringUitvalschermen: GlobalConfig = {
       name: 'heroText',
       type: 'textarea',
       defaultValue:
-        'Compacte schermen die schuin naar buiten uitvallen en zo schaduw geven voor ramen en gevels — ook op de verdieping. Strak weggewerkt in een cassette.',
+        'Compacte schermen die schuin naar buiten uitvallen en zo schaduw geven voor ramen en gevels, ook op de verdieping. Strak weggewerkt in een cassette.',
     },
     { name: 'heroPrimaryCta', type: 'text', defaultValue: 'Offerte aanvragen →' },
     { name: 'heroSecondaryCta', type: 'text', defaultValue: 'Terug naar Zonwering' },

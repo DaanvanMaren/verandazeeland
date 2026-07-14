@@ -49,12 +49,12 @@ export default async function ZakelijkProjectbouwPage() {
       </div>
 
       {/* toepassingen & voordelen */}
-      <div style={{ padding: '56px 40px', background: '#fff' }}>
+      <div style={{ padding: '56px 40px', background: '#efe6d4' }}>
         <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 32, margin: '0 0 30px', letterSpacing: '-1px' }}>{c.benefitsHeading}</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 18 }}>
           {c.benefits?.map((row) => (
             <div key={row.id} className="lift" style={{ background: '#fffdf9', borderRadius: 18, padding: 26, boxShadow: '0 8px 26px -20px rgba(8,42,82,.4)' }}>
-              <div style={{ width: 44, height: 44, borderRadius: 12, background: '#ffcf33', marginBottom: 16 }} />
+              <div style={{ width: 44, height: 44, borderRadius: 12, background: '#ffcf33', marginBottom: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22, fontWeight: 900, color: '#082a52' }}>✓</div>
               <h3 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 17, margin: '0 0 8px' }}>{row.title}</h3>
               <p style={{ fontSize: '14.5px', color: '#6b6152', lineHeight: 1.6, margin: 0 }}>{row.desc}</p>
             </div>

@@ -8,7 +8,7 @@ export const zonwering: GlobalConfig = {
   slug: 'zonwering',
   label: 'Zonwering',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Zonwering' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Aangenaam koel' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Zonwering perfect afgestemd op uw veranda' },

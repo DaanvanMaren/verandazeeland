@@ -8,7 +8,7 @@ export const schuifwandAluminium: GlobalConfig = {
   slug: 'schuifwand-aluminium',
   label: 'Aluminium schuifpui',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Schuifwanden' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Schuifwanden' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Aluminium schuifpui' },

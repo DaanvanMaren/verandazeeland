@@ -8,7 +8,7 @@ export const zakelijkZorg: GlobalConfig = {
   slug: 'zakelijk-zorg',
   label: 'Zakelijk · Zorg',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Zakelijk' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Zorginstellingen' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Rust, comfort en veiligheid voorop' },

@@ -8,7 +8,7 @@ export const optieWanden: GlobalConfig = {
   slug: 'optie-wanden',
   label: 'Voor- en zijwanden (optie)',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Opties & accessoires' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Opties' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Voor- en zijwanden' },
@@ -27,7 +27,7 @@ export const optieWanden: GlobalConfig = {
       name: 'introText',
       type: 'textarea',
       defaultValue:
-        'Met de juiste voor- en zijwandensluit u uw veranda helemaal af. Combineer glazen schuifwanden met kozijnen, deuren en ramen tot precies de indeling die bij uw situatie past — het hele jaar door comfortabel.',
+        'Met de juiste voor- en zijwandensluit u uw veranda helemaal af. Combineer glazen schuifwanden met kozijnen, deuren en ramen tot precies de indeling die bij uw situatie past. Het hele jaar door comfortabel.',
     },
     {
       name: 'introPoints',

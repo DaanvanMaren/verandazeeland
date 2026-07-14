@@ -8,7 +8,7 @@ export const zonweringBovendak: GlobalConfig = {
   slug: 'zonwering-bovendak',
   label: 'Bovendakzonwering',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Zonwering' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Zonwering' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Bovendakzonwering' },

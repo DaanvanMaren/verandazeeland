@@ -8,7 +8,7 @@ export const tuinkamers: GlobalConfig = {
   slug: 'tuinkamers',
   label: 'Tuinkamers (overzicht)',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Tuinkamers' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Het hele jaar buiten' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Uw tuinkamer, altijd het juiste seizoen' },
@@ -29,7 +29,7 @@ export const tuinkamers: GlobalConfig = {
       name: 'typesIntro',
       type: 'textarea',
       defaultValue:
-        'De dakvorm bepaalt de uitstraling van uw tuinkamer. Een hellend dak en een vlak dak geven allebei een ander karakter — wij zetten de verschillen voor u op een rij.',
+        'De dakvorm bepaalt de uitstraling van uw tuinkamer. Een hellend dak en een vlak dak geven allebei een ander karakter. Wij zetten de verschillen voor u op een rij.',
     },
     {
       name: 'types',

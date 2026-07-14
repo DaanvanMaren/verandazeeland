@@ -8,7 +8,7 @@ export const verandaCube: GlobalConfig = {
   slug: 'veranda-cube',
   label: 'Cube (product)',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Verandas' },
   fields: [
     // hero
     { name: 'heroBadge', type: 'text', defaultValue: 'Topmodel' },
@@ -47,7 +47,7 @@ export const verandaCube: GlobalConfig = {
       name: 'introText',
       type: 'textarea',
       defaultValue:
-        'De Cube valt direct op met zijn strakke lijnen, extra brede staanders en volledig vlakke dak met onzichtbare dakhelling. Modern, robuust en tot in de puntjes afgewerkt — en dankzij een verstevigde goot mogelijk tot 7 meter breed op slechts twee palen. Een designstatement dat past bij een eigentijdse tuin, en heerlijk om onder te leven.',
+        'De Cube valt direct op met zijn strakke lijnen, extra brede staanders en volledig vlakke dak met onzichtbare dakhelling. Modern, robuust en tot in de puntjes afgewerkt, en dankzij een verstevigde goot mogelijk tot 7 meter breed op slechts twee palen. Een designstatement dat past bij een eigentijdse tuin, en heerlijk om onder te leven.',
     },
     {
       name: 'introBullets',

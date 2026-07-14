@@ -8,7 +8,7 @@ export const accessoires: GlobalConfig = {
   slug: 'accessoires',
   label: 'Accessoires',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Opties & accessoires' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Maak het compleet' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Accessoires voor uw veranda' },

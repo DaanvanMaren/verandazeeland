@@ -8,7 +8,7 @@ export const zakelijkHoreca: GlobalConfig = {
   slug: 'zakelijk-horeca',
   label: 'Zakelijk — Horeca & Leisure',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Zakelijk' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Horeca & Leisure' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Meer terras, langer seizoen' },

@@ -8,7 +8,7 @@ export const zakelijkKantoren: GlobalConfig = {
   slug: 'zakelijk-kantoren',
   label: 'Zakelijk — Kantoren & Commercieel Vastgoed',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Zakelijk' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Kantoren & Commercieel Vastgoed' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Haal meer uit je bedrijfspand' },

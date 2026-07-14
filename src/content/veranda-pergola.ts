@@ -8,7 +8,7 @@ export const verandaPergola: GlobalConfig = {
   slug: 'veranda-pergola',
   label: 'Veranda Pergola-overkapping',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Verandas' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Vrijstaand' },
     { name: 'heroPrice', type: 'text', defaultValue: 'vanaf € 5.791' },

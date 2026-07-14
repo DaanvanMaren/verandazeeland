@@ -8,7 +8,7 @@ export const verandaLinea: GlobalConfig = {
   slug: 'veranda-linea',
   label: 'Veranda Linea',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Verandas' },
   fields: [
     // hero
     { name: 'heroBadge', type: 'text', defaultValue: 'Modern design' },
@@ -47,7 +47,7 @@ export const verandaLinea: GlobalConfig = {
       name: 'introText',
       type: 'textarea',
       defaultValue:
-        'De Linea combineert strakke lijnen met een optisch vlak dak en een moderne uitstraling. Waar de Cube volledig kubistisch en robuust is, houdt de Linea een rankere, lichtere lijn aan. De overkapping sluit perfect aan bij een moderne bouwstijl en behoudt het buitengevoel — zowel aan de gevel als vrijstaand in de tuin.',
+        'De Linea combineert strakke lijnen met een optisch vlak dak en een moderne uitstraling. Waar de Cube volledig kubistisch en robuust is, houdt de Linea een rankere, lichtere lijn aan. De overkapping sluit perfect aan bij een moderne bouwstijl en behoudt het buitengevoel, zowel aan de gevel als vrijstaand in de tuin.',
     },
     {
       name: 'introPoints',

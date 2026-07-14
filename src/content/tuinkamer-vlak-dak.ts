@@ -8,7 +8,7 @@ export const tuinkamerVlakDak: GlobalConfig = {
   slug: 'tuinkamer-vlak-dak',
   label: 'Tuinkamer met vlak dak',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Tuinkamers' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Tuinkamer' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Tuinkamer met vlak dak' },
@@ -28,7 +28,7 @@ export const tuinkamerVlakDak: GlobalConfig = {
       name: 'introText',
       type: 'textarea',
       defaultValue:
-        'Het vlakke dak zorgt voor een minimalistisch silhouet met rechte lijnen en, bij de Cube, volledig verborgen afwatering. Gebaseerd op de Linea of Cube maakt u er een designstatement van dat naadloos aansluit op moderne architectuur — het hele jaar door te gebruiken.',
+        'Het vlakke dak zorgt voor een minimalistisch silhouet met rechte lijnen en, bij de Cube, volledig verborgen afwatering. Gebaseerd op de Linea of Cube maakt u er een designstatement van dat naadloos aansluit op moderne architectuur, het hele jaar door te gebruiken.',
     },
     {
       name: 'introPoints',

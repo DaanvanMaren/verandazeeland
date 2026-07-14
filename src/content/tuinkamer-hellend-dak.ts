@@ -8,7 +8,7 @@ export const tuinkamerHellendDak: GlobalConfig = {
   slug: 'tuinkamer-hellend-dak',
   label: 'Tuinkamer met hellend dak',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Tuinkamers' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Tuinkamer' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Tuinkamer met hellend dak' },

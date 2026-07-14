@@ -8,7 +8,7 @@ export const zakelijkVakantieparken: GlobalConfig = {
   slug: 'zakelijk-vakantieparken',
   label: 'Zakelijk — Vakantieparken',
   access: { read: () => true },
-  admin: { group: 'Content' },
+  admin: { group: 'Zakelijk' },
   fields: [
     { name: 'heroBadge', type: 'text', defaultValue: 'Vakantieparken & Recreatie' },
     { name: 'heroTitle', type: 'text', required: true, defaultValue: 'Comfort dat gasten waarderen' },
