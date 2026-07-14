@@ -1,11 +1,127 @@
 import React from 'react'
 
-export const metadata = { title: "Tuinkamers | Veranda Zeeland" }
+import { getContent } from '@/content'
+import type { Media } from '@/payload-types'
 
-// ponytail: rendered straight from the design mock-up (exact markup). To make a
-// page's copy editable in /admin, convert it to fields + getContent later.
-const html = "<div style=\"max-width:1280px;margin:0 auto;background:#f6f0e6\">\n\n  <div style=\"background:#082a52;color:#c3d4e6;font-size:12.5px;display:flex;justify-content:space-between;align-items:center;padding:9px 40px\">\n    <span>Serooskerke · Showroom di t/m za 10.00–17.00u, bij voorkeur op afspraak</span>\n    <div style=\"display:flex;gap:18px;align-items:center\"><span><span style=\"color:#ffcf33\">★★★★★</span> 9,2 / 327 reviews</span><span style=\"opacity:.4\">|</span><span><strong style=\"color:#fff\">NL</strong> · DE</span></div>\n  </div>\n\n  <div style=\"display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:#f6f0e6;position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(8,42,82,.08)\">\n    <a href=\"/\"><img src=\"/uploads/logo-1783333745716.png\" alt=\"Veranda Zeeland\" style=\"height:56px;width:auto;display:block\"></a>\n    <nav class=\"mainnav\" style=\"display:flex;gap:24px;font-size:15px;font-weight:600;align-items:center\">\n      <div class=\"menu-item\"><a class=\"nav-a\" href=\"/veranda-s\">Veranda's</a><div class=\"dropdown\"><div class=\"dropdown-inner\"><a href=\"/veranda-greenline\">Greenline</a><a href=\"/veranda-profiline\">Profiline</a><a href=\"/veranda-linea\">Linea</a><a href=\"/veranda-cube\">Cube</a><a href=\"/veranda-pergola\">Pergola-overkapping</a></div></div></div>\n      <div class=\"menu-item\"><a class=\"nav-a\" href=\"/tuinkamers\" style=\"color:#0053a1\">Tuinkamers</a><div class=\"dropdown\"><div class=\"dropdown-inner\"><a href=\"/tuinkamer-hellend-dak\">Tuinkamer met hellend dak</a><a href=\"/tuinkamer-vlak-dak\">Tuinkamer met vlak dak</a></div></div></div>\n      <div class=\"menu-item\"><a class=\"nav-a\" href=\"/glazen-schuifwanden\">Schuifwanden</a><div class=\"dropdown\"><div class=\"dropdown-inner\"><a href=\"/schuifwand-glas\">Glazen schuifwanden</a><a href=\"/schuifwand-aluminium\">Aluminium schuifpui</a><a href=\"/schuifwand-lamellen\">Lamellen schuifwanden</a><a href=\"/schuifwand-steellook\">Steellook schuifwanden</a></div></div></div>\n      <div class=\"menu-item\"><a class=\"nav-a\" href=\"/zonwering\">Zonwering</a><div class=\"dropdown\"><div class=\"dropdown-inner\"><a href=\"/zonwering-onderdak\">Onderdakzonwering</a><a href=\"/zonwering-bovendak\">Bovendakzonwering</a><a href=\"/zonwering-screens\">Screens</a><a href=\"/zonwering-uitvalschermen\">Uitvalschermen</a></div></div></div>\n      <div class=\"menu-item\"><a class=\"nav-a\" href=\"/accessoires\">Opties</a><div class=\"dropdown\"><div class=\"dropdown-inner\"><a href=\"/optie-wanden\">Voor- en zijwanden</a><a href=\"/optie-dakbedekking\">Dakbedekking</a><a href=\"/optie-ledverlichting\">Ledverlichting</a><a href=\"/optie-fundering\">Fundering</a><a href=\"/optie-onderhoud\">Onderhoudsproducten</a></div></div></div>\n      <div class=\"menu-item\"><a class=\"nav-a\" href=\"/zakelijk\">Zakelijk</a><div class=\"dropdown\" style=\"left:auto;right:-14px\"><div class=\"dropdown-inner\"><a href=\"/zakelijk-horeca\">Horeca & Leisure</a><a href=\"/zakelijk-kantoren\">Kantoren & Commercieel Vastgoed</a><a href=\"/zakelijk-onderwijs\">Onderwijs & Scholen</a><a href=\"/zakelijk-vakantieparken\">Vakantieparken & Recreatie</a><a href=\"/zakelijk-zorg\">Zorginstellingen</a><a href=\"/zakelijk-projectbouw\">Projectbouw & Ontwikkeling</a></div></div></div>\n    </nav>\n    <a class=\"btn-n\" href=\"/contact\" style=\"background:#082a52;color:#fff;font-weight:700;font-size:14px;padding:13px 22px;border-radius:999px\">Offerte aanvragen</a>\n  </div>\n\n  <div style=\"padding:20px 40px 0;font-size:13px;color:#8a94a0\"><a class=\"nav-a\" href=\"/\">Home</a> › <span style=\"color:#082a52;font-weight:600\">Tuinkamers</span></div>\n  <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:44px;padding:24px 40px 56px;align-items:center\">\n    <div>\n      <span style=\"display:inline-block;background:#ffcf33;color:#082a52;font-weight:800;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:6px 13px;border-radius:999px;margin-bottom:20px\">Het hele jaar buiten</span>\n      <h1 style=\"font-family:'Archivo';font-weight:900;font-size:54px;line-height:.98;margin:0 0 20px;letter-spacing:-1.8px\">Uw tuinkamer, altijd het juiste seizoen</h1>\n      <p style=\"font-size:18px;line-height:1.65;color:#42586c;margin:0 0 28px\">Een tuinkamer is een veranda die u met glazen schuifwanden of vaste voor- en zijwanden verder afsluit: beschutter tegen wind en regen, en daardoor langer in het jaar te gebruiken. Omdat Verasol-veranda's modulair zijn opgebouwd, bouwt u een bestaande veranda stap voor stap uit tot een volwaardige tuinkamer.</p>\n      <div style=\"display:flex;gap:14px;flex-wrap:wrap\"><a class=\"btn-n\" href=\"/contact\" style=\"background:#082a52;color:#fff;font-weight:700;font-size:15px;padding:15px 26px;border-radius:999px\">Offerte aanvragen →</a><a class=\"btn-y\" href=\"/contact\" style=\"background:#ffcf33;color:#082a52;font-weight:800;font-size:15px;padding:15px 26px;border-radius:999px\">Plan een bezoek</a></div>\n    </div>\n    <div style=\"position:relative;border-radius:22px;overflow:hidden;min-height:420px;background:#082a52\"><img src=\"/uploads/DJI_20260527082041_0005_D.jpg\" alt=\"Uw tuinkamer, altijd het juiste seizoen\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\"></div>\n  </div>\n  <!-- 2 type tuinkamers -->\n  <div style=\"padding:56px 40px;background:#fff\">\n    <span style=\"color:#c08a1a;font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase\">Ontdek de mogelijkheden</span>\n    <h2 style=\"font-family:'Archivo';font-weight:800;font-size:34px;margin:10px 0 8px;letter-spacing:-1px\">2 type tuinkamers</h2>\n    <p style=\"color:#6b6152;font-size:16.5px;margin:0 0 32px;max-width:640px\">De dakvorm bepaalt de uitstraling van uw tuinkamer. Een hellend dak en een vlak dak geven allebei een ander karakter — wij zetten de verschillen voor u op een rij.</p>\n    <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:24px\">\n      <a class=\"cat-card lift\" href=\"/tuinkamer-hellend-dak\" style=\"background:#fffdf9;border-radius:20px;overflow:hidden;box-shadow:0 8px 26px -18px rgba(8,42,82,.4);display:block\">\n        <div style=\"position:relative;height:300px;overflow:hidden;background:#082a52\"><img class=\"cat-img\" src=\"/uploads/Profiline_Ommeren_VS_20260529_003_LR.jpg\" alt=\"Tuinkamer met hellend dak\" style=\"width:100%;height:100%;object-fit:cover\"></div>\n        <div style=\"padding:26px;display:flex;align-items:center;justify-content:space-between;gap:12px\"><div><h3 style=\"font-family:'Archivo';font-weight:800;font-size:24px;margin:0 0 4px;letter-spacing:-.5px\">Hellend dak</h3><p style=\"font-size:14.5px;color:#6b6152;margin:0\">Ruimtelijk, veel licht en natuurlijke afwatering</p></div><span style=\"background:#082a52;color:#fff;font-weight:700;font-size:14px;padding:12px 20px;border-radius:999px;white-space:nowrap\">Bekijk →</span></div>\n      </a>\n      <a class=\"cat-card lift\" href=\"/tuinkamer-vlak-dak\" style=\"background:#fffdf9;border-radius:20px;overflow:hidden;box-shadow:0 8px 26px -18px rgba(8,42,82,.4);display:block\">\n        <div style=\"position:relative;height:300px;overflow:hidden;background:#082a52\"><img class=\"cat-img\" src=\"/uploads/cube-kerk.jpg\" alt=\"Tuinkamer met vlak dak\" style=\"width:100%;height:100%;object-fit:cover\"></div>\n        <div style=\"padding:26px;display:flex;align-items:center;justify-content:space-between;gap:12px\"><div><h3 style=\"font-family:'Archivo';font-weight:800;font-size:24px;margin:0 0 4px;letter-spacing:-.5px\">Vlak dak</h3><p style=\"font-size:14.5px;color:#6b6152;margin:0\">Strak, modern en kubistisch van vorm</p></div><span style=\"background:#082a52;color:#fff;font-weight:700;font-size:14px;padding:12px 20px;border-radius:999px;white-space:nowrap\">Bekijk →</span></div>\n      </a>\n    </div>\n  </div>\n\n  <div style=\"padding:56px 40px 0\">\n    <h2 style=\"font-family:'Archivo';font-weight:800;font-size:34px;margin:0 0 6px;letter-spacing:-1px\">Waarom een tuinkamer?</h2>\n    <p style=\"color:#6b6152;font-size:16.5px;margin:0 0 32px\">Alle voordelen van buiten wonen, zonder de nadelen van het weer.</p>\n    <div style=\"display:grid;grid-template-columns:repeat(4,1fr);gap:18px\">\n      <div class=\"lift\" style=\"background:#fffdf9;border-radius:18px;padding:26px;box-shadow:0 8px 26px -20px rgba(8,42,82,.4)\"><div style=\"width:44px;height:44px;border-radius:12px;background:#ffcf33;margin-bottom:16px\"></div><h3 style=\"font-family:'Archivo';font-weight:800;font-size:18px;margin:0 0 8px\">Jaarrond comfort</h3><p style=\"font-size:14.5px;color:#6b6152;line-height:1.6;margin:0\">Met beglazing en optionele verwarming het hele jaar bruikbaar.</p></div>\n      <div class=\"lift\" style=\"background:#fffdf9;border-radius:18px;padding:26px;box-shadow:0 8px 26px -20px rgba(8,42,82,.4)\"><div style=\"width:44px;height:44px;border-radius:12px;background:#ffcf33;margin-bottom:16px\"></div><h3 style=\"font-family:'Archivo';font-weight:800;font-size:18px;margin:0 0 8px\">Meer leefruimte</h3><p style=\"font-size:14.5px;color:#6b6152;line-height:1.6;margin:0\">Een volwaardige extra kamer aan uw woning, zonder verbouwing.</p></div>\n      <div class=\"lift\" style=\"background:#fffdf9;border-radius:18px;padding:26px;box-shadow:0 8px 26px -20px rgba(8,42,82,.4)\"><div style=\"width:44px;height:44px;border-radius:12px;background:#ffcf33;margin-bottom:16px\"></div><h3 style=\"font-family:'Archivo';font-weight:800;font-size:18px;margin:0 0 8px\">Volledig op maat</h3><p style=\"font-size:14.5px;color:#6b6152;line-height:1.6;margin:0\">Afgestemd op uw woning, tuin en wensen.</p></div>\n      <div class=\"lift\" style=\"background:#fffdf9;border-radius:18px;padding:26px;box-shadow:0 8px 26px -20px rgba(8,42,82,.4)\"><div style=\"width:44px;height:44px;border-radius:12px;background:#ffcf33;margin-bottom:16px\"></div><h3 style=\"font-family:'Archivo';font-weight:800;font-size:18px;margin:0 0 8px\">Ombouw mogelijk</h3><p style=\"font-size:14.5px;color:#6b6152;line-height:1.6;margin:0\">Bestaande veranda eenvoudig uit te breiden tot tuinkamer.</p></div>\n    </div>\n  </div>\n  <div style=\"padding:60px 40px\">\n    <h2 style=\"font-family:'Archivo';font-weight:800;font-size:34px;text-align:center;margin:0 0 32px;letter-spacing:-1px\">Projecten uit Zeeland</h2>\n    <div style=\"display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:200px;gap:16px\">\n      <div style=\"grid-row:span 2;position:relative;border-radius:18px;overflow:hidden;background:#082a52\"><img src=\"/uploads/Profiline_Veenendaal_VS_20250611_430_LR.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\" alt=\"Project\"></div>\n      <div style=\"position:relative;border-radius:18px;overflow:hidden;background:#082a52\"><img src=\"/uploads/Profiline_Ommeren_VS_20260529_003_LR.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\" alt=\"Project\"></div>\n      <div style=\"position:relative;border-radius:18px;overflow:hidden;background:#082a52\"><img src=\"/uploads/Profiline_Ommeren_VS_20260529_237_LR.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\" alt=\"Project\"></div>\n      <div style=\"position:relative;border-radius:18px;overflow:hidden;background:#082a52\"><img src=\"/uploads/foto-water-suppen.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\" alt=\"Project\"></div>\n      <div style=\"position:relative;border-radius:18px;overflow:hidden;background:#082a52\"><img src=\"/uploads/DJI_20260527082041_0005_D.jpg\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\" alt=\"Project\"></div>\n    </div>\n  </div>\n  <div style=\"background:#082a52;color:#fff;margin:0 40px 56px;border-radius:26px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center\">\n    <div><span style=\"color:#ffcf33;font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase\">Glasschuifwanden</span><h2 style=\"font-family:'Archivo';font-weight:800;font-size:34px;margin:12px 0 14px;letter-spacing:-1px\">Open of dicht, u kiest</h2><p style=\"font-size:16.5px;line-height:1.7;color:#c9d6e6;margin:0 0 24px\">Combineer uw tuinkamer met glasschuifwanden: in de zomer volledig open, bij wind en regen in enkele seconden dicht. Zo bepaalt u zelf hoe u van uw buitenruimte geniet.</p><a class=\"btn-y\" href=\"/glazen-schuifwanden\" style=\"background:#ffcf33;color:#082a52;font-weight:800;font-size:15px;padding:14px 26px;border-radius:999px;display:inline-block\">Bekijk glaswanden →</a></div>\n    <div style=\"position:relative;border-radius:16px;overflow:hidden;min-height:300px;background:#33547d\"><img src=\"/uploads/Profiline_Ommeren_VS_20260529_003_LR.jpg\" alt=\"Open of dicht, u kiest\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\"></div>\n  </div>\n\n  <div style=\"background:#ffcf33;padding:56px;margin:0 40px 40px;border-radius:26px;text-align:center\">\n    <h2 style=\"font-family:'Archivo';font-weight:900;font-size:38px;margin:0 0 10px;letter-spacing:-1.4px;color:#082a52\">Benieuwd naar de mogelijkheden?</h2>\n    <p style=\"font-size:16.5px;color:#3a4d63;margin:0 auto 24px;max-width:520px\">Vraag vrijblijvend een offerte op maat aan of kom langs in onze showroom in Serooskerke.</p>\n    <a class=\"btn-n\" href=\"/contact\" style=\"background:#082a52;color:#fff;font-weight:800;font-size:16px;padding:17px 32px;border-radius:999px;display:inline-block\">Offerte aanvragen →</a>\n  </div>\n\n  <div style=\"background:#082a52;color:#9fb3ca;padding:56px 56px 30px;font-size:14px\">\n    <div style=\"display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)\">\n      <div><img src=\"/uploads/logo-1783333745716.png\" alt=\"Veranda Zeeland\" style=\"height:52px;margin-bottom:16px\"><p style=\"line-height:1.7;margin:0;max-width:260px\">Specialist in veranda's, tuinkamers en glasschuifwanden voor heel Zeeland.</p></div>\n      <div><div style=\"color:#fff;font-weight:700;margin-bottom:14px\">Producten</div><div style=\"display:flex;flex-direction:column;gap:9px\"><a class=\"nav-a\" href=\"/veranda-s\">Veranda's</a><a class=\"nav-a\" href=\"/tuinkamers\">Tuinkamers</a><a class=\"nav-a\" href=\"/glazen-schuifwanden\">Schuifwanden</a><a class=\"nav-a\" href=\"/zonwering\">Zonwering</a><a class=\"nav-a\" href=\"/accessoires\">Opties</a><a class=\"nav-a\" href=\"/zakelijk\">Zakelijk</a></div></div>\n      <div><div style=\"color:#fff;font-weight:700;margin-bottom:14px\">Over ons</div><div style=\"display:flex;flex-direction:column;gap:9px\"><a class=\"nav-a\" href=\"/contact\">Over ons</a><a class=\"nav-a\" href=\"/contact\">Showroom</a><a class=\"nav-a\" href=\"/contact\">Projecten</a><a class=\"nav-a\" href=\"/contact\">Contact</a></div></div>\n      <div><div style=\"color:#fff;font-weight:700;margin-bottom:14px\">Contact</div><div style=\"line-height:1.8\">De Stekelweie 2<br>4353 RX Serooskerke<br>T: 0118-853055<br>E: info@verandazeeland.nl</div><div style=\"margin-top:12px;color:#ffcf33\">★★★★★ 9,2 · 327 reviews</div></div>\n    </div>\n    <div style=\"padding-top:22px;display:flex;justify-content:space-between;font-size:12.5px;opacity:.7\"><span>© 2019–2026 Veranda Zeeland</span><span>Algemene voorwaarden · Privacy · Disclaimer</span></div>\n  </div>\n\n</div>"
+import { Footer } from '../_components/Footer'
+import { Header } from '../_components/Header'
 
-export default function Page() {
-  return <div dangerouslySetInnerHTML={{ __html: html }} />
+export const metadata = {
+  title: 'Tuinkamers | Veranda Zeeland',
+}
+
+const img = (f: number | Media | null | undefined, fallback: string) =>
+  f && typeof f === 'object' && f.url ? f.url : fallback
+
+const cover: React.CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }
+
+export default async function TuinkamersPage() {
+  const c = await getContent('tuinkamers')
+
+  return (
+    <div style={{ maxWidth: 1280, margin: '0 auto', background: '#f6f0e6' }}>
+      <Header />
+
+      <div style={{ padding: '20px 40px 0', fontSize: 13, color: '#8a94a0' }}>
+        <a className="nav-a" href="/">Home</a> › <span style={{ color: '#082a52', fontWeight: 600 }}>Tuinkamers</span>
+      </div>
+
+      {/* page hero */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 44, padding: '24px 40px 56px', alignItems: 'center' }}>
+        <div>
+          {c.heroBadge && (
+            <span style={{ display: 'inline-block', background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 12, letterSpacing: 1, textTransform: 'uppercase', padding: '6px 13px', borderRadius: 999, marginBottom: 20 }}>
+              {c.heroBadge}
+            </span>
+          )}
+          <h1 style={{ fontFamily: 'Archivo', fontWeight: 900, fontSize: 54, lineHeight: 0.98, margin: '0 0 20px', letterSpacing: '-1.8px' }}>{c.heroTitle}</h1>
+          {c.heroText && <p style={{ fontSize: 18, lineHeight: 1.65, color: '#42586c', margin: '0 0 28px' }}>{c.heroText}</p>}
+          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+            <a className="btn-n" href="/contact" style={{ background: '#082a52', color: '#fff', fontWeight: 700, fontSize: 15, padding: '15px 26px', borderRadius: 999 }}>{c.heroPrimaryCta}</a>
+            <a className="btn-y" href="/contact" style={{ background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 15, padding: '15px 26px', borderRadius: 999 }}>{c.heroSecondaryCta}</a>
+          </div>
+        </div>
+        <div style={{ position: 'relative', borderRadius: 22, overflow: 'hidden', minHeight: 420, background: '#082a52' }}>
+          <img src={img(c.heroImage, c.heroImageFallback ?? '')} alt={c.heroTitle} style={cover} />
+        </div>
+      </div>
+
+      {/* 2 type tuinkamers */}
+      <div style={{ padding: '56px 40px', background: '#fff' }}>
+        <span style={{ color: '#c08a1a', fontWeight: 800, fontSize: 13, letterSpacing: '1.5px', textTransform: 'uppercase' }}>{c.typesLabel}</span>
+        <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 34, margin: '10px 0 8px', letterSpacing: '-1px' }}>{c.typesHeading}</h2>
+        {c.typesIntro && <p style={{ color: '#6b6152', fontSize: '16.5px', margin: '0 0 32px', maxWidth: 640 }}>{c.typesIntro}</p>}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+          {c.types?.map((row) => (
+            <a
+              key={row.id}
+              className="cat-card lift"
+              href={row.href ?? '#'}
+              style={{ background: '#fffdf9', borderRadius: 20, overflow: 'hidden', boxShadow: '0 8px 26px -18px rgba(8,42,82,.4)', display: 'block' }}
+            >
+              <div style={{ position: 'relative', height: 300, overflow: 'hidden', background: '#082a52' }}>
+                <img className="cat-img" src={img(row.image, row.fallback ?? '')} alt={row.title ?? ''} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              <div style={{ padding: 26, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
+                <div>
+                  <h3 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 24, margin: '0 0 4px', letterSpacing: '-.5px' }}>{row.title}</h3>
+                  <p style={{ fontSize: '14.5px', color: '#6b6152', margin: 0 }}>{row.desc}</p>
+                </div>
+                <span style={{ background: '#082a52', color: '#fff', fontWeight: 700, fontSize: 14, padding: '12px 20px', borderRadius: 999, whiteSpace: 'nowrap' }}>{row.cta}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* waarom een tuinkamer */}
+      <div style={{ padding: '56px 40px 0' }}>
+        <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 34, margin: '0 0 6px', letterSpacing: '-1px' }}>{c.uspHeading}</h2>
+        {c.uspIntro && <p style={{ color: '#6b6152', fontSize: '16.5px', margin: '0 0 32px' }}>{c.uspIntro}</p>}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 18 }}>
+          {c.usps?.map((row) => (
+            <div key={row.id} className="lift" style={{ background: '#fffdf9', borderRadius: 18, padding: 26, boxShadow: '0 8px 26px -20px rgba(8,42,82,.4)' }}>
+              <div style={{ width: 44, height: 44, borderRadius: 12, background: '#ffcf33', marginBottom: 16 }} />
+              <h3 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 18, margin: '0 0 8px' }}>{row.title}</h3>
+              <p style={{ fontSize: '14.5px', color: '#6b6152', lineHeight: 1.6, margin: 0 }}>{row.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* projecten uit Zeeland */}
+      <div style={{ padding: '60px 40px' }}>
+        <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 34, textAlign: 'center', margin: '0 0 32px', letterSpacing: '-1px' }}>{c.galleryHeading}</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gridAutoRows: 200, gap: 16 }}>
+          {c.gallery?.map((row, i) => (
+            <div key={row.id} style={{ position: 'relative', borderRadius: 18, overflow: 'hidden', background: '#082a52', ...(i === 0 ? { gridRow: 'span 2' } : {}) }}>
+              <img src={img(row.image, row.fallback ?? '')} alt="Project" style={cover} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* glasschuifwanden band */}
+      <div style={{ background: '#082a52', color: '#fff', margin: '0 40px 56px', borderRadius: 26, padding: 56, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }}>
+        <div>
+          <span style={{ color: '#ffcf33', fontWeight: 800, fontSize: 13, letterSpacing: '1.5px', textTransform: 'uppercase' }}>{c.glasLabel}</span>
+          <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 34, margin: '12px 0 14px', letterSpacing: '-1px' }}>{c.glasTitle}</h2>
+          <p style={{ fontSize: '16.5px', lineHeight: 1.7, color: '#c9d6e6', margin: '0 0 24px' }}>{c.glasText}</p>
+          <a className="btn-y" href="/glazen-schuifwanden" style={{ background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 15, padding: '14px 26px', borderRadius: 999, display: 'inline-block' }}>{c.glasCta}</a>
+        </div>
+        <div style={{ position: 'relative', borderRadius: 16, overflow: 'hidden', minHeight: 300, background: '#33547d' }}>
+          <img src={img(c.glasImage, c.glasImageFallback ?? '')} alt={c.glasTitle ?? ''} style={cover} />
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div style={{ background: '#ffcf33', padding: 56, margin: '0 40px 40px', borderRadius: 26, textAlign: 'center' }}>
+        <h2 style={{ fontFamily: 'Archivo', fontWeight: 900, fontSize: 38, margin: '0 0 10px', letterSpacing: '-1.4px', color: '#082a52' }}>{c.ctaTitle}</h2>
+        <p style={{ fontSize: '16.5px', color: '#3a4d63', margin: '0 auto 24px', maxWidth: 520 }}>{c.ctaText}</p>
+        <a className="btn-n" href="/contact" style={{ background: '#082a52', color: '#fff', fontWeight: 800, fontSize: 16, padding: '17px 32px', borderRadius: 999, display: 'inline-block' }}>{c.ctaButton}</a>
+      </div>
+
+      <Footer />
+    </div>
+  )
 }

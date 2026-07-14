@@ -1,11 +1,124 @@
 import React from 'react'
 
-export const metadata = { title: "Contact & offerte | Veranda Zeeland" }
+import { getContent } from '@/content'
+import type { Media } from '@/payload-types'
 
-// ponytail: rendered straight from the design mock-up (exact markup). To make a
-// page's copy editable in /admin, convert it to fields + getContent later.
-const html = "<div style=\"max-width:1280px;margin:0 auto;background:#f6f0e6\">\n\n  <div style=\"background:#082a52;color:#c3d4e6;font-size:12.5px;display:flex;justify-content:space-between;align-items:center;padding:9px 40px\">\n    <span>Serooskerke · Showroom di t/m za 10.00–17.00u, bij voorkeur op afspraak</span>\n    <div style=\"display:flex;gap:18px;align-items:center\"><span><span style=\"color:#ffcf33\">★★★★★</span> 9,2 / 327 reviews</span><span style=\"opacity:.4\">|</span><span><strong style=\"color:#fff\">NL</strong> · DE</span></div>\n  </div>\n\n  <div style=\"display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:#f6f0e6;position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(8,42,82,.08)\">\n    <a href=\"/\"><img src=\"/uploads/logo-1783333745716.png\" alt=\"Veranda Zeeland\" style=\"height:56px;width:auto;display:block\"></a>\n    <nav class=\"mainnav\" style=\"display:flex;gap:24px;font-size:15px;font-weight:600;align-items:center\">\n      <div class=\"menu-item\"><a class=\"nav-a\" href=\"/veranda-s\">Veranda's</a><div class=\"dropdown\"><div class=\"dropdown-inner\"><a href=\"/veranda-greenline\">Greenline</a><a href=\"/veranda-profiline\">Profiline</a><a href=\"/veranda-linea\">Linea</a><a href=\"/veranda-cube\">Cube</a><a href=\"/veranda-pergola\">Pergola-overkapping</a></div></div></div>\n      <div class=\"menu-item\"><a class=\"nav-a\" href=\"/tuinkamers\">Tuinkamers</a><div class=\"dropdown\"><div class=\"dropdown-inner\"><a href=\"/tuinkamer-hellend-dak\">Tuinkamer met hellend dak</a><a href=\"/tuinkamer-vlak-dak\">Tuinkamer met vlak dak</a></div></div></div>\n      <div class=\"menu-item\"><a class=\"nav-a\" href=\"/glazen-schuifwanden\">Schuifwanden</a><div class=\"dropdown\"><div class=\"dropdown-inner\"><a href=\"/schuifwand-glas\">Glazen schuifwanden</a><a href=\"/schuifwand-aluminium\">Aluminium schuifpui</a><a href=\"/schuifwand-lamellen\">Lamellen schuifwanden</a><a href=\"/schuifwand-steellook\">Steellook schuifwanden</a></div></div></div>\n      <div class=\"menu-item\"><a class=\"nav-a\" href=\"/zonwering\">Zonwering</a><div class=\"dropdown\"><div class=\"dropdown-inner\"><a href=\"/zonwering-onderdak\">Onderdakzonwering</a><a href=\"/zonwering-bovendak\">Bovendakzonwering</a><a href=\"/zonwering-screens\">Screens</a><a href=\"/zonwering-uitvalschermen\">Uitvalschermen</a></div></div></div>\n      <div class=\"menu-item\"><a class=\"nav-a\" href=\"/accessoires\">Opties</a><div class=\"dropdown\"><div class=\"dropdown-inner\"><a href=\"/optie-wanden\">Voor- en zijwanden</a><a href=\"/optie-dakbedekking\">Dakbedekking</a><a href=\"/optie-ledverlichting\">Ledverlichting</a><a href=\"/optie-fundering\">Fundering</a><a href=\"/optie-onderhoud\">Onderhoudsproducten</a></div></div></div>\n      <div class=\"menu-item\"><a class=\"nav-a\" href=\"/zakelijk\">Zakelijk</a><div class=\"dropdown\" style=\"left:auto;right:-14px\"><div class=\"dropdown-inner\"><a href=\"/zakelijk-horeca\">Horeca & Leisure</a><a href=\"/zakelijk-kantoren\">Kantoren & Commercieel Vastgoed</a><a href=\"/zakelijk-onderwijs\">Onderwijs & Scholen</a><a href=\"/zakelijk-vakantieparken\">Vakantieparken & Recreatie</a><a href=\"/zakelijk-zorg\">Zorginstellingen</a><a href=\"/zakelijk-projectbouw\">Projectbouw & Ontwikkeling</a></div></div></div>\n    </nav>\n    <a class=\"btn-n\" href=\"#offerte\" style=\"background:#082a52;color:#fff;font-weight:700;font-size:14px;padding:13px 22px;border-radius:999px\">Offerte aanvragen</a>\n  </div>\n\n  <div style=\"padding:20px 40px 0;font-size:13px;color:#8a94a0\"><a class=\"nav-a\" href=\"/\">Home</a> › <span style=\"color:#082a52;font-weight:600\">Contact</span></div>\n\n  <!-- hero over ons -->\n  <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:44px;padding:24px 40px 56px;align-items:center\">\n    <div>\n      <span style=\"display:inline-block;background:#ffcf33;color:#082a52;font-weight:800;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:6px 13px;border-radius:999px;margin-bottom:20px\">Welkom in Serooskerke</span>\n      <h1 style=\"font-family:'Archivo';font-weight:900;font-size:54px;line-height:.98;margin:0 0 20px;letter-spacing:-1.8px\">Kom langs in onze showroom</h1>\n      <p style=\"font-size:18px;line-height:1.65;color:#42586c;margin:0 0 20px\">Veranda Zeeland is uw complete leverancier van veranda's, tuinkamers en glasschuifwanden. In onze showroom van 800 m² ervaart u alle modellen in het echt en krijgt u deskundig, vrijblijvend advies op maat.</p>\n      <div style=\"display:flex;gap:30px;flex-wrap:wrap;font-size:15px\">\n        <div><div style=\"font-weight:800;font-family:'Archivo';font-size:26px\">800 m²</div><div style=\"color:#6b6152\">Showroom</div></div>\n        <div><div style=\"font-weight:800;font-family:'Archivo';font-size:26px\">9,2</div><div style=\"color:#6b6152\">327 reviews</div></div>\n        <div><div style=\"font-weight:800;font-family:'Archivo';font-size:26px\">10 jaar</div><div style=\"color:#6b6152\">Specialist</div></div>\n      </div>\n    </div>\n    <div style=\"position:relative;border-radius:22px;overflow:hidden;min-height:400px;background:#082a52\"><img src=\"/uploads/DJI_20260527082041_0005_D.jpg\" alt=\"Showroom Veranda Zeeland\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\"></div>\n  </div>\n\n  <!-- contact + form -->\n  <div id=\"offerte\" style=\"display:grid;grid-template-columns:1fr 1.15fr;gap:0;background:#fff;margin:0 40px;border-radius:26px;overflow:hidden\">\n    <!-- info -->\n    <div style=\"background:#082a52;color:#fff;padding:48px 44px\">\n      <h2 style=\"font-family:'Archivo';font-weight:800;font-size:28px;margin:0 0 24px;letter-spacing:-.6px\">Contactgegevens</h2>\n      <div style=\"display:flex;flex-direction:column;gap:22px;font-size:15.5px;line-height:1.6\">\n        <div><div style=\"color:#ffcf33;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px\">Adres</div>De Stekelweie 2<br>4353 RX Serooskerke</div>\n        <div><div style=\"color:#ffcf33;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px\">Telefoon</div>0118-853055</div>\n        <div><div style=\"color:#ffcf33;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px\">E-mail</div>info@verandazeeland.nl</div>\n        <div><div style=\"color:#ffcf33;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px\">Openingstijden</div>Dinsdag t/m zaterdag<br>10.00–17.00 uur<br><span style=\"color:#9fb3ca\">Bij voorkeur op afspraak</span></div>\n      </div>\n      <div style=\"margin-top:30px;border-radius:14px;overflow:hidden;min-height:150px;position:relative;background:#33547d\"><img src=\"/uploads/Profiline_Veenendaal_VS_20250611_430_LR.jpg\" alt=\"Showroom interieur\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\"></div>\n    </div>\n    <!-- form -->\n    <div style=\"padding:48px 44px\">\n      <h2 style=\"font-family:'Archivo';font-weight:800;font-size:28px;margin:0 0 6px;letter-spacing:-.6px\">Vraag een offerte aan</h2>\n      <p style=\"color:#6b6152;font-size:15px;margin:0 0 26px\">Vul het formulier in en wij nemen binnen 2 werkdagen contact met u op.</p>\n      <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\">\n        <div><label>Voornaam</label><input type=\"text\" placeholder=\"Uw voornaam\"></div>\n        <div><label>Achternaam</label><input type=\"text\" placeholder=\"Uw achternaam\"></div>\n        <div><label>E-mailadres</label><input type=\"email\" placeholder=\"naam@voorbeeld.nl\"></div>\n        <div><label>Telefoonnummer</label><input type=\"tel\" placeholder=\"06 - ...\"></div>\n        <div style=\"grid-column:span 2\"><label>Ik ben geïnteresseerd in</label><select><option>Veranda</option><option>Tuinkamer</option><option>Schuifwanden</option><option>Zonwering</option><option>Opties</option><option>Zakelijk project</option><option>Anders / weet ik nog niet</option></select></div>\n        <div style=\"grid-column:span 2\"><label>Uw bericht</label><textarea rows=\"4\" placeholder=\"Vertel ons over uw wensen, afmetingen of situatie...\"></textarea></div>\n      </div>\n      <button class=\"btn-n\" style=\"margin-top:20px;background:#082a52;color:#fff;font-weight:800;font-size:15px;padding:15px 30px;border:none;border-radius:999px;cursor:pointer;font-family:inherit\">Verstuur aanvraag →</button>\n      <p style=\"font-size:12.5px;color:#9a9078;margin:14px 0 0\">Wij gaan zorgvuldig om met uw gegevens. Zie ons privacybeleid.</p>\n    </div>\n  </div>\n\n  <!-- service area -->\n  <div style=\"padding:60px 40px;text-align:center\">\n    <h2 style=\"font-family:'Archivo';font-weight:800;font-size:30px;margin:0 0 10px;letter-spacing:-.8px\">Actief in heel Zeeland</h2>\n    <p style=\"color:#6b6152;font-size:16px;margin:0 auto 28px;max-width:560px\">Van Walcheren tot Zeeuws-Vlaanderen en de Bevelanden: wij leveren en monteren in de hele provincie.</p>\n    <div style=\"display:flex;flex-wrap:wrap;gap:12px;justify-content:center\">\n      <span style=\"background:#fff;border-radius:999px;padding:11px 20px;font-weight:600;font-size:14px;box-shadow:0 4px 14px -10px rgba(8,42,82,.5)\">Middelburg</span>\n      <span style=\"background:#fff;border-radius:999px;padding:11px 20px;font-weight:600;font-size:14px;box-shadow:0 4px 14px -10px rgba(8,42,82,.5)\">Vlissingen</span>\n      <span style=\"background:#fff;border-radius:999px;padding:11px 20px;font-weight:600;font-size:14px;box-shadow:0 4px 14px -10px rgba(8,42,82,.5)\">Goes</span>\n      <span style=\"background:#fff;border-radius:999px;padding:11px 20px;font-weight:600;font-size:14px;box-shadow:0 4px 14px -10px rgba(8,42,82,.5)\">Zierikzee</span>\n      <span style=\"background:#fff;border-radius:999px;padding:11px 20px;font-weight:600;font-size:14px;box-shadow:0 4px 14px -10px rgba(8,42,82,.5)\">Terneuzen</span>\n      <span style=\"background:#fff;border-radius:999px;padding:11px 20px;font-weight:600;font-size:14px;box-shadow:0 4px 14px -10px rgba(8,42,82,.5)\">Kapelle</span>\n      <span style=\"background:#fff;border-radius:999px;padding:11px 20px;font-weight:600;font-size:14px;box-shadow:0 4px 14px -10px rgba(8,42,82,.5)\">Domburg</span>\n    </div>\n  </div>\n\n  <div style=\"background:#082a52;color:#9fb3ca;padding:56px 56px 30px;font-size:14px\">\n    <div style=\"display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)\">\n      <div><img src=\"/uploads/logo-1783333745716.png\" alt=\"Veranda Zeeland\" style=\"height:52px;margin-bottom:16px\"><p style=\"line-height:1.7;margin:0;max-width:260px\">Specialist in veranda's, tuinkamers en glasschuifwanden voor heel Zeeland.</p></div>\n      <div><div style=\"color:#fff;font-weight:700;margin-bottom:14px\">Producten</div><div style=\"display:flex;flex-direction:column;gap:9px\"><a class=\"nav-a\" href=\"/veranda-s\">Veranda's</a><a class=\"nav-a\" href=\"/tuinkamers\">Tuinkamers</a><a class=\"nav-a\" href=\"/glazen-schuifwanden\">Schuifwanden</a><a class=\"nav-a\" href=\"/zonwering\">Zonwering</a><a class=\"nav-a\" href=\"/accessoires\">Opties</a><a class=\"nav-a\" href=\"/zakelijk\">Zakelijk</a></div></div>\n      <div><div style=\"color:#fff;font-weight:700;margin-bottom:14px\">Over ons</div><div style=\"display:flex;flex-direction:column;gap:9px\"><a class=\"nav-a\" href=\"/contact\">Over ons</a><a class=\"nav-a\" href=\"/contact\">Showroom</a><a class=\"nav-a\" href=\"/contact\">Projecten</a><a class=\"nav-a\" href=\"/contact\">Contact</a></div></div>\n      <div><div style=\"color:#fff;font-weight:700;margin-bottom:14px\">Contact</div><div style=\"line-height:1.8\">De Stekelweie 2<br>4353 RX Serooskerke<br>T: 0118-853055<br>E: info@verandazeeland.nl</div><div style=\"margin-top:12px;color:#ffcf33\">★★★★★ 9,2 · 327 reviews</div></div>\n    </div>\n    <div style=\"padding-top:22px;display:flex;justify-content:space-between;font-size:12.5px;opacity:.7\"><span>© 2019–2026 Veranda Zeeland</span><span>Algemene voorwaarden · Privacy · Disclaimer</span></div>\n  </div>\n\n</div>"
+import { Footer } from '../_components/Footer'
+import { Header } from '../_components/Header'
 
-export default function Page() {
-  return <div dangerouslySetInnerHTML={{ __html: html }} />
+export const metadata = { title: 'Contact & offerte | Veranda Zeeland' }
+
+const img = (f: number | Media | null | undefined, fallback: string) =>
+  f && typeof f === 'object' && f.url ? f.url : fallback
+
+const cover: React.CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }
+
+const infoLabel: React.CSSProperties = { color: '#ffcf33', fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: '.5px', marginBottom: 4 }
+
+const chip: React.CSSProperties = { background: '#fff', borderRadius: 999, padding: '11px 20px', fontWeight: 600, fontSize: 14, boxShadow: '0 4px 14px -10px rgba(8,42,82,.5)' }
+
+export default async function ContactPage() {
+  const c = await getContent('contact')
+
+  return (
+    <div style={{ maxWidth: 1280, margin: '0 auto', background: '#f6f0e6' }}>
+      <Header />
+
+      <div style={{ padding: '20px 40px 0', fontSize: 13, color: '#8a94a0' }}>
+        <a className="nav-a" href="/">Home</a> › <span style={{ color: '#082a52', fontWeight: 600 }}>Contact</span>
+      </div>
+
+      {/* hero over ons */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 44, padding: '24px 40px 56px', alignItems: 'center' }}>
+        <div>
+          {c.heroBadge && (
+            <span style={{ display: 'inline-block', background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 12, letterSpacing: 1, textTransform: 'uppercase', padding: '6px 13px', borderRadius: 999, marginBottom: 20 }}>
+              {c.heroBadge}
+            </span>
+          )}
+          <h1 style={{ fontFamily: 'Archivo', fontWeight: 900, fontSize: 54, lineHeight: 0.98, margin: '0 0 20px', letterSpacing: '-1.8px' }}>{c.heroTitle}</h1>
+          {c.heroText && <p style={{ fontSize: 18, lineHeight: 1.65, color: '#42586c', margin: '0 0 20px' }}>{c.heroText}</p>}
+          <div style={{ display: 'flex', gap: 30, flexWrap: 'wrap', fontSize: 15 }}>
+            {c.stats?.map((row) => (
+              <div key={row.id}>
+                <div style={{ fontWeight: 800, fontFamily: 'Archivo', fontSize: 26 }}>{row.value}</div>
+                <div style={{ color: '#6b6152' }}>{row.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div style={{ position: 'relative', borderRadius: 22, overflow: 'hidden', minHeight: 400, background: '#082a52' }}>
+          <img src={img(c.heroImage, c.heroImageFallback ?? '')} alt={c.heroTitle} style={cover} />
+        </div>
+      </div>
+
+      {/* contact + form */}
+      <div id="offerte" style={{ display: 'grid', gridTemplateColumns: '1fr 1.15fr', gap: 0, background: '#fff', margin: '0 40px', borderRadius: 26, overflow: 'hidden' }}>
+        {/* info */}
+        <div style={{ background: '#082a52', color: '#fff', padding: '48px 44px' }}>
+          <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 28, margin: '0 0 24px', letterSpacing: '-.6px' }}>{c.contactHeading}</h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 22, fontSize: '15.5px', lineHeight: 1.6 }}>
+            <div>
+              <div style={infoLabel}>{c.addressLabel}</div>
+              {c.addressLine1}<br />{c.addressLine2}
+            </div>
+            <div>
+              <div style={infoLabel}>{c.phoneLabel}</div>
+              {c.phone}
+            </div>
+            <div>
+              <div style={infoLabel}>{c.emailLabel}</div>
+              {c.email}
+            </div>
+            <div>
+              <div style={infoLabel}>{c.hoursLabel}</div>
+              {c.hoursDays}<br />{c.hoursTime}<br /><span style={{ color: '#9fb3ca' }}>{c.hoursNote}</span>
+            </div>
+          </div>
+          <div style={{ marginTop: 30, borderRadius: 14, overflow: 'hidden', minHeight: 150, position: 'relative', background: '#33547d' }}>
+            <img src={img(c.contactImage, c.contactImageFallback ?? '')} alt={c.contactHeading ?? ''} style={cover} />
+          </div>
+        </div>
+        {/* form */}
+        <div style={{ padding: '48px 44px' }}>
+          <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 28, margin: '0 0 6px', letterSpacing: '-.6px' }}>{c.formHeading}</h2>
+          {c.formIntro && <p style={{ color: '#6b6152', fontSize: 15, margin: '0 0 26px' }}>{c.formIntro}</p>}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <div><label>{c.formFirstName}</label><input type="text" placeholder="Uw voornaam" /></div>
+            <div><label>{c.formLastName}</label><input type="text" placeholder="Uw achternaam" /></div>
+            <div><label>{c.formEmail}</label><input type="email" placeholder="naam@voorbeeld.nl" /></div>
+            <div><label>{c.formPhone}</label><input type="tel" placeholder="06 - ..." /></div>
+            <div style={{ gridColumn: 'span 2' }}>
+              <label>{c.formInterest}</label>
+              <select>
+                <option>Veranda</option>
+                <option>Tuinkamer</option>
+                <option>Schuifwanden</option>
+                <option>Zonwering</option>
+                <option>Opties</option>
+                <option>Zakelijk project</option>
+                <option>Anders / weet ik nog niet</option>
+              </select>
+            </div>
+            <div style={{ gridColumn: 'span 2' }}><label>{c.formMessage}</label><textarea rows={4} placeholder="Vertel ons over uw wensen, afmetingen of situatie..." /></div>
+          </div>
+          <button className="btn-n" style={{ marginTop: 20, background: '#082a52', color: '#fff', fontWeight: 800, fontSize: 15, padding: '15px 30px', border: 'none', borderRadius: 999, cursor: 'pointer', fontFamily: 'inherit' }}>{c.formButton}</button>
+          {c.formDisclaimer && <p style={{ fontSize: '12.5px', color: '#9a9078', margin: '14px 0 0' }}>{c.formDisclaimer}</p>}
+        </div>
+      </div>
+
+      {/* service area */}
+      <div style={{ padding: '60px 40px', textAlign: 'center' }}>
+        <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 30, margin: '0 0 10px', letterSpacing: '-.8px' }}>{c.serviceHeading}</h2>
+        {c.serviceText && <p style={{ color: '#6b6152', fontSize: 16, margin: '0 auto 28px', maxWidth: 560 }}>{c.serviceText}</p>}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
+          {c.serviceAreas?.map((row) => (
+            <span key={row.id} style={chip}>{row.name}</span>
+          ))}
+        </div>
+      </div>
+
+      <Footer />
+    </div>
+  )
 }

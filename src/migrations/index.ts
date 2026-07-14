@@ -1,6 +1,7 @@
 import * as migration_20260714_073818_initial from './20260714_073818_initial';
 import * as migration_20260714_113510_home_fields from './20260714_113510_home_fields';
 import * as migration_20260714_114235_add_veranda_s from './20260714_114235_add_veranda_s';
+import * as migration_20260714_120318_add_all_design_pages from './20260714_120318_add_all_design_pages';
 
 export const migrations = [
   {
@@ -16,6 +17,11 @@ export const migrations = [
   {
     up: migration_20260714_114235_add_veranda_s.up,
     down: migration_20260714_114235_add_veranda_s.down,
-    name: '20260714_114235_add_veranda_s'
+    name: '20260714_114235_add_veranda_s',
+  },
+  {
+    up: migration_20260714_120318_add_all_design_pages.up,
+    down: migration_20260714_120318_add_all_design_pages.down,
+    name: '20260714_120318_add_all_design_pages'
   },
 ];

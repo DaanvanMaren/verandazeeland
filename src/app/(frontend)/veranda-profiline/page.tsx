@@ -1,11 +1,136 @@
 import React from 'react'
 
-export const metadata = { title: "Profiline veranda | Veranda Zeeland" }
+import { getContent } from '@/content'
+import type { Media } from '@/payload-types'
 
-// ponytail: rendered straight from the design mock-up (exact markup). To make a
-// page's copy editable in /admin, convert it to fields + getContent later.
-const html = "<div style=\"max-width:1280px;margin:0 auto;background:#f6f0e6\">\n\n  <div style=\"background:#082a52;color:#c3d4e6;font-size:12.5px;display:flex;justify-content:space-between;align-items:center;padding:9px 40px\">\n    <span>Serooskerke · Showroom di t/m za 10.00–17.00u, bij voorkeur op afspraak</span>\n    <div style=\"display:flex;gap:18px;align-items:center\"><span><span style=\"color:#ffcf33\">★★★★★</span> 9,2 / 327 reviews</span><span style=\"opacity:.4\">|</span><span><strong style=\"color:#fff\">NL</strong> · DE</span></div>\n  </div>\n\n  <div style=\"display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:#f6f0e6;position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(8,42,82,.08)\">\n    <a href=\"/\"><img src=\"/uploads/logo-1783333745716.png\" alt=\"Veranda Zeeland\" style=\"height:56px;width:auto;display:block\"></a>\n    <nav class=\"mainnav\" style=\"display:flex;gap:24px;font-size:15px;font-weight:600;align-items:center\">\n      <div class=\"menu-item\"><a class=\"nav-a\" href=\"/veranda-s\" style=\"color:#0053a1\">Veranda's</a><div class=\"dropdown\"><div class=\"dropdown-inner\"><a href=\"/veranda-greenline\">Greenline</a><a href=\"/veranda-profiline\">Profiline</a><a href=\"/veranda-linea\">Linea</a><a href=\"/veranda-cube\">Cube</a><a href=\"/veranda-pergola\">Pergola-overkapping</a></div></div></div>\n      <div class=\"menu-item\"><a class=\"nav-a\" href=\"/tuinkamers\">Tuinkamers</a><div class=\"dropdown\"><div class=\"dropdown-inner\"><a href=\"/tuinkamer-hellend-dak\">Tuinkamer met hellend dak</a><a href=\"/tuinkamer-vlak-dak\">Tuinkamer met vlak dak</a></div></div></div>\n      <div class=\"menu-item\"><a class=\"nav-a\" href=\"/glazen-schuifwanden\">Schuifwanden</a><div class=\"dropdown\"><div class=\"dropdown-inner\"><a href=\"/schuifwand-glas\">Glazen schuifwanden</a><a href=\"/schuifwand-aluminium\">Aluminium schuifpui</a><a href=\"/schuifwand-lamellen\">Lamellen schuifwanden</a><a href=\"/schuifwand-steellook\">Steellook schuifwanden</a></div></div></div>\n      <div class=\"menu-item\"><a class=\"nav-a\" href=\"/zonwering\">Zonwering</a><div class=\"dropdown\"><div class=\"dropdown-inner\"><a href=\"/zonwering-onderdak\">Onderdakzonwering</a><a href=\"/zonwering-bovendak\">Bovendakzonwering</a><a href=\"/zonwering-screens\">Screens</a><a href=\"/zonwering-uitvalschermen\">Uitvalschermen</a></div></div></div>\n      <div class=\"menu-item\"><a class=\"nav-a\" href=\"/accessoires\">Opties</a><div class=\"dropdown\"><div class=\"dropdown-inner\"><a href=\"/optie-wanden\">Voor- en zijwanden</a><a href=\"/optie-dakbedekking\">Dakbedekking</a><a href=\"/optie-ledverlichting\">Ledverlichting</a><a href=\"/optie-fundering\">Fundering</a><a href=\"/optie-onderhoud\">Onderhoudsproducten</a></div></div></div>\n      <div class=\"menu-item\"><a class=\"nav-a\" href=\"/zakelijk\">Zakelijk</a><div class=\"dropdown\" style=\"left:auto;right:-14px\"><div class=\"dropdown-inner\"><a href=\"/zakelijk-horeca\">Horeca & Leisure</a><a href=\"/zakelijk-kantoren\">Kantoren & Commercieel Vastgoed</a><a href=\"/zakelijk-onderwijs\">Onderwijs & Scholen</a><a href=\"/zakelijk-vakantieparken\">Vakantieparken & Recreatie</a><a href=\"/zakelijk-zorg\">Zorginstellingen</a><a href=\"/zakelijk-projectbouw\">Projectbouw & Ontwikkeling</a></div></div></div>\n    </nav>\n    <a class=\"btn-n\" href=\"/contact\" style=\"background:#082a52;color:#fff;font-weight:700;font-size:14px;padding:13px 22px;border-radius:999px\">Offerte aanvragen</a>\n  </div>\n\n  <div style=\"padding:20px 40px 0;font-size:13px;color:#8a94a0\"><a class=\"nav-a\" href=\"/\">Home</a> › <a class=\"nav-a\" href=\"/veranda-s\">Veranda's</a> › <span style=\"color:#082a52;font-weight:600\">Profiline</span></div>\n\n  <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:44px;padding:24px 40px 48px;align-items:center\">\n    <div>\n      <div style=\"display:flex;align-items:center;gap:12px;margin-bottom:18px\"><span style=\"background:#ffcf33;color:#082a52;font-weight:800;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:6px 13px;border-radius:999px\">Populair</span><span style=\"background:#eef4fb;color:#0053a1;font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px\">vanaf € 2.059</span></div>\n      <h1 style=\"font-family:'Archivo';font-weight:900;font-size:58px;line-height:.96;margin:0 0 18px;letter-spacing:-2px\">Profiline</h1>\n      <p style=\"font-size:18px;line-height:1.65;color:#42586c;margin:0 0 26px\">Onze meest veelzijdige veranda. Dankzij de extra stevige constructie bouwt u breder, dieper en ruimer — met overspanningen tot 7 meter op slechts twee staanders. Volledig op maat en uit te bouwen tot een complete tuinkamer.</p>\n      <div style=\"display:flex;gap:14px;flex-wrap:wrap\"><a class=\"btn-n\" href=\"/contact\" style=\"background:#082a52;color:#fff;font-weight:700;font-size:15px;padding:15px 26px;border-radius:999px\">Offerte Profiline →</a><a class=\"btn-y\" href=\"/contact\" style=\"background:#ffcf33;color:#082a52;font-weight:800;font-size:15px;padding:15px 26px;border-radius:999px\">Bezoek de showroom</a></div>\n    </div>\n    <div style=\"position:relative;border-radius:22px;overflow:hidden;min-height:440px;background:#082a52\"><img src=\"/uploads/Profiline_Ommeren_VS_20260529_003_LR.jpg\" alt=\"Profiline veranda\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\"></div>\n  </div>\n\n  <div style=\"margin:0 40px;background:#fff;border:1px solid #eee4d2;border-radius:18px;overflow:hidden;display:grid;grid-template-columns:repeat(4,1fr)\">\n      <div style=\"padding:22px 24px;border-right:1px solid #eee4d2\"><div style=\"font-family:'Archivo';font-weight:800;font-size:24px;color:#082a52\">€ 2.059</div><div style=\"font-size:13.5px;color:#6b6152;margin-top:4px\">Vanaf prijs</div></div>\n      <div style=\"padding:22px 24px;border-right:1px solid #eee4d2\"><div style=\"font-family:'Archivo';font-weight:800;font-size:24px;color:#082a52\">tot 7 m</div><div style=\"font-size:13.5px;color:#6b6152;margin-top:4px\">Overspanning</div></div>\n      <div style=\"padding:22px 24px;border-right:1px solid #eee4d2\"><div style=\"font-family:'Archivo';font-weight:800;font-size:24px;color:#082a52\">20+</div><div style=\"font-size:13.5px;color:#6b6152;margin-top:4px\">Standaardmaten</div></div>\n      <div style=\"padding:22px 24px\"><div style=\"font-family:'Archivo';font-weight:800;font-size:24px;color:#082a52\">5–10 jaar</div><div style=\"font-size:13.5px;color:#6b6152;margin-top:4px\">Garantie</div></div>\n  </div>\n\n  <div style=\"display:grid;grid-template-columns:1.15fr 1fr;gap:48px;padding:56px 40px;align-items:center\">\n    <div>\n      <h2 style=\"font-family:'Archivo';font-weight:800;font-size:32px;margin:0 0 16px;letter-spacing:-1px\">Meer ruimte, meer vrijheid</h2>\n      <p style=\"font-size:16.5px;line-height:1.75;color:#42586c;margin:0 0 18px\">De Profiline heeft een schuin dak dat zorgt voor een ruimtelijk gevoel, prettige lichtinval en natuurlijke waterafvoer. Met de speciale XS-profielen en een verstevigde goot overspant u tot 7 meter op slechts twee staanders, voor een volledig vrij uitzicht zonder paal in het midden. Muurbevestigd, vrijstaand of om een hoek, en met een glasdak tot 4 meter diep.</p>\n      <ul style=\"margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:15.5px;color:#42586c\"><li>✓ Overspanningen tot 7 meter op twee staanders</li><li>✓ Schuin dak: ruimtelijk, veel licht, natuurlijke waterafvoer</li><li>✓ Meerdere standaardkleuren plus Verasol special-kleuren</li><li>✓ 20+ standaardafmetingen, daarnaast volledig maatwerk</li><li>✓ Uit te bouwen tot tuinkamer met glazen schuifwanden of kozijnen</li></ul>\n    </div>\n    <div style=\"position:relative;border-radius:18px;overflow:hidden;min-height:340px;background:#082a52\"><img src=\"/uploads/Profiline_Veenendaal_VS_20250611_423_LR.jpg\" alt=\"Profiline detail\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\"></div>\n  </div>\n\n  <div style=\"padding:40px 40px 56px;background:#fff\">\n    <h2 style=\"font-family:'Archivo';font-weight:800;font-size:32px;margin:0 0 30px;letter-spacing:-1px\">Kenmerken &amp; voordelen</h2>\n    <div style=\"display:grid;grid-template-columns:repeat(4,1fr);gap:18px\">\n      <div class=\"lift\" style=\"background:#fffdf9;border-radius:18px;padding:26px;box-shadow:0 8px 26px -20px rgba(8,42,82,.4)\"><div style=\"width:44px;height:44px;border-radius:12px;background:#ffcf33;margin-bottom:16px\"></div><h3 style=\"font-family:'Archivo';font-weight:800;font-size:17px;margin:0 0 8px\">Grote overspanning</h3><p style=\"font-size:14.5px;color:#6b6152;line-height:1.6;margin:0\">Tot 7 meter breed op slechts twee staanders, vrij uitzicht.</p></div>\n      <div class=\"lift\" style=\"background:#fffdf9;border-radius:18px;padding:26px;box-shadow:0 8px 26px -20px rgba(8,42,82,.4)\"><div style=\"width:44px;height:44px;border-radius:12px;background:#ffcf33;margin-bottom:16px\"></div><h3 style=\"font-family:'Archivo';font-weight:800;font-size:17px;margin:0 0 8px\">Robuust</h3><p style=\"font-size:14.5px;color:#6b6152;line-height:1.6;margin:0\">Extra stevige constructie, geschikt voor intensief gebruik.</p></div>\n      <div class=\"lift\" style=\"background:#fffdf9;border-radius:18px;padding:26px;box-shadow:0 8px 26px -20px rgba(8,42,82,.4)\"><div style=\"width:44px;height:44px;border-radius:12px;background:#ffcf33;margin-bottom:16px\"></div><h3 style=\"font-family:'Archivo';font-weight:800;font-size:17px;margin:0 0 8px\">Uitbreidbaar</h3><p style=\"font-size:14.5px;color:#6b6152;line-height:1.6;margin:0\">Nu of later eenvoudig om te bouwen tot tuinkamer.</p></div>\n      <div class=\"lift\" style=\"background:#fffdf9;border-radius:18px;padding:26px;box-shadow:0 8px 26px -20px rgba(8,42,82,.4)\"><div style=\"width:44px;height:44px;border-radius:12px;background:#ffcf33;margin-bottom:16px\"></div><h3 style=\"font-family:'Archivo';font-weight:800;font-size:17px;margin:0 0 8px\">Vakmontage</h3><p style=\"font-size:14.5px;color:#6b6152;line-height:1.6;margin:0\">Geplaatst door ons gecertificeerde montageteam.</p></div>\n    </div>\n  </div>\n\n  <div style=\"background:#082a52;color:#fff;margin:56px 40px;border-radius:26px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center\">\n    <div><span style=\"color:#ffcf33;font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase\">Volledig op maat</span><h2 style=\"font-family:'Archivo';font-weight:800;font-size:32px;margin:12px 0 14px;letter-spacing:-1px\">Stel uw Profiline samen</h2><p style=\"font-size:16.5px;line-height:1.7;color:#c9d6e6;margin:0 0 24px\">Van afmeting, kleur en gootsierlijst tot geïntegreerde verlichting, verwarming, zonwering en glazen schuifwanden — de Profiline groeit mee met uw wensen.</p><a class=\"btn-y\" href=\"/accessoires\" style=\"background:#ffcf33;color:#082a52;font-weight:800;font-size:15px;padding:14px 26px;border-radius:999px;display:inline-block\">Bekijk alle opties →</a></div>\n    <div style=\"position:relative;border-radius:16px;overflow:hidden;min-height:300px;background:#33547d\"><img src=\"/uploads/Profiline_Veenendaal_VS_20250611_434_LR.jpg\" alt=\"Profiline op maat\" style=\"position:absolute;inset:0;width:100%;height:100%;object-fit:cover\"></div>\n  </div>\n\n  <div style=\"padding:20px 40px 56px\">\n    <h2 style=\"font-family:'Archivo';font-weight:800;font-size:28px;margin:0 0 24px;letter-spacing:-.8px\">Andere modellen</h2>\n    <div style=\"display:grid;grid-template-columns:repeat(4,1fr);gap:18px\">\n      <a class=\"lift\" href=\"/veranda-greenline\" style=\"background:#fffdf9;border-radius:18px;overflow:hidden;box-shadow:0 8px 26px -20px rgba(8,42,82,.4);display:block\"><div style=\"height:150px;overflow:hidden;background:#082a52\"><img src=\"/uploads/Profiline_Ommeren_VS_20260529_237_LR.jpg\" alt=\"Greenline\" style=\"width:100%;height:100%;object-fit:cover\"></div><div style=\"padding:18px 20px\"><h3 style=\"font-family:'Archivo';font-weight:800;font-size:18px;margin:0 0 4px\">Greenline</h3><p style=\"font-size:13.5px;color:#6b6152;margin:0\">Voordelig & strak</p></div></a>\n      <a class=\"lift\" href=\"/veranda-linea\" style=\"background:#fffdf9;border-radius:18px;overflow:hidden;box-shadow:0 8px 26px -20px rgba(8,42,82,.4);display:block\"><div style=\"height:150px;overflow:hidden;background:#082a52\"><img src=\"/uploads/DJI_20260527082041_0005_D.jpg\" alt=\"Linea\" style=\"width:100%;height:100%;object-fit:cover\"></div><div style=\"padding:18px 20px\"><h3 style=\"font-family:'Archivo';font-weight:800;font-size:18px;margin:0 0 4px\">Linea</h3><p style=\"font-size:13.5px;color:#6b6152;margin:0\">Modern vlak dak</p></div></a>\n      <a class=\"lift\" href=\"/veranda-cube\" style=\"background:#fffdf9;border-radius:18px;overflow:hidden;box-shadow:0 8px 26px -20px rgba(8,42,82,.4);display:block\"><div style=\"height:150px;overflow:hidden;background:#082a52\"><img src=\"/uploads/Lamellen_Verasol_tegels02.jpg\" alt=\"Cube\" style=\"width:100%;height:100%;object-fit:cover\"></div><div style=\"padding:18px 20px\"><h3 style=\"font-family:'Archivo';font-weight:800;font-size:18px;margin:0 0 4px\">Cube</h3><p style=\"font-size:13.5px;color:#6b6152;margin:0\">Exclusief design</p></div></a>\n      <a class=\"lift\" href=\"/veranda-pergola\" style=\"background:#fffdf9;border-radius:18px;overflow:hidden;box-shadow:0 8px 26px -20px rgba(8,42,82,.4);display:block\"><div style=\"height:150px;overflow:hidden;background:#082a52\"><img src=\"/uploads/foto-water-suppen.jpg\" alt=\"Pergola\" style=\"width:100%;height:100%;object-fit:cover\"></div><div style=\"padding:18px 20px\"><h3 style=\"font-family:'Archivo';font-weight:800;font-size:18px;margin:0 0 4px\">Pergola</h3><p style=\"font-size:13.5px;color:#6b6152;margin:0\">Vrijstaand</p></div></a>\n    </div>\n  </div>\n\n  <div style=\"background:#ffcf33;padding:56px;margin:0 40px 40px;border-radius:26px;text-align:center\">\n    <h2 style=\"font-family:'Archivo';font-weight:900;font-size:36px;margin:0 0 10px;letter-spacing:-1.4px;color:#082a52\">Interesse in de Profiline?</h2>\n    <p style=\"font-size:16.5px;color:#3a4d63;margin:0 auto 24px;max-width:520px\">Vraag vrijblijvend een offerte op maat aan of kom langs in onze showroom in Serooskerke.</p>\n    <a class=\"btn-n\" href=\"/contact\" style=\"background:#082a52;color:#fff;font-weight:800;font-size:16px;padding:17px 32px;border-radius:999px;display:inline-block\">Offerte aanvragen →</a>\n  </div>\n\n  <div style=\"background:#082a52;color:#9fb3ca;padding:56px 56px 30px;font-size:14px\">\n    <div style=\"display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)\">\n      <div><img src=\"/uploads/logo-1783333745716.png\" alt=\"Veranda Zeeland\" style=\"height:52px;margin-bottom:16px\"><p style=\"line-height:1.7;margin:0;max-width:260px\">Specialist in veranda's, tuinkamers en glasschuifwanden voor heel Zeeland.</p></div>\n      <div><div style=\"color:#fff;font-weight:700;margin-bottom:14px\">Veranda's</div><div style=\"display:flex;flex-direction:column;gap:9px\"><a class=\"nav-a\" href=\"/veranda-greenline\">Greenline</a><a class=\"nav-a\" href=\"/veranda-profiline\">Profiline</a><a class=\"nav-a\" href=\"/veranda-linea\">Linea</a><a class=\"nav-a\" href=\"/veranda-cube\">Cube</a><a class=\"nav-a\" href=\"/veranda-pergola\">Pergola</a></div></div>\n      <div><div style=\"color:#fff;font-weight:700;margin-bottom:14px\">Meer</div><div style=\"display:flex;flex-direction:column;gap:9px\"><a class=\"nav-a\" href=\"/tuinkamers\">Tuinkamers</a><a class=\"nav-a\" href=\"/glazen-schuifwanden\">Schuifwanden</a><a class=\"nav-a\" href=\"/zonwering\">Zonwering</a><a class=\"nav-a\" href=\"/accessoires\">Opties</a><a class=\"nav-a\" href=\"/zakelijk\">Zakelijk</a></div></div>\n      <div><div style=\"color:#fff;font-weight:700;margin-bottom:14px\">Contact</div><div style=\"line-height:1.8\">De Stekelweie 2<br>4353 RX Serooskerke<br>T: 0118-853055<br>E: info@verandazeeland.nl</div><div style=\"margin-top:12px;color:#ffcf33\">★★★★★ 9,2 · 327 reviews</div></div>\n    </div>\n    <div style=\"padding-top:22px;display:flex;justify-content:space-between;font-size:12.5px;opacity:.7\"><span>© 2019–2026 Veranda Zeeland</span><span>Algemene voorwaarden · Privacy · Disclaimer</span></div>\n  </div>\n\n</div>"
+import { Footer } from '../_components/Footer'
+import { Header } from '../_components/Header'
 
-export default function Page() {
-  return <div dangerouslySetInnerHTML={{ __html: html }} />
+export const metadata = { title: 'Profiline veranda | Veranda Zeeland' }
+
+const img = (f: number | Media | null | undefined, fallback: string) =>
+  f && typeof f === 'object' && f.url ? f.url : fallback
+
+const cover: React.CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }
+
+export default async function ProfilinePage() {
+  const c = await getContent('veranda-profiline')
+
+  return (
+    <div style={{ maxWidth: 1280, margin: '0 auto', background: '#f6f0e6' }}>
+      <Header />
+
+      <div style={{ padding: '20px 40px 0', fontSize: 13, color: '#8a94a0' }}>
+        <a className="nav-a" href="/">Home</a> › <a className="nav-a" href="/veranda-s">Veranda's</a> ›{' '}
+        <span style={{ color: '#082a52', fontWeight: 600 }}>Profiline</span>
+      </div>
+
+      {/* hero */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 44, padding: '24px 40px 48px', alignItems: 'center' }}>
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 18 }}>
+            {c.heroBadge && (
+              <span style={{ background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 12, letterSpacing: 1, textTransform: 'uppercase', padding: '6px 13px', borderRadius: 999 }}>
+                {c.heroBadge}
+              </span>
+            )}
+            {c.heroPrice && (
+              <span style={{ background: '#eef4fb', color: '#0053a1', fontWeight: 700, fontSize: 13, padding: '6px 12px', borderRadius: 999 }}>
+                {c.heroPrice}
+              </span>
+            )}
+          </div>
+          <h1 style={{ fontFamily: 'Archivo', fontWeight: 900, fontSize: 58, lineHeight: 0.96, margin: '0 0 18px', letterSpacing: '-2px' }}>{c.heroTitle}</h1>
+          {c.heroText && <p style={{ fontSize: 18, lineHeight: 1.65, color: '#42586c', margin: '0 0 26px' }}>{c.heroText}</p>}
+          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+            <a className="btn-n" href="/contact" style={{ background: '#082a52', color: '#fff', fontWeight: 700, fontSize: 15, padding: '15px 26px', borderRadius: 999 }}>{c.heroButtonPrimary}</a>
+            <a className="btn-y" href="/contact" style={{ background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 15, padding: '15px 26px', borderRadius: 999 }}>{c.heroButtonSecondary}</a>
+          </div>
+        </div>
+        <div style={{ position: 'relative', borderRadius: 22, overflow: 'hidden', minHeight: 440, background: '#082a52' }}>
+          <img src={img(c.heroImage, c.heroImageFallback ?? '')} alt={c.heroTitle ?? ''} style={cover} />
+        </div>
+      </div>
+
+      {/* stat bar */}
+      <div style={{ margin: '0 40px', background: '#fff', border: '1px solid #eee4d2', borderRadius: 18, overflow: 'hidden', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)' }}>
+        {c.stats?.map((row, i) => (
+          <div key={row.id} style={{ padding: '22px 24px', borderRight: i < (c.stats?.length ?? 0) - 1 ? '1px solid #eee4d2' : undefined }}>
+            <div style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 24, color: '#082a52' }}>{row.value}</div>
+            <div style={{ fontSize: '13.5px', color: '#6b6152', marginTop: 4 }}>{row.label}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* meer ruimte */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1.15fr 1fr', gap: 48, padding: '56px 40px', alignItems: 'center' }}>
+        <div>
+          <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 32, margin: '0 0 16px', letterSpacing: '-1px' }}>{c.ruimteTitle}</h2>
+          {c.ruimteText && <p style={{ fontSize: '16.5px', lineHeight: 1.75, color: '#42586c', margin: '0 0 18px' }}>{c.ruimteText}</p>}
+          <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10, fontSize: '15.5px', color: '#42586c' }}>
+            {c.ruimtePoints?.map((row) => (
+              <li key={row.id}>✓ {row.text}</li>
+            ))}
+          </ul>
+        </div>
+        <div style={{ position: 'relative', borderRadius: 18, overflow: 'hidden', minHeight: 340, background: '#082a52' }}>
+          <img src={img(c.ruimteImage, c.ruimteImageFallback ?? '')} alt={c.ruimteTitle ?? ''} style={cover} />
+        </div>
+      </div>
+
+      {/* kenmerken & voordelen */}
+      <div style={{ padding: '40px 40px 56px', background: '#fff' }}>
+        <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 32, margin: '0 0 30px', letterSpacing: '-1px' }}>{c.featuresTitle}</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 18 }}>
+          {c.features?.map((row) => (
+            <div key={row.id} className="lift" style={{ background: '#fffdf9', borderRadius: 18, padding: 26, boxShadow: '0 8px 26px -20px rgba(8,42,82,.4)' }}>
+              <div style={{ width: 44, height: 44, borderRadius: 12, background: '#ffcf33', marginBottom: 16 }} />
+              <h3 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 17, margin: '0 0 8px' }}>{row.title}</h3>
+              <p style={{ fontSize: '14.5px', color: '#6b6152', lineHeight: 1.6, margin: 0 }}>{row.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* op maat band */}
+      <div style={{ background: '#082a52', color: '#fff', margin: '56px 40px', borderRadius: 26, padding: 56, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }}>
+        <div>
+          <span style={{ color: '#ffcf33', fontWeight: 800, fontSize: 13, letterSpacing: '1.5px', textTransform: 'uppercase' }}>{c.maatLabel}</span>
+          <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 32, margin: '12px 0 14px', letterSpacing: '-1px' }}>{c.maatTitle}</h2>
+          <p style={{ fontSize: '16.5px', lineHeight: 1.7, color: '#c9d6e6', margin: '0 0 24px' }}>{c.maatText}</p>
+          <a className="btn-y" href="/accessoires" style={{ background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 15, padding: '14px 26px', borderRadius: 999, display: 'inline-block' }}>{c.maatCta}</a>
+        </div>
+        <div style={{ position: 'relative', borderRadius: 16, overflow: 'hidden', minHeight: 300, background: '#33547d' }}>
+          <img src={img(c.maatImage, c.maatImageFallback ?? '')} alt={c.maatTitle ?? ''} style={cover} />
+        </div>
+      </div>
+
+      {/* andere modellen */}
+      <div style={{ padding: '20px 40px 56px' }}>
+        <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 28, margin: '0 0 24px', letterSpacing: '-.8px' }}>{c.modelsTitle}</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 18 }}>
+          {c.models?.map((row) => (
+            <a key={row.id} className="lift" href={row.href ?? '#'} style={{ background: '#fffdf9', borderRadius: 18, overflow: 'hidden', boxShadow: '0 8px 26px -20px rgba(8,42,82,.4)', display: 'block' }}>
+              <div style={{ height: 150, overflow: 'hidden', background: '#082a52' }}>
+                <img src={img(row.image, row.fallback ?? '')} alt={row.name ?? ''} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              <div style={{ padding: '18px 20px' }}>
+                <h3 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 18, margin: '0 0 4px' }}>{row.name}</h3>
+                <p style={{ fontSize: '13.5px', color: '#6b6152', margin: 0 }}>{row.tag}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div style={{ background: '#ffcf33', padding: 56, margin: '0 40px 40px', borderRadius: 26, textAlign: 'center' }}>
+        <h2 style={{ fontFamily: 'Archivo', fontWeight: 900, fontSize: 36, margin: '0 0 10px', letterSpacing: '-1.4px', color: '#082a52' }}>{c.ctaTitle}</h2>
+        <p style={{ fontSize: '16.5px', color: '#3a4d63', margin: '0 auto 24px', maxWidth: 520 }}>{c.ctaText}</p>
+        <a className="btn-n" href="/contact" style={{ background: '#082a52', color: '#fff', fontWeight: 800, fontSize: 16, padding: '17px 32px', borderRadius: 999, display: 'inline-block' }}>{c.ctaButton}</a>
+      </div>
+
+      <Footer />
+    </div>
+  )
 }

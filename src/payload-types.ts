@@ -90,10 +90,74 @@ export interface Config {
   globals: {
     home: Home;
     'veranda-s': Veranda;
+    'veranda-greenline': VerandaGreenline;
+    'veranda-profiline': VerandaProfiline;
+    'veranda-linea': VerandaLinea;
+    'veranda-cube': VerandaCube;
+    'veranda-pergola': VerandaPergola;
+    tuinkamers: Tuinkamer;
+    'tuinkamer-hellend-dak': TuinkamerHellendDak;
+    'tuinkamer-vlak-dak': TuinkamerVlakDak;
+    'glazen-schuifwanden': GlazenSchuifwanden;
+    'schuifwand-glas': SchuifwandGla;
+    'schuifwand-aluminium': SchuifwandAluminium;
+    'schuifwand-lamellen': SchuifwandLamellen;
+    'schuifwand-steellook': SchuifwandSteellook;
+    zonwering: Zonwering;
+    'zonwering-onderdak': ZonweringOnderdak;
+    'zonwering-bovendak': ZonweringBovendak;
+    'zonwering-screens': ZonweringScreen;
+    'zonwering-uitvalschermen': ZonweringUitvalscherman;
+    accessoires: Accessoire;
+    'optie-wanden': OptieWanden;
+    'optie-dakbedekking': OptieDakbedekking;
+    'optie-ledverlichting': OptieLedverlichting;
+    'optie-fundering': OptieFundering;
+    'optie-onderhoud': OptieOnderhoud;
+    zakelijk: Zakelijk;
+    'zakelijk-horeca': ZakelijkHoreca;
+    'zakelijk-kantoren': ZakelijkKantoren;
+    'zakelijk-onderwijs': ZakelijkOnderwij;
+    'zakelijk-vakantieparken': ZakelijkVakantieparken;
+    'zakelijk-zorg': ZakelijkZorg;
+    'zakelijk-projectbouw': ZakelijkProjectbouw;
+    contact: Contact;
   };
   globalsSelect: {
     home: HomeSelect<false> | HomeSelect<true>;
     'veranda-s': VerandaSSelect<false> | VerandaSSelect<true>;
+    'veranda-greenline': VerandaGreenlineSelect<false> | VerandaGreenlineSelect<true>;
+    'veranda-profiline': VerandaProfilineSelect<false> | VerandaProfilineSelect<true>;
+    'veranda-linea': VerandaLineaSelect<false> | VerandaLineaSelect<true>;
+    'veranda-cube': VerandaCubeSelect<false> | VerandaCubeSelect<true>;
+    'veranda-pergola': VerandaPergolaSelect<false> | VerandaPergolaSelect<true>;
+    tuinkamers: TuinkamersSelect<false> | TuinkamersSelect<true>;
+    'tuinkamer-hellend-dak': TuinkamerHellendDakSelect<false> | TuinkamerHellendDakSelect<true>;
+    'tuinkamer-vlak-dak': TuinkamerVlakDakSelect<false> | TuinkamerVlakDakSelect<true>;
+    'glazen-schuifwanden': GlazenSchuifwandenSelect<false> | GlazenSchuifwandenSelect<true>;
+    'schuifwand-glas': SchuifwandGlasSelect<false> | SchuifwandGlasSelect<true>;
+    'schuifwand-aluminium': SchuifwandAluminiumSelect<false> | SchuifwandAluminiumSelect<true>;
+    'schuifwand-lamellen': SchuifwandLamellenSelect<false> | SchuifwandLamellenSelect<true>;
+    'schuifwand-steellook': SchuifwandSteellookSelect<false> | SchuifwandSteellookSelect<true>;
+    zonwering: ZonweringSelect<false> | ZonweringSelect<true>;
+    'zonwering-onderdak': ZonweringOnderdakSelect<false> | ZonweringOnderdakSelect<true>;
+    'zonwering-bovendak': ZonweringBovendakSelect<false> | ZonweringBovendakSelect<true>;
+    'zonwering-screens': ZonweringScreensSelect<false> | ZonweringScreensSelect<true>;
+    'zonwering-uitvalschermen': ZonweringUitvalschermenSelect<false> | ZonweringUitvalschermenSelect<true>;
+    accessoires: AccessoiresSelect<false> | AccessoiresSelect<true>;
+    'optie-wanden': OptieWandenSelect<false> | OptieWandenSelect<true>;
+    'optie-dakbedekking': OptieDakbedekkingSelect<false> | OptieDakbedekkingSelect<true>;
+    'optie-ledverlichting': OptieLedverlichtingSelect<false> | OptieLedverlichtingSelect<true>;
+    'optie-fundering': OptieFunderingSelect<false> | OptieFunderingSelect<true>;
+    'optie-onderhoud': OptieOnderhoudSelect<false> | OptieOnderhoudSelect<true>;
+    zakelijk: ZakelijkSelect<false> | ZakelijkSelect<true>;
+    'zakelijk-horeca': ZakelijkHorecaSelect<false> | ZakelijkHorecaSelect<true>;
+    'zakelijk-kantoren': ZakelijkKantorenSelect<false> | ZakelijkKantorenSelect<true>;
+    'zakelijk-onderwijs': ZakelijkOnderwijsSelect<false> | ZakelijkOnderwijsSelect<true>;
+    'zakelijk-vakantieparken': ZakelijkVakantieparkenSelect<false> | ZakelijkVakantieparkenSelect<true>;
+    'zakelijk-zorg': ZakelijkZorgSelect<false> | ZakelijkZorgSelect<true>;
+    'zakelijk-projectbouw': ZakelijkProjectbouwSelect<false> | ZakelijkProjectbouwSelect<true>;
+    contact: ContactSelect<false> | ContactSelect<true>;
   };
   locale: null;
   widgets: {
@@ -405,6 +469,1593 @@ export interface Veranda {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-greenline".
+ */
+export interface VerandaGreenline {
+  id: number;
+  heroBadge?: string | null;
+  heroPrice?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroButtonPrimary?: string | null;
+  heroButtonSecondary?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  specs?:
+    | {
+        value?: string | null;
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introBullets?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introImageFallback?: string | null;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  configLabel?: string | null;
+  configTitle?: string | null;
+  configText?: string | null;
+  configCta?: string | null;
+  configImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  configImageFallback?: string | null;
+  galleryTitle?: string | null;
+  gallery?:
+    | {
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        alt?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  otherTitle?: string | null;
+  otherModels?:
+    | {
+        name?: string | null;
+        tag?: string | null;
+        href?: string | null;
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-profiline".
+ */
+export interface VerandaProfiline {
+  id: number;
+  heroBadge?: string | null;
+  heroPrice?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroButtonPrimary?: string | null;
+  heroButtonSecondary?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  stats?:
+    | {
+        value?: string | null;
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ruimteTitle?: string | null;
+  ruimteText?: string | null;
+  ruimtePoints?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ruimteImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  ruimteImageFallback?: string | null;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  maatLabel?: string | null;
+  maatTitle?: string | null;
+  maatText?: string | null;
+  maatCta?: string | null;
+  maatImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  maatImageFallback?: string | null;
+  modelsTitle?: string | null;
+  models?:
+    | {
+        name?: string | null;
+        tag?: string | null;
+        href?: string | null;
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-linea".
+ */
+export interface VerandaLinea {
+  id: number;
+  heroBadge?: string | null;
+  heroPrice?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroCtaPrimary?: string | null;
+  heroCtaSecondary?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  specs?:
+    | {
+        value?: string | null;
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introPoints?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introImageFallback?: string | null;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  opmaatLabel?: string | null;
+  opmaatTitle?: string | null;
+  opmaatText?: string | null;
+  opmaatCta?: string | null;
+  opmaatImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  opmaatImageFallback?: string | null;
+  galleryTitle?: string | null;
+  gallery?:
+    | {
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        alt?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  relatedTitle?: string | null;
+  related?:
+    | {
+        name?: string | null;
+        tag?: string | null;
+        href?: string | null;
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-cube".
+ */
+export interface VerandaCube {
+  id: number;
+  heroBadge?: string | null;
+  heroPrice?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroCtaPrimary?: string | null;
+  heroCtaSecondary?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  specs?:
+    | {
+        value?: string | null;
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introBullets?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introImageFallback?: string | null;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ombouwLabel?: string | null;
+  ombouwTitle?: string | null;
+  ombouwText?: string | null;
+  ombouwCta?: string | null;
+  ombouwImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  ombouwImageFallback?: string | null;
+  galleryTitle?: string | null;
+  gallery?:
+    | {
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        alt?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  othersTitle?: string | null;
+  others?:
+    | {
+        name?: string | null;
+        tag?: string | null;
+        href?: string | null;
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-pergola".
+ */
+export interface VerandaPergola {
+  id: number;
+  heroBadge?: string | null;
+  heroPrice?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  stats?:
+    | {
+        value?: string | null;
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introBullets?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introImageFallback?: string | null;
+  featuresHeading?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  bandLabel?: string | null;
+  bandTitle?: string | null;
+  bandText?: string | null;
+  bandCta?: string | null;
+  bandImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  bandImageFallback?: string | null;
+  relatedHeading?: string | null;
+  related?:
+    | {
+        name?: string | null;
+        tag?: string | null;
+        href?: string | null;
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tuinkamers".
+ */
+export interface Tuinkamer {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  typesLabel?: string | null;
+  typesHeading?: string | null;
+  typesIntro?: string | null;
+  types?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        cta?: string | null;
+        href?: string | null;
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  uspHeading?: string | null;
+  uspIntro?: string | null;
+  usps?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  galleryHeading?: string | null;
+  gallery?:
+    | {
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  glasLabel?: string | null;
+  glasTitle?: string | null;
+  glasText?: string | null;
+  glasCta?: string | null;
+  glasImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  glasImageFallback?: string | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tuinkamer-hellend-dak".
+ */
+export interface TuinkamerHellendDak {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introPoints?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introImageFallback?: string | null;
+  featuresHeading?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  galleryHeading?: string | null;
+  gallery?:
+    | {
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  altLabel?: string | null;
+  altTitle?: string | null;
+  altText?: string | null;
+  altCta?: string | null;
+  altImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  altImageFallback?: string | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tuinkamer-vlak-dak".
+ */
+export interface TuinkamerVlakDak {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introPoints?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introImageFallback?: string | null;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  galleryTitle?: string | null;
+  gallery?:
+    | {
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  altLabel?: string | null;
+  altTitle?: string | null;
+  altText?: string | null;
+  altCta?: string | null;
+  altImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  altImageFallback?: string | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "glazen-schuifwanden".
+ */
+export interface GlazenSchuifwanden {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  typesHeading?: string | null;
+  typesIntro?: string | null;
+  types?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  projectsHeading?: string | null;
+  projects?:
+    | {
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  comboLabel?: string | null;
+  comboTitle?: string | null;
+  comboText?: string | null;
+  comboCta?: string | null;
+  comboImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  comboImageFallback?: string | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "schuifwand-glas".
+ */
+export interface SchuifwandGla {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroFallback?: string | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introList?:
+    | {
+        item?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introFallback?: string | null;
+  featuresHeading?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "schuifwand-aluminium".
+ */
+export interface SchuifwandAluminium {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introPoints?:
+    | {
+        point?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introImageFallback?: string | null;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "schuifwand-lamellen".
+ */
+export interface SchuifwandLamellen {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroFallback?: string | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introList?:
+    | {
+        item?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introFallback?: string | null;
+  featuresHeading?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "schuifwand-steellook".
+ */
+export interface SchuifwandSteellook {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroFallback?: string | null;
+  introHeading?: string | null;
+  introText?: string | null;
+  introPoints?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introFallback?: string | null;
+  featuresHeading?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zonwering".
+ */
+export interface Zonwering {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  typesHeading?: string | null;
+  typesIntro?: string | null;
+  types?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  projectsHeading?: string | null;
+  projects?:
+    | {
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  comfortLabel?: string | null;
+  comfortTitle?: string | null;
+  comfortText?: string | null;
+  comfortCta?: string | null;
+  comfortImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  comfortImageFallback?: string | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zonwering-onderdak".
+ */
+export interface ZonweringOnderdak {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroFallback?: string | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introList?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introFallback?: string | null;
+  featuresHeading?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zonwering-bovendak".
+ */
+export interface ZonweringBovendak {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroFallback?: string | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introPoints?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introFallback?: string | null;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zonwering-screens".
+ */
+export interface ZonweringScreen {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introBullets?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introImageFallback?: string | null;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zonwering-uitvalschermen".
+ */
+export interface ZonweringUitvalscherman {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroFallback?: string | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introUsps?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introFallback?: string | null;
+  featuresHeading?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "accessoires".
+ */
+export interface Accessoire {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  optionsHeading?: string | null;
+  optionsIntro?: string | null;
+  options?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  galleryHeading?: string | null;
+  gallery?:
+    | {
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  adviesLabel?: string | null;
+  adviesTitle?: string | null;
+  adviesText?: string | null;
+  adviesCta?: string | null;
+  adviesImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  adviesImageFallback?: string | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "optie-wanden".
+ */
+export interface OptieWanden {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  introTitle?: string | null;
+  introText?: string | null;
+  introPoints?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "optie-dakbedekking".
+ */
+export interface OptieDakbedekking {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introPoints?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introImageFallback?: string | null;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "optie-ledverlichting".
+ */
+export interface OptieLedverlichting {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introBullets?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introImageFallback?: string | null;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "optie-fundering".
+ */
+export interface OptieFundering {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  introTitle?: string | null;
+  introText?: string | null;
+  introList?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "optie-onderhoud".
+ */
+export interface OptieOnderhoud {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroFallback?: string | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introChecklist?:
+    | {
+        item?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introFallback?: string | null;
+  featuresHeading?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zakelijk".
+ */
+export interface Zakelijk {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroButton1?: string | null;
+  heroButton2?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  sectorsHeading?: string | null;
+  sectorsIntro?: string | null;
+  sectors?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        href?: string | null;
+        /**
+         * HTML id (voor #anker-links)
+         */
+        anchor?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  stepsHeading?: string | null;
+  steps?:
+    | {
+        number?: string | null;
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  bandLabel?: string | null;
+  bandTitle?: string | null;
+  bandText?: string | null;
+  bandCta?: string | null;
+  bandImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  bandImageFallback?: string | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zakelijk-horeca".
+ */
+export interface ZakelijkHoreca {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroButton1?: string | null;
+  heroButton2?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroFallback?: string | null;
+  benefitsHeading?: string | null;
+  benefits?:
+    | {
+        title?: string | null;
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  quote?: string | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zakelijk-kantoren".
+ */
+export interface ZakelijkKantoren {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroButtonPrimary?: string | null;
+  heroButtonSecondary?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  benefitsHeading?: string | null;
+  benefits?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  quote?: string | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zakelijk-onderwijs".
+ */
+export interface ZakelijkOnderwij {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroFallback?: string | null;
+  benefitsHeading?: string | null;
+  benefits?:
+    | {
+        title?: string | null;
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  quote?: string | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zakelijk-vakantieparken".
+ */
+export interface ZakelijkVakantieparken {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroFallback?: string | null;
+  benefitsHeading?: string | null;
+  benefits?:
+    | {
+        title?: string | null;
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  quote?: string | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zakelijk-zorg".
+ */
+export interface ZakelijkZorg {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroButton1?: string | null;
+  heroButton2?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  benefitsHeading?: string | null;
+  benefits?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  quote?: string | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zakelijk-projectbouw".
+ */
+export interface ZakelijkProjectbouw {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroButtonPrimary?: string | null;
+  heroButtonSecondary?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  benefitsHeading?: string | null;
+  benefits?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  quote?: string | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact".
+ */
+export interface Contact {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  stats?:
+    | {
+        value?: string | null;
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  contactHeading?: string | null;
+  addressLabel?: string | null;
+  addressLine1?: string | null;
+  addressLine2?: string | null;
+  phoneLabel?: string | null;
+  phone?: string | null;
+  emailLabel?: string | null;
+  email?: string | null;
+  hoursLabel?: string | null;
+  hoursDays?: string | null;
+  hoursTime?: string | null;
+  hoursNote?: string | null;
+  contactImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  contactImageFallback?: string | null;
+  formHeading?: string | null;
+  formIntro?: string | null;
+  formFirstName?: string | null;
+  formLastName?: string | null;
+  formEmail?: string | null;
+  formPhone?: string | null;
+  formInterest?: string | null;
+  formMessage?: string | null;
+  formButton?: string | null;
+  formDisclaimer?: string | null;
+  serviceHeading?: string | null;
+  serviceText?: string | null;
+  serviceAreas?:
+    | {
+        name?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "home_select".
  */
 export interface HomeSelect<T extends boolean = true> {
@@ -475,6 +2126,1362 @@ export interface VerandaSSelect<T extends boolean = true> {
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-greenline_select".
+ */
+export interface VerandaGreenlineSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroPrice?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroButtonPrimary?: T;
+  heroButtonSecondary?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  specs?:
+    | T
+    | {
+        value?: T;
+        label?: T;
+        id?: T;
+      };
+  introTitle?: T;
+  introText?: T;
+  introBullets?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introImageFallback?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+        id?: T;
+      };
+  configLabel?: T;
+  configTitle?: T;
+  configText?: T;
+  configCta?: T;
+  configImage?: T;
+  configImageFallback?: T;
+  galleryTitle?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        fallback?: T;
+        alt?: T;
+        id?: T;
+      };
+  otherTitle?: T;
+  otherModels?:
+    | T
+    | {
+        name?: T;
+        tag?: T;
+        href?: T;
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-profiline_select".
+ */
+export interface VerandaProfilineSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroPrice?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroButtonPrimary?: T;
+  heroButtonSecondary?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  stats?:
+    | T
+    | {
+        value?: T;
+        label?: T;
+        id?: T;
+      };
+  ruimteTitle?: T;
+  ruimteText?: T;
+  ruimtePoints?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  ruimteImage?: T;
+  ruimteImageFallback?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+        id?: T;
+      };
+  maatLabel?: T;
+  maatTitle?: T;
+  maatText?: T;
+  maatCta?: T;
+  maatImage?: T;
+  maatImageFallback?: T;
+  modelsTitle?: T;
+  models?:
+    | T
+    | {
+        name?: T;
+        tag?: T;
+        href?: T;
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-linea_select".
+ */
+export interface VerandaLineaSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroPrice?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroCtaPrimary?: T;
+  heroCtaSecondary?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  specs?:
+    | T
+    | {
+        value?: T;
+        label?: T;
+        id?: T;
+      };
+  introTitle?: T;
+  introText?: T;
+  introPoints?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introImageFallback?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  opmaatLabel?: T;
+  opmaatTitle?: T;
+  opmaatText?: T;
+  opmaatCta?: T;
+  opmaatImage?: T;
+  opmaatImageFallback?: T;
+  galleryTitle?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        fallback?: T;
+        alt?: T;
+        id?: T;
+      };
+  relatedTitle?: T;
+  related?:
+    | T
+    | {
+        name?: T;
+        tag?: T;
+        href?: T;
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-cube_select".
+ */
+export interface VerandaCubeSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroPrice?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroCtaPrimary?: T;
+  heroCtaSecondary?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  specs?:
+    | T
+    | {
+        value?: T;
+        label?: T;
+        id?: T;
+      };
+  introTitle?: T;
+  introText?: T;
+  introBullets?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introImageFallback?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ombouwLabel?: T;
+  ombouwTitle?: T;
+  ombouwText?: T;
+  ombouwCta?: T;
+  ombouwImage?: T;
+  ombouwImageFallback?: T;
+  galleryTitle?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        fallback?: T;
+        alt?: T;
+        id?: T;
+      };
+  othersTitle?: T;
+  others?:
+    | T
+    | {
+        name?: T;
+        tag?: T;
+        href?: T;
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-pergola_select".
+ */
+export interface VerandaPergolaSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroPrice?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  stats?:
+    | T
+    | {
+        value?: T;
+        label?: T;
+        id?: T;
+      };
+  introTitle?: T;
+  introText?: T;
+  introBullets?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introImageFallback?: T;
+  featuresHeading?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  bandLabel?: T;
+  bandTitle?: T;
+  bandText?: T;
+  bandCta?: T;
+  bandImage?: T;
+  bandImageFallback?: T;
+  relatedHeading?: T;
+  related?:
+    | T
+    | {
+        name?: T;
+        tag?: T;
+        href?: T;
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tuinkamers_select".
+ */
+export interface TuinkamersSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  typesLabel?: T;
+  typesHeading?: T;
+  typesIntro?: T;
+  types?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        cta?: T;
+        href?: T;
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  uspHeading?: T;
+  uspIntro?: T;
+  usps?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  galleryHeading?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  glasLabel?: T;
+  glasTitle?: T;
+  glasText?: T;
+  glasCta?: T;
+  glasImage?: T;
+  glasImageFallback?: T;
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tuinkamer-hellend-dak_select".
+ */
+export interface TuinkamerHellendDakSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  introTitle?: T;
+  introText?: T;
+  introPoints?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introImageFallback?: T;
+  featuresHeading?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  galleryHeading?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  altLabel?: T;
+  altTitle?: T;
+  altText?: T;
+  altCta?: T;
+  altImage?: T;
+  altImageFallback?: T;
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tuinkamer-vlak-dak_select".
+ */
+export interface TuinkamerVlakDakSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  introTitle?: T;
+  introText?: T;
+  introPoints?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introImageFallback?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  galleryTitle?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  altLabel?: T;
+  altTitle?: T;
+  altText?: T;
+  altCta?: T;
+  altImage?: T;
+  altImageFallback?: T;
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "glazen-schuifwanden_select".
+ */
+export interface GlazenSchuifwandenSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  typesHeading?: T;
+  typesIntro?: T;
+  types?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  projectsHeading?: T;
+  projects?:
+    | T
+    | {
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  comboLabel?: T;
+  comboTitle?: T;
+  comboText?: T;
+  comboCta?: T;
+  comboImage?: T;
+  comboImageFallback?: T;
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "schuifwand-glas_select".
+ */
+export interface SchuifwandGlasSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroImage?: T;
+  heroFallback?: T;
+  introTitle?: T;
+  introText?: T;
+  introList?:
+    | T
+    | {
+        item?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introFallback?: T;
+  featuresHeading?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "schuifwand-aluminium_select".
+ */
+export interface SchuifwandAluminiumSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  introTitle?: T;
+  introText?: T;
+  introPoints?:
+    | T
+    | {
+        point?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introImageFallback?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "schuifwand-lamellen_select".
+ */
+export interface SchuifwandLamellenSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroImage?: T;
+  heroFallback?: T;
+  introTitle?: T;
+  introText?: T;
+  introList?:
+    | T
+    | {
+        item?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introFallback?: T;
+  featuresHeading?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "schuifwand-steellook_select".
+ */
+export interface SchuifwandSteellookSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroImage?: T;
+  heroFallback?: T;
+  introHeading?: T;
+  introText?: T;
+  introPoints?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introFallback?: T;
+  featuresHeading?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zonwering_select".
+ */
+export interface ZonweringSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  typesHeading?: T;
+  typesIntro?: T;
+  types?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  projectsHeading?: T;
+  projects?:
+    | T
+    | {
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  comfortLabel?: T;
+  comfortTitle?: T;
+  comfortText?: T;
+  comfortCta?: T;
+  comfortImage?: T;
+  comfortImageFallback?: T;
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zonwering-onderdak_select".
+ */
+export interface ZonweringOnderdakSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  heroFallback?: T;
+  introTitle?: T;
+  introText?: T;
+  introList?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introFallback?: T;
+  featuresHeading?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zonwering-bovendak_select".
+ */
+export interface ZonweringBovendakSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  heroFallback?: T;
+  introTitle?: T;
+  introText?: T;
+  introPoints?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introFallback?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zonwering-screens_select".
+ */
+export interface ZonweringScreensSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  introTitle?: T;
+  introText?: T;
+  introBullets?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introImageFallback?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zonwering-uitvalschermen_select".
+ */
+export interface ZonweringUitvalschermenSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  heroFallback?: T;
+  introTitle?: T;
+  introText?: T;
+  introUsps?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introFallback?: T;
+  featuresHeading?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "accessoires_select".
+ */
+export interface AccessoiresSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  optionsHeading?: T;
+  optionsIntro?: T;
+  options?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  galleryHeading?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  adviesLabel?: T;
+  adviesTitle?: T;
+  adviesText?: T;
+  adviesCta?: T;
+  adviesImage?: T;
+  adviesImageFallback?: T;
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "optie-wanden_select".
+ */
+export interface OptieWandenSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  introTitle?: T;
+  introText?: T;
+  introPoints?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "optie-dakbedekking_select".
+ */
+export interface OptieDakbedekkingSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  introTitle?: T;
+  introText?: T;
+  introPoints?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introImageFallback?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "optie-ledverlichting_select".
+ */
+export interface OptieLedverlichtingSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  introTitle?: T;
+  introText?: T;
+  introBullets?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introImageFallback?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "optie-fundering_select".
+ */
+export interface OptieFunderingSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  introTitle?: T;
+  introText?: T;
+  introList?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "optie-onderhoud_select".
+ */
+export interface OptieOnderhoudSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  heroFallback?: T;
+  introTitle?: T;
+  introText?: T;
+  introChecklist?:
+    | T
+    | {
+        item?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introFallback?: T;
+  featuresHeading?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zakelijk_select".
+ */
+export interface ZakelijkSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroButton1?: T;
+  heroButton2?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  sectorsHeading?: T;
+  sectorsIntro?: T;
+  sectors?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        href?: T;
+        anchor?: T;
+        id?: T;
+      };
+  stepsHeading?: T;
+  steps?:
+    | T
+    | {
+        number?: T;
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  bandLabel?: T;
+  bandTitle?: T;
+  bandText?: T;
+  bandCta?: T;
+  bandImage?: T;
+  bandImageFallback?: T;
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zakelijk-horeca_select".
+ */
+export interface ZakelijkHorecaSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroButton1?: T;
+  heroButton2?: T;
+  heroImage?: T;
+  heroFallback?: T;
+  benefitsHeading?: T;
+  benefits?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+        id?: T;
+      };
+  quote?: T;
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zakelijk-kantoren_select".
+ */
+export interface ZakelijkKantorenSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroButtonPrimary?: T;
+  heroButtonSecondary?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  benefitsHeading?: T;
+  benefits?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  quote?: T;
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zakelijk-onderwijs_select".
+ */
+export interface ZakelijkOnderwijsSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  heroFallback?: T;
+  benefitsHeading?: T;
+  benefits?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+        id?: T;
+      };
+  quote?: T;
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zakelijk-vakantieparken_select".
+ */
+export interface ZakelijkVakantieparkenSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  heroFallback?: T;
+  benefitsHeading?: T;
+  benefits?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+        id?: T;
+      };
+  quote?: T;
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zakelijk-zorg_select".
+ */
+export interface ZakelijkZorgSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroButton1?: T;
+  heroButton2?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  benefitsHeading?: T;
+  benefits?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  quote?: T;
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zakelijk-projectbouw_select".
+ */
+export interface ZakelijkProjectbouwSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroButtonPrimary?: T;
+  heroButtonSecondary?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  benefitsHeading?: T;
+  benefits?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  quote?: T;
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact_select".
+ */
+export interface ContactSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  stats?:
+    | T
+    | {
+        value?: T;
+        label?: T;
+        id?: T;
+      };
+  contactHeading?: T;
+  addressLabel?: T;
+  addressLine1?: T;
+  addressLine2?: T;
+  phoneLabel?: T;
+  phone?: T;
+  emailLabel?: T;
+  email?: T;
+  hoursLabel?: T;
+  hoursDays?: T;
+  hoursTime?: T;
+  hoursNote?: T;
+  contactImage?: T;
+  contactImageFallback?: T;
+  formHeading?: T;
+  formIntro?: T;
+  formFirstName?: T;
+  formLastName?: T;
+  formEmail?: T;
+  formPhone?: T;
+  formInterest?: T;
+  formMessage?: T;
+  formButton?: T;
+  formDisclaimer?: T;
+  serviceHeading?: T;
+  serviceText?: T;
+  serviceAreas?:
+    | T
+    | {
+        name?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
