@@ -89,9 +89,11 @@ export interface Config {
   fallbackLocale: null;
   globals: {
     home: Home;
+    'veranda-s': Veranda;
   };
   globalsSelect: {
     home: HomeSelect<false> | HomeSelect<true>;
+    'veranda-s': VerandaSSelect<false> | VerandaSSelect<true>;
   };
   locale: null;
   widgets: {
@@ -364,6 +366,45 @@ export interface Home {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-s".
+ */
+export interface Veranda {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroImage?: (number | null) | Media;
+  linesHeading?: string | null;
+  linesIntro?: string | null;
+  lines?:
+    | {
+        name?: string | null;
+        price?: string | null;
+        tag?: string | null;
+        desc?: string | null;
+        badge?: string | null;
+        href?: string | null;
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ombouwLabel?: string | null;
+  ombouwTitle?: string | null;
+  ombouwText?: string | null;
+  ombouwCta?: string | null;
+  ombouwImage?: (number | null) | Media;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "home_select".
  */
 export interface HomeSelect<T extends boolean = true> {
@@ -395,6 +436,42 @@ export interface HomeSelect<T extends boolean = true> {
         author?: T;
         id?: T;
       };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-s_select".
+ */
+export interface VerandaSSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroImage?: T;
+  linesHeading?: T;
+  linesIntro?: T;
+  lines?:
+    | T
+    | {
+        name?: T;
+        price?: T;
+        tag?: T;
+        desc?: T;
+        badge?: T;
+        href?: T;
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  ombouwLabel?: T;
+  ombouwTitle?: T;
+  ombouwText?: T;
+  ombouwCta?: T;
+  ombouwImage?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
