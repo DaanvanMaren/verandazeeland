@@ -4,6 +4,7 @@ import { getContent } from '@/content'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
+import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
 export const metadata = { title: 'Offerte aanvragen | Veranda Zeeland' }
@@ -23,9 +24,7 @@ export default async function OffertePage() {
     <div className="max-w-[1280px] mx-auto bg-cream">
       <Header />
 
-      <div className="pt-[20px] px-[40px] pb-0 max-[600px]:px-[16px] text-[13px] text-mute">
-        <a className="nav-a" href="/">Home</a> › <span className="text-navy font-semibold">Offerte aanvragen</span>
-      </div>
+      <Breadcrumbs />
 
       {/* intro */}
       <div className="pt-[24px] px-[40px] pb-[8px] max-[600px]:px-[16px] max-w-[720px]">

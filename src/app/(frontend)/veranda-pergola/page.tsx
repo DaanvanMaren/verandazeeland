@@ -4,6 +4,7 @@ import { getContent } from '@/content'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
+import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
 export const metadata = { title: 'Pergola-overkapping veranda | Veranda Zeeland' }
@@ -20,9 +21,7 @@ export default async function VerandaPergolaPage() {
     <div className="max-w-[1280px] mx-auto bg-cream">
       <Header />
 
-      <div className="pt-[20px] px-[40px] pb-0 max-[600px]:px-[16px] text-[13px] text-mute">
-        <a className="nav-a" href="/">Home</a> › <a className="nav-a" href="/veranda-s">Veranda's</a> › <span className="text-navy font-semibold">Pergola</span>
-      </div>
+      <Breadcrumbs />
 
       {/* hero */}
       <div className="grid grid-cols-2 max-[820px]:grid-cols-1 gap-[44px] pt-[24px] px-[40px] pb-[48px] max-[600px]:px-[16px] items-center">
