@@ -2048,6 +2048,7 @@ export interface Contact {
   contactImageFallback?: string | null;
   formHeading?: string | null;
   formIntro?: string | null;
+  formIntro2?: string | null;
   formFirstName?: string | null;
   formLastName?: string | null;
   formEmail?: string | null;
@@ -3478,6 +3479,7 @@ export interface ContactSelect<T extends boolean = true> {
   contactImageFallback?: T;
   formHeading?: T;
   formIntro?: T;
+  formIntro2?: T;
   formFirstName?: T;
   formLastName?: T;
   formEmail?: T;

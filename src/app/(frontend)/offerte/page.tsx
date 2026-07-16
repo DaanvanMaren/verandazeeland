@@ -34,6 +34,7 @@ export default async function OffertePage() {
         </span>
         <h1 className="font-display font-black text-[48px] leading-[1] mb-[14px] tracking-[-1.6px]">{c.formHeading}</h1>
         {c.formIntro && <p className="text-[18px] leading-[1.65] text-slate m-0">{c.formIntro}</p>}
+        {c.formIntro2 && <p className="text-[18px] leading-[1.65] text-slate m-0">{c.formIntro2}</p>}
       </div>
 
       {/* info + form */}

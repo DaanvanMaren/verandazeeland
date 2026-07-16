@@ -55,6 +55,7 @@ export const contact: GlobalConfig = {
     // offerte-formulier (copy only — form does not submit yet)
     { name: 'formHeading', type: 'text', defaultValue: 'Vraag een offerte aan' },
     { name: 'formIntro', type: 'textarea', defaultValue: 'Vul het formulier in en wij nemen binnen 2 werkdagen contact met u op.' },
+    { name: 'formIntro2', type:'textarea', defaultValue:'En ontvang indien gewenst onze brochure.'},
     { name: 'formFirstName', type: 'text', defaultValue: 'Voornaam' },
     { name: 'formLastName', type: 'text', defaultValue: 'Achternaam' },
     { name: 'formEmail', type: 'text', defaultValue: 'E-mailadres' },
