@@ -143,15 +143,7 @@ export default async function HomePage() {
           <h2 className="font-display font-extrabold text-[40px] leading-[1.05] mt-[14px] mb-[20px] tracking-[-1.2px]">
             {c.welcomeTitle}
           </h2>
-          <div className="text-[17px] leading-[1.7] text-sky mb-[16px]"><SplitText text={<Rich field={c.welkomBijVerandazeelandTekst} />}
-                                                                                   textAlign="left"
-                                                                                   delay={20}
-                                                                                   duration={1.25}
-                                                                                   ease="power3.out"
-                                                                                   splitType="words"
-                                                                                   from={{ opacity: 0, y: 40 }}
-                                                                                   to={{ opacity: 1, y: 0 }}
-                                                                                   threshold={0.1}/></div>
+          <div className="text-[17px] leading-[1.7] text-sky mb-[16px]"><Rich field={c.welkomBijVerandazeelandTekst} /></div>
 
           <a className="btn-y bg-gold text-navy font-extrabold text-[15px] py-[15px] px-[28px] rounded-full" href="/contact">
             {c.welcomeCta}
