@@ -409,8 +409,21 @@ export interface Home {
   categoriesHeading?: string | null;
   welcomeLabel?: string | null;
   welcomeTitle?: string | null;
-  welcomeText1?: string | null;
-  welcomeText2?: string | null;
+  welkomBijVerandazeelandTekst?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   welcomeCta?: string | null;
   welcomeImage?: (number | null) | Media;
   modelsHeading?: string | null;
@@ -2074,8 +2087,7 @@ export interface HomeSelect<T extends boolean = true> {
   categoriesHeading?: T;
   welcomeLabel?: T;
   welcomeTitle?: T;
-  welcomeText1?: T;
-  welcomeText2?: T;
+  welkomBijVerandazeelandTekst?: T;
   welcomeCta?: T;
   welcomeImage?: T;
   modelsHeading?: T;

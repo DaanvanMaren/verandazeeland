@@ -11,85 +11,85 @@ export const metadata = { title: 'Contact & offerte | Veranda Zeeland' }
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback
 
-const cover: React.CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }
+const cover = 'absolute inset-0 w-full h-full object-cover'
 
-const infoLabel: React.CSSProperties = { color: '#ffcf33', fontWeight: 700, fontSize: 13, textTransform: 'uppercase', letterSpacing: '.5px', marginBottom: 4 }
+const infoLabel = 'text-gold font-bold text-[13px] uppercase tracking-[0.5px] mb-[4px]'
 
-const chip: React.CSSProperties = { background: '#fff', borderRadius: 999, padding: '11px 20px', fontWeight: 600, fontSize: 14, boxShadow: '0 4px 14px -10px rgba(8,42,82,.5)' }
+const chip = 'bg-white rounded-full py-[11px] px-[20px] font-semibold text-[14px] shadow-[0_4px_14px_-10px_rgba(8,42,82,0.5)]'
 
 export default async function ContactPage() {
   const c = await getContent('contact')
 
   return (
-    <div style={{ maxWidth: 1280, margin: '0 auto', background: '#f6f0e6' }}>
+    <div className="max-w-[1280px] mx-auto bg-cream">
       <Header />
 
-      <div style={{ padding: '20px 40px 0', fontSize: 13, color: '#8a94a0' }}>
-        <a className="nav-a" href="/">Home</a> › <span style={{ color: '#082a52', fontWeight: 600 }}>Contact</span>
+      <div className="pt-[20px] px-[40px] pb-0 max-[600px]:px-[16px] text-[13px] text-mute">
+        <a className="nav-a" href="/">Home</a> › <span className="text-navy font-semibold">Contact</span>
       </div>
 
       {/* hero over ons */}
-      <div id="over-ons" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 44, padding: '24px 40px 56px', alignItems: 'center' }}>
+      <div id="over-ons" className="grid grid-cols-2 max-[820px]:grid-cols-1 gap-[44px] pt-[24px] px-[40px] pb-[56px] max-[600px]:px-[16px] items-center">
         <div>
           {c.heroBadge && (
-            <span style={{ display: 'inline-block', background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 12, letterSpacing: 1, textTransform: 'uppercase', padding: '6px 13px', borderRadius: 999, marginBottom: 20 }}>
+            <span className="inline-block bg-gold text-navy font-extrabold text-[12px] tracking-[1px] uppercase py-[6px] px-[13px] rounded-full mb-[20px]">
               {c.heroBadge}
             </span>
           )}
-          <h1 style={{ fontFamily: 'Archivo', fontWeight: 900, fontSize: 54, lineHeight: 0.98, margin: '0 0 20px', letterSpacing: '-1.8px' }}>{c.heroTitle}</h1>
-          {c.heroText && <p style={{ fontSize: 18, lineHeight: 1.65, color: '#42586c', margin: '0 0 20px' }}>{c.heroText}</p>}
-          <div style={{ display: 'flex', gap: 30, flexWrap: 'wrap', fontSize: 15 }}>
+          <h1 className="font-display font-black text-[54px] leading-[0.98] mb-[20px] tracking-[-1.8px]">{c.heroTitle}</h1>
+          {c.heroText && <p className="text-[18px] leading-[1.65] text-slate mb-[20px]">{c.heroText}</p>}
+          <div className="flex gap-[30px] flex-wrap text-[15px]">
             {c.stats?.map((row) => (
               <div key={row.id}>
-                <div style={{ fontWeight: 800, fontFamily: 'Archivo', fontSize: 26 }}>{row.value}</div>
-                <div style={{ color: '#6b6152' }}>{row.label}</div>
+                <div className="font-extrabold font-display text-[26px]">{row.value}</div>
+                <div className="text-taupe">{row.label}</div>
               </div>
             ))}
           </div>
         </div>
-        <div style={{ position: 'relative', borderRadius: 22, overflow: 'hidden', minHeight: 400, background: '#082a52' }}>
-          <img src={img(c.heroImage, c.heroImageFallback ?? '')} alt={c.heroTitle} style={cover} />
+        <div className="relative rounded-[22px] overflow-hidden min-h-[400px] bg-navy">
+          <img src={img(c.heroImage, c.heroImageFallback ?? '')} alt={c.heroTitle} className={cover} />
         </div>
       </div>
 
       {/* contactgegevens + kaart */}
-      <div id="showroom" style={{ display: 'grid', gridTemplateColumns: '1fr 1.15fr', gap: 0, background: '#fff', margin: '0 40px', borderRadius: 26, overflow: 'hidden' }}>
+      <div id="showroom" className="grid grid-cols-[1fr_1.15fr] max-[820px]:grid-cols-1 gap-0 bg-white my-0 mx-[40px] max-[600px]:mx-[16px] rounded-[26px] overflow-hidden">
         {/* info */}
-        <div style={{ background: '#082a52', color: '#fff', padding: '48px 44px' }}>
-          <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 28, margin: '0 0 24px', letterSpacing: '-.6px' }}>{c.contactHeading}</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 22, fontSize: '15.5px', lineHeight: 1.6 }}>
+        <div className="bg-navy text-white py-[48px] px-[44px]">
+          <h2 className="font-display font-extrabold text-[28px] mb-[24px] tracking-[-0.6px]">{c.contactHeading}</h2>
+          <div className="flex flex-col gap-[22px] text-[15.5px] leading-[1.6]">
             <div>
-              <div style={infoLabel}>{c.addressLabel}</div>
+              <div className={infoLabel}>{c.addressLabel}</div>
               <a className="nav-a" href={`https://maps.google.com/?q=${encodeURIComponent(`${c.addressLine1}, ${c.addressLine2}`)}`} target="_blank" rel="noopener">{c.addressLine1}<br />{c.addressLine2}</a>
             </div>
             <div>
-              <div style={infoLabel}>{c.phoneLabel}</div>
+              <div className={infoLabel}>{c.phoneLabel}</div>
               <a className="nav-a" href={`tel:${(c.phone ?? '').replace(/[^0-9+]/g, '')}`}>{c.phone}</a>
             </div>
             <div>
-              <div style={infoLabel}>{c.emailLabel}</div>
+              <div className={infoLabel}>{c.emailLabel}</div>
               <a className="nav-a" href={`mailto:${c.email}`}>{c.email}</a>
             </div>
             <div>
-              <div style={infoLabel}>{c.hoursLabel}</div>
-              {c.hoursDays}<br />{c.hoursTime}<br /><span style={{ color: '#9fb3ca' }}>{c.hoursNote}</span>
+              <div className={infoLabel}>{c.hoursLabel}</div>
+              {c.hoursDays}<br />{c.hoursTime}<br /><span className="text-steel">{c.hoursNote}</span>
             </div>
           </div>
-          <a className="btn-y" href="/offerte" style={{ display: 'inline-block', marginTop: 30, background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 15, padding: '14px 26px', borderRadius: 999 }}>Vraag een offerte aan →</a>
+          <a className="btn-y inline-block mt-[30px] bg-gold text-navy font-extrabold text-[15px] py-[14px] px-[26px] rounded-full" href="/offerte">Vraag een offerte aan →</a>
         </div>
         {/* kaart / sfeerbeeld */}
-        <div style={{ position: 'relative', minHeight: 420, background: '#33547d' }}>
-          <img src={img(c.contactImage, c.contactImageFallback ?? '')} alt={c.contactHeading ?? ''} style={cover} />
+        <div className="relative min-h-[420px] bg-navy-light">
+          <img src={img(c.contactImage, c.contactImageFallback ?? '')} alt={c.contactHeading ?? ''} className={cover} />
         </div>
       </div>
 
       {/* service area */}
-      <div style={{ padding: '60px 40px', textAlign: 'center' }}>
-        <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 30, margin: '0 0 10px', letterSpacing: '-.8px' }}>{c.serviceHeading}</h2>
-        {c.serviceText && <p style={{ color: '#6b6152', fontSize: 16, margin: '0 auto 28px', maxWidth: 560 }}>{c.serviceText}</p>}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
+      <div className="py-[60px] px-[40px] max-[600px]:px-[16px] text-center">
+        <h2 className="font-display font-extrabold text-[30px] mb-[10px] tracking-[-0.8px]">{c.serviceHeading}</h2>
+        {c.serviceText && <p className="text-taupe text-[16px] mt-0 mx-auto mb-[28px] max-w-[560px]">{c.serviceText}</p>}
+        <div className="flex flex-wrap gap-[12px] justify-center">
           {c.serviceAreas?.map((row) => (
-            <span key={row.id} style={chip}>{row.name}</span>
+            <span key={row.id} className={chip}>{row.name}</span>
           ))}
         </div>
       </div>

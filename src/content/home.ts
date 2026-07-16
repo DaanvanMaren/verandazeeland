@@ -1,4 +1,5 @@
 import type { GlobalConfig } from 'payload'
+import { rich } from './rich'
 
 // Home page content — every text is an editable field with the design copy as
 // defaultValue (ships in code, renders immediately, editable in /admin).
@@ -39,16 +40,15 @@ export const home: GlobalConfig = {
     { name: 'welcomeLabel', type: 'text', defaultValue: 'Welkom bij Veranda Zeeland' },
     { name: 'welcomeTitle', type: 'text', defaultValue: 'Uw complete leverancier in Serooskerke' },
     {
-      name: 'welcomeText1',
-      type: 'textarea',
-      defaultValue:
-        "Als officieel Verasol-dealer leveren wij de complete lijn hoogwaardige aluminium veranda's: van de voordelige Greenline tot de exclusieve Cube. In Duitsland geproduceerd, betaalbaar en van perfecte kwaliteit. Een veranda kan zelfs worden omgebouwd naar een volwaardige tuinkamer voor nog meer woonplezier.",
-    },
-    {
-      name: 'welcomeText2',
-      type: 'textarea',
-      defaultValue:
-        'Kom langs voor deskundig en vrijblijvend advies aan De Stekelweie 2 te Serooskerke.',
+      name: 'welkomBijVerandazeelandTekst',
+      type: 'richText',
+      // Function default → applied at the app layer, not as a SQL column DEFAULT.
+      // ponytail: avoids the drizzle dev-push bug that fails to escape the
+      // apostrophe in "veranda's" when a static jsonb default is pushed.
+      defaultValue: () =>
+        rich(
+          "Als officieel Verasol-dealer leveren wij de complete lijn hoogwaardige aluminium veranda's: van de voordelige Greenline tot de exclusieve Cube. In Duitsland geproduceerd, betaalbaar en van perfecte kwaliteit. Een veranda kan zelfs worden omgebouwd naar een volwaardige tuinkamer voor nog meer woonplezier. Kom langs voor deskundig en vrijblijvend advies aan De Stekelweie 2 te Serooskerke.",
+        ),
     },
     { name: 'welcomeCta', type: 'text', defaultValue: 'Plan uw bezoek →' },
     { name: 'welcomeImage', type: 'upload', relationTo: 'media' },

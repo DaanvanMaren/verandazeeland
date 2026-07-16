@@ -13,92 +13,91 @@ export const metadata = {
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback
 
-const cover: React.CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }
+const cover = 'absolute inset-0 w-full h-full object-cover'
 
 export default async function ZakelijkPage() {
   const c = await getContent('zakelijk')
 
   return (
-    <div style={{ maxWidth: 1280, margin: '0 auto', background: '#f6f0e6' }}>
+    <div className="max-w-[1280px] mx-auto bg-cream">
       <Header />
 
-      <div style={{ padding: '20px 40px 0', fontSize: 13, color: '#8a94a0' }}>
-        <a className="nav-a" href="/">Home</a> › <span style={{ color: '#082a52', fontWeight: 600 }}>Zakelijk</span>
+      <div className="pt-[20px] px-[40px] max-[600px]:px-[16px] pb-0 text-[13px] text-mute">
+        <a className="nav-a" href="/">Home</a> › <span className="text-navy font-semibold">Zakelijk</span>
       </div>
 
       {/* hero */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 44, padding: '24px 40px 56px', alignItems: 'center' }}>
+      <div className="grid grid-cols-2 max-[820px]:grid-cols-1 gap-[44px] pt-[24px] px-[40px] pb-[56px] max-[600px]:px-[16px] items-center">
         <div>
           {c.heroBadge && (
-            <span style={{ display: 'inline-block', background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 12, letterSpacing: 1, textTransform: 'uppercase', padding: '6px 13px', borderRadius: 999, marginBottom: 20 }}>
+            <span className="inline-block bg-gold text-navy font-extrabold text-[12px] tracking-[1px] uppercase py-[6px] px-[13px] rounded-full mb-[20px]">
               {c.heroBadge}
             </span>
           )}
-          <h1 style={{ fontFamily: 'Archivo', fontWeight: 900, fontSize: 54, lineHeight: 0.98, margin: '0 0 20px', letterSpacing: '-1.8px' }}>{c.heroTitle}</h1>
-          {c.heroText && <p style={{ fontSize: 18, lineHeight: 1.65, color: '#42586c', margin: '0 0 28px' }}>{c.heroText}</p>}
-          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-            <a className="btn-n" href="/contact" style={{ background: '#082a52', color: '#fff', fontWeight: 700, fontSize: 15, padding: '15px 26px', borderRadius: 999 }}>{c.heroButton1}</a>
-            <a className="btn-y" href="/contact" style={{ background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 15, padding: '15px 26px', borderRadius: 999 }}>{c.heroButton2}</a>
+          <h1 className="font-display font-black text-[54px] leading-[0.98] mb-[20px] tracking-[-1.8px]">{c.heroTitle}</h1>
+          {c.heroText && <p className="text-[18px] leading-[1.65] text-slate mb-[28px]">{c.heroText}</p>}
+          <div className="flex gap-[14px] flex-wrap">
+            <a className="btn-n bg-navy text-white font-bold text-[15px] py-[15px] px-[26px] rounded-full" href="/contact">{c.heroButton1}</a>
+            <a className="btn-y bg-gold text-navy font-extrabold text-[15px] py-[15px] px-[26px] rounded-full" href="/contact">{c.heroButton2}</a>
           </div>
         </div>
-        <div style={{ position: 'relative', borderRadius: 22, overflow: 'hidden', minHeight: 420, background: '#082a52' }}>
-          <img src={img(c.heroImage, c.heroImageFallback ?? '')} alt={c.heroTitle} style={cover} />
+        <div className="relative rounded-[22px] overflow-hidden min-h-[420px] bg-navy">
+          <img src={img(c.heroImage, c.heroImageFallback ?? '')} alt={c.heroTitle} className={cover} />
         </div>
       </div>
 
       {/* sectoren */}
-      <div style={{ padding: '56px 40px', background: '#efe6d4' }}>
-        <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 34, margin: '0 0 6px', letterSpacing: '-1px' }}>{c.sectorsHeading}</h2>
-        {c.sectorsIntro && <p style={{ color: '#6b6152', fontSize: '16.5px', margin: '0 0 32px' }}>{c.sectorsIntro}</p>}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 18 }}>
+      <div className="py-[56px] px-[40px] max-[600px]:px-[16px] bg-line">
+        <h2 className="font-display font-extrabold text-[34px] mb-[6px] tracking-[-1px]">{c.sectorsHeading}</h2>
+        {c.sectorsIntro && <p className="text-taupe text-[16.5px] mb-[32px]">{c.sectorsIntro}</p>}
+        <div className="grid grid-cols-3 max-[820px]:grid-cols-1 gap-[18px]">
           {c.sectors?.map((row) => (
             <a
               key={row.id}
-              className="lift"
+              className="lift block scroll-mt-[96px] bg-panel rounded-[18px] p-[28px] shadow-[0_8px_26px_-20px_rgba(8,42,82,0.4)]"
               id={row.anchor ?? undefined}
               href={row.href ?? '#'}
-              style={{ display: 'block', scrollMarginTop: 96, background: '#fffdf9', borderRadius: 18, padding: 28, boxShadow: '0 8px 26px -20px rgba(8,42,82,.4)' }}
             >
-              <div style={{ width: 44, height: 44, borderRadius: 12, background: '#ffcf33', marginBottom: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22, fontWeight: 900, color: '#082a52' }}>✓</div>
-              <h3 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 19, margin: '0 0 10px' }}>{row.title}</h3>
-              <p style={{ fontSize: '14.5px', color: '#6b6152', lineHeight: 1.65, margin: 0 }}>{row.desc}</p>
+              <div className="w-[44px] h-[44px] rounded-[12px] bg-gold mb-[16px] flex items-center justify-center text-[22px] font-black text-navy">✓</div>
+              <h3 className="font-display font-extrabold text-[19px] mb-[10px]">{row.title}</h3>
+              <p className="text-[14.5px] text-taupe leading-[1.65]">{row.desc}</p>
             </a>
           ))}
         </div>
       </div>
 
       {/* werkwijze */}
-      <div style={{ padding: '64px 40px' }}>
-        <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 34, textAlign: 'center', margin: '0 0 40px', letterSpacing: '-1px' }}>{c.stepsHeading}</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 20 }}>
+      <div className="py-[64px] px-[40px] max-[600px]:px-[16px]">
+        <h2 className="font-display font-extrabold text-[34px] text-center mb-[40px] tracking-[-1px]">{c.stepsHeading}</h2>
+        <div className="grid grid-cols-4 max-[820px]:grid-cols-1 gap-[20px]">
           {c.steps?.map((row) => (
-            <div key={row.id} style={{ textAlign: 'center' }}>
-              <div style={{ fontFamily: 'Archivo', fontWeight: 900, fontSize: 40, color: '#ffcf33' }}>{row.number}</div>
-              <h3 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 18, margin: '6px 0 8px' }}>{row.title}</h3>
-              <p style={{ fontSize: '14.5px', color: '#6b6152', lineHeight: 1.6, margin: 0 }}>{row.desc}</p>
+            <div key={row.id} className="text-center">
+              <div className="font-display font-black text-[40px] text-gold">{row.number}</div>
+              <h3 className="font-display font-extrabold text-[18px] mt-[6px] mb-[8px]">{row.title}</h3>
+              <p className="text-[14.5px] text-taupe leading-[1.6]">{row.desc}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* band */}
-      <div style={{ background: '#082a52', color: '#fff', margin: '0 40px 56px', borderRadius: 26, padding: 56, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }}>
-        <div style={{ position: 'relative', borderRadius: 16, overflow: 'hidden', minHeight: 300, background: '#33547d' }}>
-          <img src={img(c.bandImage, c.bandImageFallback ?? '')} alt={c.bandTitle ?? ''} style={cover} />
+      <div className="bg-navy text-white mb-[56px] mx-[40px] max-[600px]:mx-[16px] rounded-[26px] p-[56px] max-[600px]:p-[26px] grid grid-cols-2 max-[820px]:grid-cols-1 gap-[48px] items-center">
+        <div className="relative rounded-[16px] overflow-hidden min-h-[300px] bg-navy-light">
+          <img src={img(c.bandImage, c.bandImageFallback ?? '')} alt={c.bandTitle ?? ''} className={cover} />
         </div>
         <div>
-          <span style={{ color: '#ffcf33', fontWeight: 800, fontSize: 13, letterSpacing: '1.5px', textTransform: 'uppercase' }}>{c.bandLabel}</span>
-          <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 34, margin: '12px 0 14px', letterSpacing: '-1px' }}>{c.bandTitle}</h2>
-          <p style={{ fontSize: '16.5px', lineHeight: 1.7, color: '#c9d6e6', margin: '0 0 24px' }}>{c.bandText}</p>
-          <a className="btn-y" href="/contact" style={{ background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 15, padding: '14px 26px', borderRadius: 999, display: 'inline-block' }}>{c.bandCta}</a>
+          <span className="text-gold font-extrabold text-[13px] tracking-[1.5px] uppercase">{c.bandLabel}</span>
+          <h2 className="font-display font-extrabold text-[34px] mt-[12px] mb-[14px] tracking-[-1px]">{c.bandTitle}</h2>
+          <p className="text-[16.5px] leading-[1.7] text-sky mb-[24px]">{c.bandText}</p>
+          <a className="btn-y bg-gold text-navy font-extrabold text-[15px] py-[14px] px-[26px] rounded-full inline-block" href="/contact">{c.bandCta}</a>
         </div>
       </div>
 
       {/* CTA */}
-      <div style={{ background: '#ffcf33', padding: 56, margin: '0 40px 40px', borderRadius: 26, textAlign: 'center' }}>
-        <h2 style={{ fontFamily: 'Archivo', fontWeight: 900, fontSize: 38, margin: '0 0 10px', letterSpacing: '-1.4px', color: '#082a52' }}>{c.ctaTitle}</h2>
-        <p style={{ fontSize: '16.5px', color: '#3a4d63', margin: '0 auto 24px', maxWidth: 520 }}>{c.ctaText}</p>
-        <a className="btn-n" href="/offerte" style={{ background: '#082a52', color: '#fff', fontWeight: 800, fontSize: 16, padding: '17px 32px', borderRadius: 999, display: 'inline-block' }}>{c.ctaButton}</a>
+      <div className="bg-gold p-[56px] max-[600px]:p-[26px] mb-[40px] mx-[40px] max-[600px]:mx-[16px] rounded-[26px] text-center">
+        <h2 className="font-display font-black text-[38px] mb-[10px] tracking-[-1.4px] text-navy">{c.ctaTitle}</h2>
+        <p className="text-[16.5px] text-slate-dark mx-auto mb-[24px] max-w-[520px]">{c.ctaText}</p>
+        <a className="btn-n bg-navy text-white font-extrabold text-[16px] py-[17px] px-[32px] rounded-full inline-block" href="/offerte">{c.ctaButton}</a>
       </div>
 
       <Footer />

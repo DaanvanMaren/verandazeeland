@@ -13,67 +13,66 @@ export const metadata = {
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback
 
-const cover: React.CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }
+const cover = 'absolute inset-0 w-full h-full object-cover'
 
 export default async function VerandasPage() {
   const c = await getContent('veranda-s')
 
   return (
-    <div style={{ maxWidth: 1280, margin: '0 auto', background: '#f6f0e6' }}>
+    <div className="max-w-[1280px] mx-auto bg-cream">
       <Header />
 
-      <div style={{ padding: '20px 40px 0', fontSize: 13, color: '#8a94a0' }}>
-        <a className="nav-a" href="/">Home</a> › <span style={{ color: '#082a52', fontWeight: 600 }}>Veranda's</span>
+      <div className="pt-[20px] px-[40px] max-[600px]:px-[16px] text-[13px] text-mute">
+        <a className="nav-a" href="/">Home</a> › <span className="text-navy font-semibold">Veranda's</span>
       </div>
 
       {/* page hero */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 44, padding: '24px 40px 56px', alignItems: 'center' }}>
+      <div className="grid grid-cols-2 max-[820px]:grid-cols-1 gap-[44px] pt-[24px] px-[40px] pb-[56px] max-[600px]:px-[16px] items-center">
         <div>
           {c.heroBadge && (
-            <span style={{ display: 'inline-block', background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 12, letterSpacing: 1, textTransform: 'uppercase', padding: '6px 13px', borderRadius: 999, marginBottom: 20 }}>
+            <span className="inline-block bg-gold text-navy font-extrabold text-[12px] tracking-[1px] uppercase py-[6px] px-[13px] rounded-full mb-[20px]">
               {c.heroBadge}
             </span>
           )}
-          <h1 style={{ fontFamily: 'Archivo', fontWeight: 900, fontSize: 56, lineHeight: 0.98, margin: '0 0 20px', letterSpacing: '-1.8px' }}>{c.heroTitle}</h1>
-          {c.heroText && <p style={{ fontSize: 18, lineHeight: 1.65, color: '#42586c', margin: '0 0 28px' }}>{c.heroText}</p>}
-          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-            <a className="btn-n" href="/offerte" style={{ background: '#082a52', color: '#fff', fontWeight: 700, fontSize: 15, padding: '15px 26px', borderRadius: 999 }}>Offerte aanvragen →</a>
-            <a className="btn-y" href="#lijnen" style={{ background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 15, padding: '15px 26px', borderRadius: 999 }}>Bekijk de productlijnen</a>
+          <h1 className="font-display font-black text-[56px] leading-[0.98] mb-[20px] tracking-[-1.8px]">{c.heroTitle}</h1>
+          {c.heroText && <p className="text-[18px] leading-[1.65] text-slate mb-[28px]">{c.heroText}</p>}
+          <div className="flex gap-[14px] flex-wrap">
+            <a className="btn-n bg-navy text-white font-bold text-[15px] py-[15px] px-[26px] rounded-full" href="/offerte">Offerte aanvragen →</a>
+            <a className="btn-y bg-gold text-navy font-extrabold text-[15px] py-[15px] px-[26px] rounded-full" href="#lijnen">Bekijk de productlijnen</a>
           </div>
         </div>
-        <div style={{ position: 'relative', borderRadius: 22, overflow: 'hidden', minHeight: 420, background: '#082a52' }}>
-          <img src={img(c.heroImage, '/uploads/Profiline_Ommeren_VS_20260529_003_LR.jpg')} alt={c.heroTitle} style={cover} />
+        <div className="relative rounded-[22px] overflow-hidden min-h-[420px] bg-navy">
+          <img src={img(c.heroImage, '/uploads/Profiline_Ommeren_VS_20260529_003_LR.jpg')} alt={c.heroTitle} className={cover} />
         </div>
       </div>
 
       {/* productlijnen */}
-      <div id="lijnen" style={{ padding: '56px 40px 20px', background: '#fff' }}>
-        <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 34, margin: '0 0 6px', letterSpacing: '-1px' }}>{c.linesHeading}</h2>
-        {c.linesIntro && <p style={{ color: '#6b6152', fontSize: '16.5px', margin: '0 0 34px', maxWidth: 640 }}>{c.linesIntro}</p>}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 22 }}>
+      <div id="lijnen" className="pt-[56px] px-[40px] pb-[20px] max-[600px]:px-[16px] bg-white">
+        <h2 className="font-display font-extrabold text-[34px] mb-[6px] tracking-[-1px]">{c.linesHeading}</h2>
+        {c.linesIntro && <p className="text-taupe text-[16.5px] mb-[34px] max-w-[640px]">{c.linesIntro}</p>}
+        <div className="grid grid-cols-3 max-[820px]:grid-cols-1 gap-[22px]">
           {c.lines?.map((row) => (
             <a
               key={row.id}
-              className="lift"
+              className="lift bg-panel rounded-[20px] overflow-hidden shadow-[0_8px_26px_-18px_rgba(8,42,82,0.4)] flex flex-col"
               href={row.href ?? '#'}
-              style={{ background: '#fffdf9', borderRadius: 20, overflow: 'hidden', boxShadow: '0 8px 26px -18px rgba(8,42,82,.4)', display: 'flex', flexDirection: 'column' }}
             >
-              <div style={{ position: 'relative', height: 210, overflow: 'hidden', background: '#082a52' }}>
+              <div className="relative h-[210px] overflow-hidden bg-navy">
                 {row.badge && (
-                  <span style={{ position: 'absolute', top: 16, left: 16, zIndex: 1, background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 11, padding: '5px 11px', borderRadius: 999, textTransform: 'uppercase', letterSpacing: '.5px' }}>
+                  <span className="absolute top-[16px] left-[16px] z-[1] bg-gold text-navy font-extrabold text-[11px] py-[5px] px-[11px] rounded-full uppercase tracking-[0.5px]">
                     {row.badge}
                   </span>
                 )}
-                <img src={img(row.image, row.fallback ?? '')} alt={row.name ?? ''} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={img(row.image, row.fallback ?? '')} alt={row.name ?? ''} className="w-full h-full object-cover" />
               </div>
-              <div style={{ padding: 24, display: 'flex', flexDirection: 'column', flex: 1 }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 10, marginBottom: 8 }}>
-                  <h3 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 22, margin: 0, letterSpacing: '-.5px' }}>{row.name}</h3>
-                  {row.price && <span style={{ color: '#0053a1', fontWeight: 700, fontSize: 13, whiteSpace: 'nowrap' }}>{row.price}</span>}
+              <div className="p-[24px] flex flex-col flex-1">
+                <div className="flex items-baseline justify-between gap-[10px] mb-[8px]">
+                  <h3 className="font-display font-extrabold text-[22px] tracking-[-0.5px]">{row.name}</h3>
+                  {row.price && <span className="text-brand-blue font-bold text-[13px] whitespace-nowrap">{row.price}</span>}
                 </div>
-                {row.tag && <div style={{ fontWeight: 700, fontSize: 13, color: '#c08a1a', textTransform: 'uppercase', letterSpacing: '.5px', marginBottom: 10 }}>{row.tag}</div>}
-                <p style={{ fontSize: '14.5px', color: '#6b6152', lineHeight: 1.6, margin: '0 0 16px', flex: 1 }}>{row.desc}</p>
-                <span style={{ fontWeight: 700, color: '#0053a1', fontSize: '14.5px' }}>Bekijk {row.name} →</span>
+                {row.tag && <div className="font-bold text-[13px] text-gold-dark uppercase tracking-[0.5px] mb-[10px]">{row.tag}</div>}
+                <p className="text-[14.5px] text-taupe leading-[1.6] mb-[16px] flex-1">{row.desc}</p>
+                <span className="font-bold text-brand-blue text-[14.5px]">Bekijk {row.name} →</span>
               </div>
             </a>
           ))}
@@ -81,23 +80,23 @@ export default async function VerandasPage() {
       </div>
 
       {/* ombouw band */}
-      <div style={{ background: '#082a52', color: '#fff', margin: '56px 40px', borderRadius: 26, padding: 56, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }}>
-        <div style={{ position: 'relative', borderRadius: 16, overflow: 'hidden', minHeight: 300, background: '#33547d' }}>
-          <img src={img(c.ombouwImage, '/uploads/Profiline_Veenendaal_VS_20250611_430_LR.jpg')} alt={c.ombouwTitle ?? ''} style={cover} />
+      <div className="bg-navy text-white my-[56px] mx-[40px] max-[600px]:mx-[16px] rounded-[26px] p-[56px] max-[600px]:p-[26px] grid grid-cols-2 max-[820px]:grid-cols-1 gap-[48px] items-center">
+        <div className="relative rounded-[16px] overflow-hidden min-h-[300px] bg-navy-light">
+          <img src={img(c.ombouwImage, '/uploads/Profiline_Veenendaal_VS_20250611_430_LR.jpg')} alt={c.ombouwTitle ?? ''} className={cover} />
         </div>
         <div>
-          <span style={{ color: '#ffcf33', fontWeight: 800, fontSize: 13, letterSpacing: '1.5px', textTransform: 'uppercase' }}>{c.ombouwLabel}</span>
-          <h2 style={{ fontFamily: 'Archivo', fontWeight: 800, fontSize: 34, margin: '12px 0 14px', letterSpacing: '-1px' }}>{c.ombouwTitle}</h2>
-          <p style={{ fontSize: '16.5px', lineHeight: 1.7, color: '#c9d6e6', margin: '0 0 24px' }}>{c.ombouwText}</p>
-          <a className="btn-y" href="/tuinkamers" style={{ background: '#ffcf33', color: '#082a52', fontWeight: 800, fontSize: 15, padding: '14px 26px', borderRadius: 999, display: 'inline-block' }}>{c.ombouwCta}</a>
+          <span className="text-gold font-extrabold text-[13px] tracking-[1.5px] uppercase">{c.ombouwLabel}</span>
+          <h2 className="font-display font-extrabold text-[34px] mt-[12px] mb-[14px] tracking-[-1px]">{c.ombouwTitle}</h2>
+          <p className="text-[16.5px] leading-[1.7] text-sky mb-[24px]">{c.ombouwText}</p>
+          <a className="btn-y bg-gold text-navy font-extrabold text-[15px] py-[14px] px-[26px] rounded-full inline-block" href="/tuinkamers">{c.ombouwCta}</a>
         </div>
       </div>
 
       {/* CTA */}
-      <div style={{ background: '#ffcf33', padding: 56, margin: '0 40px 40px', borderRadius: 26, textAlign: 'center' }}>
-        <h2 style={{ fontFamily: 'Archivo', fontWeight: 900, fontSize: 38, margin: '0 0 10px', letterSpacing: '-1.4px', color: '#082a52' }}>{c.ctaTitle}</h2>
-        <p style={{ fontSize: '16.5px', color: '#3a4d63', margin: '0 auto 24px', maxWidth: 520 }}>{c.ctaText}</p>
-        <a className="btn-n" href="/offerte" style={{ background: '#082a52', color: '#fff', fontWeight: 800, fontSize: 16, padding: '17px 32px', borderRadius: 999, display: 'inline-block' }}>{c.ctaButton}</a>
+      <div className="bg-gold p-[56px] max-[600px]:p-[26px] mb-[40px] mx-[40px] max-[600px]:mx-[16px] rounded-[26px] text-center">
+        <h2 className="font-display font-black text-[38px] mb-[10px] tracking-[-1.4px] text-navy">{c.ctaTitle}</h2>
+        <p className="text-[16.5px] text-slate-dark mx-auto mb-[24px] max-w-[520px]">{c.ctaText}</p>
+        <a className="btn-n bg-navy text-white font-extrabold text-[16px] py-[17px] px-[32px] rounded-full inline-block" href="/offerte">{c.ctaButton}</a>
       </div>
 
       <Footer />

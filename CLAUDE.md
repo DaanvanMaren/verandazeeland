@@ -142,6 +142,11 @@ on prompts). Getting a page online is pure structure + code; no content promotio
    { name: 'heroTitle', type: 'text', defaultValue: 'De kop uit het ontwerp' },
    { name: 'intro', type: 'richText', defaultValue: rich('Alinea 1.', 'Alinea 2.') },
    ```
+   **richText default met een apostrof/quote (bv. `veranda's`)?** Wikkel de default in een
+   functie: `defaultValue: () => rich("...veranda's...")`. Een *statische* richText-default
+   wordt door de dev-push als SQL `ADD COLUMN ... jsonb DEFAULT '...'` geschreven, en die
+   escapet de `'` niet → `syntax error at or near "s"` en de kolom wordt nooit aangemaakt.
+   Met `() =>` past Payload de default in de app-laag toe (geen SQL-default) — zelfde resultaat.
 2. **Register** — add the group to `src/content/globals.ts` (the #1 forgotten step).
 3. **Route** — create `src/app/(frontend)/<url>/page.tsx`; read editable bits with
    `getContent('<slug>')` + `<Img>`/`<Rich>` (see the table below), and hardcode fixed
