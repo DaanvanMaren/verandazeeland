@@ -70,6 +70,7 @@ docs/
   content-fields.md       ← how to add pages & fields (the detailed guide)
   CONTENT.md              ← content model + promoting content staging → prod
   DEPLOY-RAILWAY.md       ← the Railway setup (Postgres + Bucket + vars) and deploys
+  TROUBLESHOOTING.md      ← concrete build/deploy failures we hit, and their fixes
   MAINTAINING.md          ← running this across many client sites + template fixes
 ```
 
@@ -155,6 +156,7 @@ on prompts). Getting a page online is pure structure + code; no content promotio
    ```bash
    npm run generate:types
    npm run migrate:create -- add_<slug>   # against your LOCAL Postgres
+   npm run migrate                        # apply it locally (push is off; no auto-sync)
    ```
 5. **Ship:** commit + push. The deploy runs `payload migrate` → the page is live in every
    environment, with its text (from the code defaults).

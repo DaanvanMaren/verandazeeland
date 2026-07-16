@@ -36,15 +36,14 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI || process.env.DATABASE_URL,
     },
-    // Migrations are the ONLY way schema changes — in dev too. Payload defaults
-    // push:true in dev, which auto-syncs the schema on boot; that made
-    // `migrate:create` diff against an already-changed DB → empty migration →
-    // the column existed in dev but never in prod → 500. With push:false, dev
-    // behaves like prod: edit field → migrate:create → migrate. See CLAUDE.md
-    // gotchas ("migrate:create produced an empty migration").
+    // push: false → dev never auto-syncs the schema (drizzle push). Every schema
+    // change must go through a migration, exactly like prod. This kills the
+    // silent-drift trap: with push on, dev added the column itself, so
+    // `migrate:create` diffed against an already-current DB and wrote an EMPTY
+    // migration → prod never got the column → 500s. See docs/DEVELOPING.md.
     push: false,
-    // Run pending migrations automatically on boot so a deploy can never serve
-    // on an un-migrated DB.
+    // prodMigrations → run pending migrations automatically on boot (also in
+    // dev now that push is off), so a deploy can't serve on an un-migrated DB.
     prodMigrations: migrations,
   }),
   sharp,

@@ -3,6 +3,7 @@ import * as migration_20260714_113510_home_fields from './20260714_113510_home_f
 import * as migration_20260714_114235_add_veranda_s from './20260714_114235_add_veranda_s';
 import * as migration_20260714_120318_add_all_design_pages from './20260714_120318_add_all_design_pages';
 import * as migration_20260716_114500_home_welcome_richtext from './20260716_114500_home_welcome_richtext';
+import * as migration_20260716_123825 from './20260716_123825';
 
 export const migrations = [
   {
@@ -23,11 +24,16 @@ export const migrations = [
   {
     up: migration_20260714_120318_add_all_design_pages.up,
     down: migration_20260714_120318_add_all_design_pages.down,
-    name: '20260714_120318_add_all_design_pages'
+    name: '20260714_120318_add_all_design_pages',
   },
   {
     up: migration_20260716_114500_home_welcome_richtext.up,
     down: migration_20260716_114500_home_welcome_richtext.down,
     name: '20260716_114500_home_welcome_richtext',
+  },
+  {
+    up: migration_20260716_123825.up,
+    down: migration_20260716_123825.down,
+    name: '20260716_123825'
   },
 ];
