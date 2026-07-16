@@ -179,14 +179,22 @@ Full field-type reference with examples: [docs/content-fields.md](docs/content-f
 
 - **New global not showing / `getContent('x')` errors** → not registered in `globals.ts`,
   or `generate:types` not run.
-- **Restart `npm run dev` after adding a global** — the Postgres adapter pushes the new
-  table to the dev DB on boot; a running server won't have it yet.
+- **After adding/changing a content field, dev won't see it until you migrate.** The adapter
+  runs `push: false` — dev does NOT auto-sync the schema on boot (it behaves like prod).
+  Run `npm run migrate:create -- <name>` then `npm run migrate`, then start `npm run dev`.
+- **`migrate:create` produced an empty migration (or the column is missing in prod but fine
+  in dev)** → this is the push trap and `push: false` prevents it. `migrate:create` diffs your
+  config against the connected DB; with push on, dev auto-added the column on boot, so the diff
+  came out empty and no migration file was written — the column then existed only in dev, never
+  in prod, and the live page 500'd with `column ... does not exist`. Fix: keep `push: false` in
+  `payload.config.ts`, and if a column is already missing in prod, hand-write the `ADD COLUMN`
+  migration (see `src/migrations/`). Never rely on boot to apply schema changes.
 - **You're on the shared dev DB.** `npm run dev` reads/writes the Railway dev Postgres
-  (`DATABASE_URI`), not a local file. Schema changes you push are visible to the whole team
-  immediately; be deliberate about renaming/removing fields.
-- **"You're about to delete … column / DATA LOSS WARNING" prompt on `npm run dev`** → your
-  code dropped/renamed a field the dev DB still has. Press **N** unless you truly mean to lose
-  that column's data for everyone. Never blindly press `y`.
+  (`DATABASE_URI`), not a local file. Migrations you run and push are visible to the whole team;
+  after pulling teammates' changes with new migrations, run `npm run migrate` to catch up.
+- **`column ... does not exist` on a deployed page** → a field was added without a migration.
+  `prodMigrations` runs pending migrations on boot, so this means no migration was ever created
+  for that field. Author one (see the empty-migration gotcha above) and redeploy.
 - **Never `git reset --hard` a customized client site** onto the template — it wipes the
   site's work. Use `merge`/`cherry-pick`. See [docs/MAINTAINING.md](docs/MAINTAINING.md).
 - **Image renders empty** → field not filled in `/admin`, or missing `relationTo: 'media'`.

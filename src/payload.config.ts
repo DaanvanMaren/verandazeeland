@@ -9,6 +9,7 @@ import sharp from 'sharp'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { contentGlobals } from './content/globals'
+import { migrations } from './migrations'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -35,6 +36,16 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI || process.env.DATABASE_URL,
     },
+    // Migrations are the ONLY way schema changes — in dev too. Payload defaults
+    // push:true in dev, which auto-syncs the schema on boot; that made
+    // `migrate:create` diff against an already-changed DB → empty migration →
+    // the column existed in dev but never in prod → 500. With push:false, dev
+    // behaves like prod: edit field → migrate:create → migrate. See CLAUDE.md
+    // gotchas ("migrate:create produced an empty migration").
+    push: false,
+    // Run pending migrations automatically on boot so a deploy can never serve
+    // on an un-migrated DB.
+    prodMigrations: migrations,
   }),
   sharp,
   plugins: [
