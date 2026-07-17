@@ -1,3 +1,5 @@
+import type { GlobalConfig } from 'payload'
+
 import { accessoires } from './accessoires'
 import { contact } from './contact'
 import { glazenSchuifwanden } from './glazen-schuifwanden'
@@ -39,6 +41,20 @@ import { zonweringUitvalschermen } from './zonwering-uitvalschermen'
 // Add a page the easy way:   npm run new:page
 // Or by hand: create src/content/<slug>.ts, import it above, add it below,
 // then run `npm run generate:types`. See docs/content-fields.md.
+//
+// Field-level i18n (see localization in payload.config.ts): mark every copy
+// field translatable so each gets an nl + de value in /admin. Images (upload)
+// stay shared across locales. Done here so the 34 content files stay
+// locale-agnostic — no per-field `localized: true` to maintain.
+// ponytail: localize by type here instead of editing ~800 fields by hand.
+const TRANSLATE = new Set(['text', 'textarea', 'richText', 'array'])
+const localize = (g: GlobalConfig): GlobalConfig => ({
+  ...g,
+  fields: g.fields.map((f) =>
+    'name' in f && TRANSLATE.has(f.type) ? { ...f, localized: true } : f,
+  ),
+})
+
 export const contentGlobals = [
   home,
   verandaS,
@@ -74,4 +90,4 @@ export const contentGlobals = [
   zakelijkZorg,
   zakelijkProjectbouw,
   contact,
-]
+].map(localize)

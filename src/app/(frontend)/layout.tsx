@@ -1,5 +1,6 @@
 import React from 'react'
 import './styles.css'
+import { currentLocale } from '@/content'
 
 // Pages render static design markup (no DB at request time), but the Payload
 // admin shares this app, so keep the frontend dynamic (no build-time DB access).
@@ -11,9 +12,9 @@ export const metadata = {
     "Veranda's, tuinkamers en glasschuifwanden van Duitse topkwaliteit, op maat gemaakt en gemonteerd door Veranda Zeeland in Serooskerke.",
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="nl">
+    <html lang={await currentLocale()}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />

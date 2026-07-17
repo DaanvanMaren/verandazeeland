@@ -1,6 +1,7 @@
 // ponytail: server-only module (uses getPayload). Only import from server
 // components. Add the `server-only` package if you want a hard compile guard.
 import { RichText } from '@payloadcms/richtext-lexical/react'
+import { cookies } from 'next/headers'
 import NextImage from 'next/image'
 import { getPayload, type GlobalSlug } from 'payload'
 import React from 'react'
@@ -10,11 +11,23 @@ import type { Media } from '@/payload-types'
 
 export { contentGlobals } from './globals'
 
+// The locale the visitor picked in the header switcher (cookie), 'nl' default.
+// try/catch so non-request callers (seed scripts) don't blow up on cookies().
+export async function currentLocale(): Promise<'nl' | 'de'> {
+  try {
+    return (await cookies()).get('locale')?.value === 'de' ? 'de' : 'nl'
+  } catch {
+    return 'nl'
+  }
+}
+
 // Fetch a content group's filled-in values, fully typed (c.heroTitle, c.heroImage …).
 // depth: 2 resolves upload fields into full Media objects.
-export async function getContent<T extends GlobalSlug>(slug: T) {
+// locale picks the language ('nl' default, 'de' German); untranslated de fields
+// fall back to nl (see localization in payload.config.ts).
+export async function getContent<T extends GlobalSlug>(slug: T, locale?: 'nl' | 'de') {
   const payload = await getPayload({ config: await config })
-  return payload.findGlobal({ slug, depth: 2 })
+  return payload.findGlobal({ slug, depth: 2, locale: locale ?? (await currentLocale()) })
 }
 
 // Render an upload field. Pass through width/height/className/priority etc.

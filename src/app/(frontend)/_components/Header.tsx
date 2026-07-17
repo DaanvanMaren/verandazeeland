@@ -1,11 +1,23 @@
+import { cookies } from 'next/headers'
 import React from 'react'
+
+import { currentLocale } from '@/content'
+
+// Set the visitor's language. getContent() reads this cookie, so switching it
+// re-renders every page's content in that locale (see src/content/index.tsx).
+async function setLocale(formData: FormData) {
+  'use server'
+  const l = formData.get('l') === 'de' ? 'de' : 'nl'
+  ;(await cookies()).set('locale', l, { path: '/', maxAge: 60 * 60 * 24 * 365 })
+}
 
 // Site header (utility bar + nav). Structural/navigation markup, reused by every
 // page. Layout/colour come from Tailwind utilities; the interactive bits
 // (hover dropdowns, the checkbox mobile-nav) stay on the component classes in
 // styles.css (.menu-item/.dropdown/.mainnav/.hamburger/.navtoggle/.nav-a).
 // Site-wide editable bits (hours, reviews) can move to a `site` global later.
-export function Header() {
+export async function Header() {
+  const locale = await currentLocale()
   return (
     <>
       <div className="fullbleed bg-navy text-[#c3d4e6] text-[12.5px]">
@@ -16,9 +28,15 @@ export function Header() {
               <span className="text-gold">★★★★★</span> 9,2 / 327 reviews
             </span>
             <span className="opacity-40">|</span>
-            <span>
-              <strong className="text-white">NL</strong> · DE
-            </span>
+            <form action={setLocale} className="flex gap-[6px] items-center">
+              <button type="submit" name="l" value="nl" className={locale === 'nl' ? 'text-white font-bold' : 'hover:text-white'}>
+                NL
+              </button>
+              <span className="opacity-40">·</span>
+              <button type="submit" name="l" value="de" className={locale === 'de' ? 'text-white font-bold' : 'hover:text-white'}>
+                DE
+              </button>
+            </form>
           </div>
         </div>
       </div>

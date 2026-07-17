@@ -5,6 +5,8 @@ import * as migration_20260714_120318_add_all_design_pages from './20260714_1203
 import * as migration_20260716_114500_home_welcome_richtext from './20260716_114500_home_welcome_richtext';
 import * as migration_20260716_123825 from './20260716_123825';
 import * as migration_20260716_131322_extraveld_offerte from './20260716_131322_extraveld_offerte';
+import * as migration_20260716_144856_add_de_localization from './20260716_144856_add_de_localization';
+import * as migration_20260717_000001_seed_de_content from './20260717_000001_seed_de_content';
 
 export const migrations = [
   {
@@ -40,6 +42,16 @@ export const migrations = [
   {
     up: migration_20260716_131322_extraveld_offerte.up,
     down: migration_20260716_131322_extraveld_offerte.down,
-    name: '20260716_131322_extraveld_offerte'
+    name: '20260716_131322_extraveld_offerte',
+  },
+  {
+    up: migration_20260716_144856_add_de_localization.up,
+    down: migration_20260716_144856_add_de_localization.down,
+    name: '20260716_144856_add_de_localization'
+  },
+  {
+    up: migration_20260717_000001_seed_de_content.up,
+    down: migration_20260717_000001_seed_de_content.down,
+    name: '20260717_000001_seed_de_content',
   },
 ];

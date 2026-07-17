@@ -23,6 +23,18 @@ export default buildConfig({
   },
   collections: [Media, Users],
   globals: contentGlobals,
+  // Field-level i18n. nl is the design/default locale; de is the German
+  // translation. fallback:true → any field not yet translated in de shows the
+  // nl value, so German pages are never blank. Which fields are translatable is
+  // set centrally in src/content/globals.ts (all copy; images stay shared).
+  localization: {
+    locales: [
+      { label: 'Nederlands', code: 'nl' },
+      { label: 'Deutsch', code: 'de' },
+    ],
+    defaultLocale: 'nl',
+    fallback: true,
+  },
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

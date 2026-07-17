@@ -86,7 +86,7 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  fallbackLocale: null;
+  fallbackLocale: ('false' | 'none' | 'null') | false | null | ('nl' | 'de') | ('nl' | 'de')[];
   globals: {
     home: Home;
     'veranda-s': Veranda;
@@ -159,7 +159,7 @@ export interface Config {
     'zakelijk-projectbouw': ZakelijkProjectbouwSelect<false> | ZakelijkProjectbouwSelect<true>;
     contact: ContactSelect<false> | ContactSelect<true>;
   };
-  locale: null;
+  locale: 'nl' | 'de';
   widgets: {
     collections: CollectionsWidget;
   };
