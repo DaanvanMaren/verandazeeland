@@ -4,11 +4,19 @@ import React from 'react'
 import { usePathname } from 'next/navigation'
 
 import { extraLabels, nav } from './nav'
+import { tr } from './i18n'
 
 // Auto breadcrumbs: derives "Home › parent › current" from the current path
 // against the shared nav tree. Drop <Breadcrumbs /> into any page — no props.
+// Client component, so it reads the locale from the cookie. The effect defers
+// the de switch to after mount to avoid a hydration mismatch (server renders nl).
 export function Breadcrumbs() {
   const path = usePathname()
+  const [locale, setLocale] = React.useState<'nl' | 'de'>('nl')
+  React.useEffect(() => {
+    if (/(?:^|;\s*)locale=de/.test(document.cookie)) setLocale('de')
+  }, [])
+  const t = (s: string) => tr(s, locale)
   if (!path || path === '/') return null
 
   const trail: { label: string; href?: string }[] = [{ label: 'Home', href: '/' }]
@@ -32,10 +40,10 @@ export function Breadcrumbs() {
           {i > 0 && ' › '}
           {item.href ? (
             <a className="nav-a" href={item.href}>
-              {item.label}
+              {t(item.label)}
             </a>
           ) : (
-            <span className="text-navy font-semibold">{item.label}</span>
+            <span className="text-navy font-semibold">{t(item.label)}</span>
           )}
         </React.Fragment>
       ))}

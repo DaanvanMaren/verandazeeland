@@ -1,10 +1,11 @@
 import React from 'react'
 
-import { getContent, Rich } from '@/content'
+import { getContent, Rich, currentLocale } from '@/content'
 import type { Media } from '@/payload-types'
 
 import { Footer } from './_components/Footer'
 import { Header } from './_components/Header'
+import { tr } from './_components/i18n'
 import SplitText from "@/components/SplitText";
 import CountUp from "@/components/CountUp";
 
@@ -25,6 +26,8 @@ const catOverlay = 'absolute inset-0 bg-[linear-gradient(180deg,transparent_45%,
 
 export default async function HomePage() {
   const c = await getContent('home')
+  const locale = await currentLocale()
+  const t = (s: string) => tr(s, locale)
 
   return (
     <div className="max-w-[1280px] mx-auto bg-cream">
@@ -87,7 +90,7 @@ export default async function HomePage() {
           </span>
         ))}
         <span className="bg-navy text-gold rounded-full py-[13px] px-[22px] font-bold text-[14.5px]">
-          ★ <CountUp from={0} to={9.2} direction="up" duration={3} className="count-up-text" delay={0.5} /> uit <CountUp from={0} to={327} separator="," direction="up" duration={3} className="count-up-text" delay={0.5} /> reviews
+          ★ <CountUp from={0} to={9.2} direction="up" duration={3} className="count-up-text" delay={0.5} /> {t('uit')} <CountUp from={0} to={327} separator="," direction="up" duration={3} className="count-up-text" delay={0.5} /> {t('reviews')}
         </span>
       </div>
 
@@ -98,7 +101,7 @@ export default async function HomePage() {
             {c.categoriesHeading}
           </h2>
           <a className="nav-a font-bold text-brand-blue text-[15px] whitespace-nowrap" href="/veranda-s">
-            Alle producten →
+            {t('Alle producten →')}
           </a>
         </div>
         <div className="grid grid-cols-[2fr_1fr_1fr] max-[820px]:grid-cols-1 auto-rows-[210px] gap-[16px]">
@@ -106,30 +109,30 @@ export default async function HomePage() {
             <img className={`cat-img ${cover}`} src="/uploads/Profiline_Ommeren_VS_20260529_003_LR.jpg" alt="Veranda's" />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_40%,rgba(8,42,82,0.85))]" />
             <div className="absolute left-[30px] bottom-[28px] text-white">
-              <span className="bg-gold text-navy font-extrabold text-[11px] py-[5px] px-[11px] rounded-full uppercase tracking-[0.5px]">Populair</span>
-              <div className="font-display font-extrabold text-[34px] mt-[12px]">Veranda's</div>
+              <span className="bg-gold text-navy font-extrabold text-[11px] py-[5px] px-[11px] rounded-full uppercase tracking-[0.5px]">{t('Populair')}</span>
+              <div className="font-display font-extrabold text-[34px] mt-[12px]">{t("Veranda's")}</div>
               <div className="text-[15px] opacity-90">Greenline · Profiline · Linea · Cube</div>
             </div>
           </a>
           <a className={`cat-card lift ${catCard}`} href="/tuinkamers">
             <img className={`cat-img ${cover}`} src="/uploads/DJI_20260527082041_0005_D.jpg" alt="Tuinkamers" />
             <div className={catOverlay} />
-            <div className={catLabel}>Tuinkamers</div>
+            <div className={catLabel}>{t('Tuinkamers')}</div>
           </a>
           <a className={`cat-card lift ${catCard}`} href="/glazen-schuifwanden">
             <img className={`cat-img ${cover}`} src="/uploads/Profiline_Ommeren_VS_20260529_237_LR.jpg" alt="Schuifwanden" />
             <div className={catOverlay} />
-            <div className={catLabel}>Schuifwanden</div>
+            <div className={catLabel}>{t('Schuifwanden')}</div>
           </a>
           <a className={`cat-card lift ${catCard}`} href="/zonwering">
             <img className={`cat-img ${cover}`} src="/uploads/Profiline_Veenendaal_VS_20250611_430_LR.jpg" alt="Zonwering" />
             <div className={catOverlay} />
-            <div className={catLabel}>Zonwering</div>
+            <div className={catLabel}>{t('Zonwering')}</div>
           </a>
           <a className={`cat-card lift ${catCard}`} href="/accessoires">
             <img className={`cat-img ${cover}`} src="/uploads/Lamellen_Verasol_tegels02.jpg" alt="Opties" />
             <div className={catOverlay} />
-            <div className={catLabel}>Opties</div>
+            <div className={catLabel}>{t('Opties')}</div>
           </a>
         </div>
       </div>
@@ -162,10 +165,10 @@ export default async function HomePage() {
         <p className="text-center text-taupe text-[16.5px] mb-[38px]">{c.modelsSub}</p>
         <div className="grid grid-cols-4 max-[820px]:grid-cols-1 gap-[20px]">
           {[
-            { href: '/veranda-greenline', name: 'Greenline', desc: 'De voordeligste lijn, betaalbaar en strak.', img: '/uploads/Profiline_Ommeren_VS_20260529_237_LR.jpg' },
-            { href: '/veranda-profiline', name: 'Profiline', desc: 'Veelzijdig, tot 7 meter overspanning.', img: '/uploads/Profiline_Ommeren_VS_20260529_003_LR.jpg' },
-            { href: '/veranda-linea', name: 'Linea', desc: 'Modern design met een optisch vlak dak.', img: '/uploads/DJI_20260527082041_0005_D.jpg' },
-            { href: '/veranda-cube', name: 'Cube', desc: 'Exclusief, kubistisch met vlak dak.', img: '/uploads/Lamellen_Verasol_tegels02.jpg' },
+            { href: '/veranda-greenline', name: 'Greenline', desc: t('De voordeligste lijn, betaalbaar en strak.'), img: '/uploads/Profiline_Ommeren_VS_20260529_237_LR.jpg' },
+            { href: '/veranda-profiline', name: 'Profiline', desc: t('Veelzijdig, tot 7 meter overspanning.'), img: '/uploads/Profiline_Ommeren_VS_20260529_003_LR.jpg' },
+            { href: '/veranda-linea', name: 'Linea', desc: t('Modern design met een optisch vlak dak.'), img: '/uploads/DJI_20260527082041_0005_D.jpg' },
+            { href: '/veranda-cube', name: 'Cube', desc: t('Exclusief, kubistisch met vlak dak.'), img: '/uploads/Lamellen_Verasol_tegels02.jpg' },
           ].map((m) => (
             <a key={m.href} className="lift bg-panel rounded-[20px] overflow-hidden shadow-[0_8px_26px_-16px_rgba(8,42,82,0.4)] block" href={m.href}>
               <div className="h-[190px] overflow-hidden bg-navy">
@@ -174,7 +177,7 @@ export default async function HomePage() {
               <div className="p-[24px]">
                 <h3 className="font-display font-extrabold text-[21px] mb-[8px]">{m.name}</h3>
                 <p className="text-[14.5px] text-taupe leading-[1.6] mb-[14px]">{m.desc}</p>
-                <span className="font-bold text-brand-blue text-[14px]">Ontdek {m.name} →</span>
+                <span className="font-bold text-brand-blue text-[14px]">{t('Ontdek')} {m.name} →</span>
               </div>
             </a>
           ))}

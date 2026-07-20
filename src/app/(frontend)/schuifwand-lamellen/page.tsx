@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { getContent } from '@/content'
+import { getContent, currentLocale } from '@/content'
+import { tr } from '../_components/i18n'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
@@ -16,6 +17,8 @@ const cover = 'absolute inset-0 w-full h-full object-cover'
 
 export default async function SchuifwandLamellenPage() {
   const c = await getContent('schuifwand-lamellen')
+  const locale = await currentLocale()
+  const t = (s: string) => tr(s, locale)
 
   return (
     <div className="max-w-[1280px] mx-auto bg-cream">
@@ -34,8 +37,8 @@ export default async function SchuifwandLamellenPage() {
           <h1 className="font-display font-black text-[50px] leading-[1.02] mb-[20px] tracking-[-1.6px]">{c.heroTitle}</h1>
           {c.heroText && <p className="text-[18px] leading-[1.65] text-slate mb-[28px]">{c.heroText}</p>}
           <div className="flex gap-[14px] flex-wrap">
-            <a className="btn-n bg-navy text-white font-bold text-[15px] py-[15px] px-[26px] rounded-full" href="/offerte">Offerte aanvragen →</a>
-            <a className="btn-y bg-gold text-navy font-extrabold text-[15px] py-[15px] px-[26px] rounded-full" href="/glazen-schuifwanden">Terug naar Schuifwanden</a>
+            <a className="btn-n bg-navy text-white font-bold text-[15px] py-[15px] px-[26px] rounded-full" href="/offerte">{t('Offerte aanvragen →')}</a>
+            <a className="btn-y bg-gold text-navy font-extrabold text-[15px] py-[15px] px-[26px] rounded-full" href="/glazen-schuifwanden">{t('Terug naar Schuifwanden')}</a>
           </div>
         </div>
         <div className="relative rounded-[22px] overflow-hidden min-h-[420px] bg-navy">

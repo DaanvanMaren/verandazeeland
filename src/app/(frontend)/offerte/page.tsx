@@ -1,11 +1,12 @@
 import React from 'react'
 
-import { getContent } from '@/content'
+import { getContent, currentLocale } from '@/content'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
+import { tr } from '../_components/i18n'
 
 export const metadata = { title: 'Offerte aanvragen | Veranda Zeeland' }
 
@@ -19,6 +20,8 @@ const infoLabel = 'text-gold font-bold text-[13px] uppercase tracking-[0.5px] mb
 // Reads the shared `contact` global — the offerte form fields live there.
 export default async function OffertePage() {
   const c = await getContent('contact')
+  const locale = await currentLocale()
+  const t = (s: string) => tr(s, locale)
 
   return (
     <div className="max-w-[1280px] mx-auto bg-cream">
@@ -29,7 +32,7 @@ export default async function OffertePage() {
       {/* intro */}
       <div className="pt-[24px] px-[40px] pb-[8px] max-[600px]:px-[16px] max-w-[720px]">
         <span className="inline-block bg-gold text-navy font-extrabold text-[12px] tracking-[1px] uppercase py-[6px] px-[13px] rounded-full mb-[18px]">
-          Vrijblijvend & op maat
+          {t('Vrijblijvend & op maat')}
         </span>
         <h1 className="font-display font-black text-[48px] leading-[1] mb-[14px] tracking-[-1.6px]">{c.formHeading}</h1>
         {c.formIntro && <p className="text-[18px] leading-[1.65] text-slate m-0">{c.formIntro}</p>}
@@ -68,23 +71,23 @@ export default async function OffertePage() {
           <h2 className="font-display font-extrabold text-[28px] mb-[6px] tracking-[-0.6px]">{c.formHeading}</h2>
           {c.formIntro && <p className="text-taupe text-[15px] mb-[26px]">{c.formIntro}</p>}
           <div className="grid grid-cols-2 max-[820px]:grid-cols-1 gap-[16px]">
-            <div><label>{c.formFirstName}</label><input type="text" placeholder="Uw voornaam" /></div>
-            <div><label>{c.formLastName}</label><input type="text" placeholder="Uw achternaam" /></div>
-            <div><label>{c.formEmail}</label><input type="text" placeholder="naam@voorbeeld.nl" /></div>
+            <div><label>{c.formFirstName}</label><input type="text" placeholder={t('Uw voornaam')} /></div>
+            <div><label>{c.formLastName}</label><input type="text" placeholder={t('Uw achternaam')} /></div>
+            <div><label>{c.formEmail}</label><input type="text" placeholder={t('naam@voorbeeld.nl')} /></div>
             <div><label>{c.formPhone}</label><input type="tel" placeholder="06 - ..." /></div>
             <div className="col-span-2 max-[820px]:col-auto">
               <label>{c.formInterest}</label>
               <select>
                 <option>Veranda</option>
-                <option>Tuinkamer</option>
-                <option>Schuifwanden</option>
-                <option>Zonwering</option>
-                <option>Opties</option>
-                <option>Zakelijk project</option>
-                <option>Anders / weet ik nog niet</option>
+                <option>{t('Tuinkamer')}</option>
+                <option>{t('Schuifwanden')}</option>
+                <option>{t('Zonwering')}</option>
+                <option>{t('Opties')}</option>
+                <option>{t('Zakelijk project')}</option>
+                <option>{t('Anders / weet ik nog niet')}</option>
               </select>
             </div>
-            <div className="col-span-2 max-[820px]:col-auto"><label>{c.formMessage}</label><textarea rows={4} placeholder="Vertel ons over uw wensen, afmetingen of situatie..." /></div>
+            <div className="col-span-2 max-[820px]:col-auto"><label>{c.formMessage}</label><textarea rows={4} placeholder={t('Vertel ons over uw wensen, afmetingen of situatie...')} /></div>
           </div>
           <button className="btn-n mt-[20px] bg-navy text-white font-extrabold text-[15px] py-[15px] px-[30px] border-none rounded-full cursor-pointer font-[inherit]">{c.formButton}</button>
           {c.formDisclaimer && <p className="text-[12.5px] text-[#9a9078] mt-[14px] mx-0 mb-0">{c.formDisclaimer}</p>}
@@ -93,7 +96,7 @@ export default async function OffertePage() {
 
       {/* liever bellen / langskomen */}
       <div className="pt-[28px] px-[40px] pb-[60px] max-[600px]:px-[16px] text-center text-taupe text-[15px]">
-        Liever direct contact? Bel <a className="nav-a font-bold text-brand-blue" href={`tel:${(c.phone ?? '').replace(/[^0-9+]/g, '')}`}>{c.phone}</a> of <a className="nav-a font-bold text-brand-blue" href="/contact">kom langs in de showroom</a>.
+        {t('Liever direct contact? Bel')} <a className="nav-a font-bold text-brand-blue" href={`tel:${(c.phone ?? '').replace(/[^0-9+]/g, '')}`}>{c.phone}</a> {t('of')} <a className="nav-a font-bold text-brand-blue" href="/contact">{t('kom langs in de showroom')}</a>.
       </div>
 
       <Footer />

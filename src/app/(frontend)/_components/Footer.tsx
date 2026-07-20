@@ -1,8 +1,15 @@
 import React from 'react'
 
+import { currentLocale } from '@/content'
+
+import { tr } from './i18n'
+
 // Site footer. Structural/navigation markup, reused by every page. Layout/colour
 // via Tailwind utilities; .nav-a keeps its hover transition from styles.css.
-export function Footer() {
+// Fixed copy is translated via tr() (see i18n.ts); address/phone/email are kept.
+export async function Footer() {
+  const locale = await currentLocale()
+  const t = (s: string) => tr(s, locale)
   return (
     <div className="fullbleed bg-navy text-steel text-[14px]">
       <div className="bar-inner pt-[56px] px-[56px] pb-[30px]">
@@ -10,31 +17,31 @@ export function Footer() {
           <div>
             <img src="/uploads/logo-1783333745716.png" alt="Veranda Zeeland" className="h-[52px] mb-[16px]" />
             <p className="leading-[1.7] max-w-[260px]">
-              Specialist in veranda's, tuinkamers en glasschuifwanden voor heel Zeeland.
+              {t("Specialist in veranda's, tuinkamers en glasschuifwanden voor heel Zeeland.")}
             </p>
           </div>
           <div>
-            <div className="text-white font-bold mb-[14px]">Producten</div>
+            <div className="text-white font-bold mb-[14px]">{t('Producten')}</div>
             <div className="flex flex-col gap-[9px]">
-              <a className="nav-a" href="/veranda-s">Veranda's</a>
-              <a className="nav-a" href="/tuinkamers">Tuinkamers</a>
-              <a className="nav-a" href="/glazen-schuifwanden">Schuifwanden</a>
-              <a className="nav-a" href="/zonwering">Zonwering</a>
-              <a className="nav-a" href="/accessoires">Opties</a>
-              <a className="nav-a" href="/zakelijk">Zakelijk</a>
+              <a className="nav-a" href="/veranda-s">{t("Veranda's")}</a>
+              <a className="nav-a" href="/tuinkamers">{t('Tuinkamers')}</a>
+              <a className="nav-a" href="/glazen-schuifwanden">{t('Schuifwanden')}</a>
+              <a className="nav-a" href="/zonwering">{t('Zonwering')}</a>
+              <a className="nav-a" href="/accessoires">{t('Opties')}</a>
+              <a className="nav-a" href="/zakelijk">{t('Zakelijk')}</a>
             </div>
           </div>
           <div>
-            <div className="text-white font-bold mb-[14px]">Over ons</div>
+            <div className="text-white font-bold mb-[14px]">{t('Over ons')}</div>
             <div className="flex flex-col gap-[9px]">
-              <a className="nav-a" href="/contact#over-ons">Over ons</a>
-              <a className="nav-a" href="/contact#showroom">Showroom</a>
-              <a className="nav-a" href="/offerte">Offerte aanvragen</a>
-              <a className="nav-a" href="/contact">Contact</a>
+              <a className="nav-a" href="/contact#over-ons">{t('Over ons')}</a>
+              <a className="nav-a" href="/contact#showroom">{t('Showroom')}</a>
+              <a className="nav-a" href="/offerte">{t('Offerte aanvragen')}</a>
+              <a className="nav-a" href="/contact">{t('Contact')}</a>
             </div>
           </div>
           <div>
-            <div className="text-white font-bold mb-[14px]">Contact</div>
+            <div className="text-white font-bold mb-[14px]">{t('Contact')}</div>
             <div className="leading-[1.8]">
               <a className="nav-a" href="https://maps.google.com/?q=De+Stekelweie+2,+4353+RX+Serooskerke" target="_blank" rel="noopener">
                 De Stekelweie 2<br />4353 RX Serooskerke
@@ -44,12 +51,12 @@ export function Footer() {
               <br />
               <a className="nav-a" href="mailto:info@verandazeeland.nl">E: info@verandazeeland.nl</a>
             </div>
-            <div className="mt-[12px] text-gold">★★★★★ 9,2 · 327 reviews</div>
+            <div className="mt-[12px] text-gold">★★★★★ 9,2 · 327 {t('reviews')}</div>
           </div>
         </div>
         <div className="pt-[22px] flex justify-between flex-wrap gap-[8px] text-[12.5px] opacity-70">
           <span>© 2019–2026 Veranda Zeeland</span>
-          <span>Algemene voorwaarden · Privacy · Disclaimer</span>
+          <span>{t('Algemene voorwaarden · Privacy · Disclaimer')}</span>
         </div>
       </div>
     </div>

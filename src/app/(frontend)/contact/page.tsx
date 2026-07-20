@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { getContent } from '@/content'
+import { getContent, currentLocale } from '@/content'
+import { tr } from '../_components/i18n'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
@@ -20,6 +21,8 @@ const chip = 'bg-white rounded-full py-[11px] px-[20px] font-semibold text-[14px
 
 export default async function ContactPage() {
   const c = await getContent('contact')
+  const locale = await currentLocale()
+  const t = (s: string) => tr(s, locale)
 
   return (
     <div className="max-w-[1280px] mx-auto bg-cream">
@@ -74,7 +77,7 @@ export default async function ContactPage() {
               {c.hoursDays}<br />{c.hoursTime}<br /><span className="text-steel">{c.hoursNote}</span>
             </div>
           </div>
-          <a className="btn-y inline-block mt-[30px] bg-gold text-navy font-extrabold text-[15px] py-[14px] px-[26px] rounded-full" href="/offerte">Vraag een offerte aan →</a>
+          <a className="btn-y inline-block mt-[30px] bg-gold text-navy font-extrabold text-[15px] py-[14px] px-[26px] rounded-full" href="/offerte">{t('Vraag een offerte aan →')}</a>
         </div>
         {/* kaart / sfeerbeeld */}
         <div className="relative min-h-[420px] bg-navy-light">
