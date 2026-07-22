@@ -9,6 +9,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Tuinkamer met vlak dak | Veranda Zeeland',
+  description:
+    'Tuinkamer met vlak dak: strak en modern, op basis van de Linea of Cube. Een volwaardige extra leefruimte, volledig op maat inclusief montage in Zeeland.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

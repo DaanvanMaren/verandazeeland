@@ -9,6 +9,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Comfort dat gasten waarderen | Zakelijk | Veranda Zeeland',
+  description:
+    'Veranda’s en tuinkamers voor vakantieparken en recreatie: langer verhuurseizoen en hogere bezetting. Projectmatige uitrol door Veranda Zeeland.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

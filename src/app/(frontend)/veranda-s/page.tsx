@@ -10,6 +10,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: "Veranda's — Greenline, Profiline, Linea & Cube | Veranda Zeeland",
+  description:
+    'Vijf productlijnen aluminium veranda’s van Verasol: Greenline, Profiline, Linea, Cube en Pergola. Op maat gemaakt, inclusief inmeten en montage in heel Zeeland.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

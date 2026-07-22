@@ -72,4 +72,10 @@ export const nav: NavNode[] = [
 export const extraLabels: Record<string, string> = {
   '/offerte': 'Offerte aanvragen',
   '/contact': 'Contact',
+  '/veranda-prijzen': 'Veranda prijzen',
+  '/veranda-vergunning': 'Veranda vergunning',
+  '/veranda-laten-plaatsen': 'Veranda laten plaatsen',
+  '/veranda-middelburg': 'Veranda Middelburg',
+  '/veranda-goes': 'Veranda Goes',
+  '/veranda-vlissingen': 'Veranda Vlissingen',
 }

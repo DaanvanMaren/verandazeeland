@@ -7,7 +7,11 @@ import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = { title: 'Onderdakzonwering | Veranda Zeeland' }
+export const metadata = {
+  title: 'Onderdakzonwering | Veranda Zeeland',
+  description:
+    'Onderdakzonwering: elegant weggewerkt onder het verandadak, houdt warmte buiten en is elektrisch bedienbaar. Op maat voor elke veranda, inclusief montage.',
+}
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

@@ -17,11 +17,17 @@ import { tuinkamerHellendDak } from './tuinkamer-hellend-dak'
 import { tuinkamerVlakDak } from './tuinkamer-vlak-dak'
 import { tuinkamers } from './tuinkamers'
 import { verandaCube } from './veranda-cube'
+import { verandaGoes } from './veranda-goes'
 import { verandaGreenline } from './veranda-greenline'
+import { verandaLatenPlaatsen } from './veranda-laten-plaatsen'
 import { verandaLinea } from './veranda-linea'
+import { verandaMiddelburg } from './veranda-middelburg'
 import { verandaPergola } from './veranda-pergola'
+import { verandaPrijzen } from './veranda-prijzen'
 import { verandaProfiline } from './veranda-profiline'
 import { verandaS } from './veranda-s'
+import { verandaVergunning } from './veranda-vergunning'
+import { verandaVlissingen } from './veranda-vlissingen'
 import { zakelijk } from './zakelijk'
 import { zakelijkHoreca } from './zakelijk-horeca'
 import { zakelijkKantoren } from './zakelijk-kantoren'
@@ -90,4 +96,10 @@ export const contentGlobals = [
   zakelijkZorg,
   zakelijkProjectbouw,
   contact,
+  verandaPrijzen,
+  verandaVergunning,
+  verandaLatenPlaatsen,
+  verandaMiddelburg,
+  verandaGoes,
+  verandaVlissingen,
 ].map(localize)

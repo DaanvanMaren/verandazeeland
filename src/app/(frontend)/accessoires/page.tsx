@@ -9,6 +9,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Accessoires | Veranda Zeeland',
+  description:
+    'Maak uw veranda compleet met opties: voor- en zijwanden, dakbedekking, ledverlichting, fundering en onderhoudsproducten. Bekijk alle mogelijkheden.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

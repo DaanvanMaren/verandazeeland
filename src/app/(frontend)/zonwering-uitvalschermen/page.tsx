@@ -9,6 +9,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Uitvalschermen | Veranda Zeeland',
+  description:
+    'Uitvalschermen: klassieke zonwering voor ramen en gevels, in vele doekkleuren. Effectief tegen zon en warmte, op maat gemaakt en gemonteerd in heel Zeeland.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

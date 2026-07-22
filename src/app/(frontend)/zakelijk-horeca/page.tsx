@@ -9,6 +9,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Meer terras, langer seizoen | Zakelijk | Veranda Zeeland',
+  description:
+    'Terrasoverkappingen voor horeca en leisure: langer seizoen, meer couverts en een beschut terras bij elk weer. Maatwerk en montage door Veranda Zeeland.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

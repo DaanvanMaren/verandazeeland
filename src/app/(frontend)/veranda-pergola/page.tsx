@@ -7,7 +7,11 @@ import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = { title: 'Pergola-overkapping veranda | Veranda Zeeland' }
+export const metadata = {
+  title: 'Pergola-overkapping veranda | Veranda Zeeland',
+  description:
+    'De Pergola-overkapping: zonwering op een vrijstaande constructie, ideaal voor grote terrassen zonder gevelmontage, vanaf € 5.791. Op maat voor heel Zeeland.',
+}
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

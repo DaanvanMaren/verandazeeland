@@ -9,6 +9,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Ledverlichting | Veranda Zeeland',
+  description:
+    'Ledverlichting voor uw veranda: dimbare spots in het dak of de goot, sfeervol en energiezuinig. Ingebouwd tijdens de montage, bedienbaar op afstand.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

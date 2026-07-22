@@ -9,6 +9,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Voor- en zijwanden | Veranda Zeeland',
+  description:
+    'Voor- en zijwanden voor uw veranda: van borstwering tot volledig glas. Meer beschutting en comfort, later altijd uit te breiden. Op maat gemaakt in Zeeland.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

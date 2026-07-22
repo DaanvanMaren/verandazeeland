@@ -7,7 +7,11 @@ import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = { title: 'Profiline veranda | Veranda Zeeland' }
+export const metadata = {
+  title: 'Profiline veranda | Veranda Zeeland',
+  description:
+    'De Profiline veranda: veelzijdig maatwerk met overspanningen tot 7 meter, vanaf € 2.059. Uit te bouwen tot complete tuinkamer. Inclusief montage in heel Zeeland.',
+}
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

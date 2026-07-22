@@ -36,6 +36,15 @@ export const deUI: Record<string, string> = {
   Zorginstellingen: 'Pflegeeinrichtungen',
   'Projectbouw & Ontwikkeling': 'Projektbau & Entwicklung',
 
+  // SEO landing pages (breadcrumbs + footer links)
+  'Veranda prijzen': 'Preise Terrassenüberdachung',
+  'Veranda vergunning': 'Genehmigung Terrassenüberdachung',
+  'Veranda laten plaatsen': 'Überdachung montieren lassen',
+  'Veranda Middelburg': 'Überdachung Middelburg',
+  'Veranda Goes': 'Überdachung Goes',
+  'Veranda Vlissingen': 'Überdachung Vlissingen',
+  Informatie: 'Informationen',
+
   // buttons / links / eyebrows
   'Offerte aanvragen': 'Angebot anfordern',
   'Offerte aanvragen →': 'Angebot anfordern →',

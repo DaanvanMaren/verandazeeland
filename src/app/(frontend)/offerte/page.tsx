@@ -8,7 +8,11 @@ import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 import { tr } from '../_components/i18n'
 
-export const metadata = { title: 'Offerte aanvragen | Veranda Zeeland' }
+export const metadata = {
+  title: 'Offerte aanvragen | Veranda Zeeland',
+  description:
+    'Vraag een vrijblijvende offerte aan voor uw veranda, tuinkamer, schuifwand of zonwering. Gratis inmeten aan huis, heldere prijs inclusief montage.',
+}
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

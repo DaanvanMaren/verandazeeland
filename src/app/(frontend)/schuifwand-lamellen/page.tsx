@@ -8,7 +8,11 @@ import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = { title: 'Lamellen schuifwanden | Veranda Zeeland' }
+export const metadata = {
+  title: 'Lamellen schuifwanden | Veranda Zeeland',
+  description:
+    'Lamellen schuifwanden: regelbare houtlook- of aluminium lamellen voor privacy, zon- en windregulering. Stijlvol en op maat voor uw veranda of terras.',
+}
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

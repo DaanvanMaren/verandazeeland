@@ -9,6 +9,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Zakelijk | Veranda Zeeland',
+  description:
+    'Zakelijke overkappingen en terrasoplossingen: voor horeca, kantoren, onderwijs, zorg, vakantieparken en projectbouw. Advies, maatwerk en montage in Zeeland.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

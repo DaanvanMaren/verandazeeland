@@ -9,6 +9,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Series op maat voor uw project | Zakelijk | Veranda Zeeland',
+  description:
+    'Overkappingen voor projectbouw en ontwikkeling: veranda’s en tuinkamers projectmatig meegeleverd in nieuwbouw of renovatie. Partner voor bouwers in Zeeland.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

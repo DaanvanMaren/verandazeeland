@@ -9,6 +9,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Fundering | Veranda Zeeland',
+  description:
+    'Een goede fundering onder uw veranda of tuinkamer: puntfundering of ringbalk, door ons verzorgd. Stevig, vorstvrij en geschikt voor elke ondergrond.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

@@ -122,6 +122,12 @@ export interface Config {
     'zakelijk-zorg': ZakelijkZorg;
     'zakelijk-projectbouw': ZakelijkProjectbouw;
     contact: Contact;
+    'veranda-prijzen': VerandaPrijzen;
+    'veranda-vergunning': VerandaVergunning;
+    'veranda-laten-plaatsen': VerandaLatenPlaatsen;
+    'veranda-middelburg': VerandaMiddelburg;
+    'veranda-goes': VerandaGo;
+    'veranda-vlissingen': VerandaVlissingen;
   };
   globalsSelect: {
     home: HomeSelect<false> | HomeSelect<true>;
@@ -158,6 +164,12 @@ export interface Config {
     'zakelijk-zorg': ZakelijkZorgSelect<false> | ZakelijkZorgSelect<true>;
     'zakelijk-projectbouw': ZakelijkProjectbouwSelect<false> | ZakelijkProjectbouwSelect<true>;
     contact: ContactSelect<false> | ContactSelect<true>;
+    'veranda-prijzen': VerandaPrijzenSelect<false> | VerandaPrijzenSelect<true>;
+    'veranda-vergunning': VerandaVergunningSelect<false> | VerandaVergunningSelect<true>;
+    'veranda-laten-plaatsen': VerandaLatenPlaatsenSelect<false> | VerandaLatenPlaatsenSelect<true>;
+    'veranda-middelburg': VerandaMiddelburgSelect<false> | VerandaMiddelburgSelect<true>;
+    'veranda-goes': VerandaGoesSelect<false> | VerandaGoesSelect<true>;
+    'veranda-vlissingen': VerandaVlissingenSelect<false> | VerandaVlissingenSelect<true>;
   };
   locale: 'nl' | 'de';
   widgets: {
@@ -2070,6 +2082,192 @@ export interface Contact {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-prijzen".
+ */
+export interface VerandaPrijzen {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroImage?: (number | null) | Media;
+  sections?:
+    | {
+        title?: string | null;
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  faqHeading?: string | null;
+  faqs?:
+    | {
+        question?: string | null;
+        answer?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-vergunning".
+ */
+export interface VerandaVergunning {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroImage?: (number | null) | Media;
+  sections?:
+    | {
+        title?: string | null;
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  faqHeading?: string | null;
+  faqs?:
+    | {
+        question?: string | null;
+        answer?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-laten-plaatsen".
+ */
+export interface VerandaLatenPlaatsen {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroImage?: (number | null) | Media;
+  sections?:
+    | {
+        title?: string | null;
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  faqHeading?: string | null;
+  faqs?:
+    | {
+        question?: string | null;
+        answer?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-middelburg".
+ */
+export interface VerandaMiddelburg {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroImage?: (number | null) | Media;
+  sections?:
+    | {
+        title?: string | null;
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  faqHeading?: string | null;
+  faqs?:
+    | {
+        question?: string | null;
+        answer?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-goes".
+ */
+export interface VerandaGo {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroImage?: (number | null) | Media;
+  sections?:
+    | {
+        title?: string | null;
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  faqHeading?: string | null;
+  faqs?:
+    | {
+        question?: string | null;
+        answer?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-vlissingen".
+ */
+export interface VerandaVlissingen {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroImage?: (number | null) | Media;
+  sections?:
+    | {
+        title?: string | null;
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  faqHeading?: string | null;
+  faqs?:
+    | {
+        question?: string | null;
+        answer?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "home_select".
  */
 export interface HomeSelect<T extends boolean = true> {
@@ -3496,6 +3694,192 @@ export interface ContactSelect<T extends boolean = true> {
         name?: T;
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-prijzen_select".
+ */
+export interface VerandaPrijzenSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroImage?: T;
+  sections?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+        id?: T;
+      };
+  faqHeading?: T;
+  faqs?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-vergunning_select".
+ */
+export interface VerandaVergunningSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroImage?: T;
+  sections?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+        id?: T;
+      };
+  faqHeading?: T;
+  faqs?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-laten-plaatsen_select".
+ */
+export interface VerandaLatenPlaatsenSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroImage?: T;
+  sections?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+        id?: T;
+      };
+  faqHeading?: T;
+  faqs?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-middelburg_select".
+ */
+export interface VerandaMiddelburgSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroImage?: T;
+  sections?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+        id?: T;
+      };
+  faqHeading?: T;
+  faqs?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-goes_select".
+ */
+export interface VerandaGoesSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroImage?: T;
+  sections?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+        id?: T;
+      };
+  faqHeading?: T;
+  faqs?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-vlissingen_select".
+ */
+export interface VerandaVlissingenSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroImage?: T;
+  sections?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+        id?: T;
+      };
+  faqHeading?: T;
+  faqs?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

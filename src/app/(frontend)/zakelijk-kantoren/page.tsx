@@ -9,6 +9,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Haal meer uit je bedrijfspand | Zakelijk | Veranda Zeeland',
+  description:
+    'Overkappingen voor kantoren en commercieel vastgoed: buitenwerkplekken, rookruimtes en representatieve entrees. Zakelijk maatwerk van Veranda Zeeland.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

@@ -9,6 +9,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Bovendakzonwering | Veranda Zeeland',
+  description:
+    'Bovendakzonwering: de meest effectieve warmtewering, gemonteerd bóven het verandadak. Zonlicht tegenhouden voordat het glas raakt. Op maat gemaakt in Zeeland.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

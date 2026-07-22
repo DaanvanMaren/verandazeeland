@@ -54,6 +54,16 @@ export async function Footer() {
             <div className="mt-[12px] text-gold">★★★★★ 9,2 · 327 {t('reviews')}</div>
           </div>
         </div>
+        {/* SEO landing pages — internal links so crawlers reach them from every page */}
+        <div className="pt-[18px] pb-[4px] flex flex-wrap gap-x-[18px] gap-y-[6px] text-[12.5px]">
+          <span className="text-white font-bold">{t('Informatie')}:</span>
+          <a className="nav-a" href="/veranda-prijzen">{t('Veranda prijzen')}</a>
+          <a className="nav-a" href="/veranda-vergunning">{t('Veranda vergunning')}</a>
+          <a className="nav-a" href="/veranda-laten-plaatsen">{t('Veranda laten plaatsen')}</a>
+          <a className="nav-a" href="/veranda-middelburg">{t('Veranda Middelburg')}</a>
+          <a className="nav-a" href="/veranda-goes">{t('Veranda Goes')}</a>
+          <a className="nav-a" href="/veranda-vlissingen">{t('Veranda Vlissingen')}</a>
+        </div>
         <div className="pt-[22px] flex justify-between flex-wrap gap-[8px] text-[12.5px] opacity-70">
           <span>© 2019–2026 Veranda Zeeland</span>
           <span>{t('Algemene voorwaarden · Privacy · Disclaimer')}</span>

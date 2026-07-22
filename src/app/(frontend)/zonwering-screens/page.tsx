@@ -9,6 +9,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Screens | Veranda Zeeland',
+  description:
+    'Verticale screens: doorzicht naar buiten, geen inkijk en geen felle zon. Windvast en elektrisch bedienbaar, op maat voor veranda, tuinkamer of gevel.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

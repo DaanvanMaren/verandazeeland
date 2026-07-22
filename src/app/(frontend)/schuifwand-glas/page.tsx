@@ -8,7 +8,11 @@ import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = { title: 'Glazen schuifwanden | Veranda Zeeland' }
+export const metadata = {
+  title: 'Glazen schuifwand voor uw veranda | Veranda Zeeland',
+  description:
+    'Glazen schuifwanden op maat: heldere panelen die vrijwel volledig opzij schuiven. Windvrij zitten met vrij uitzicht op de tuin. Inclusief montage in Zeeland.',
+}
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

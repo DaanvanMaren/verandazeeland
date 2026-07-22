@@ -7,6 +7,8 @@ import * as migration_20260716_123825 from './20260716_123825';
 import * as migration_20260716_131322_extraveld_offerte from './20260716_131322_extraveld_offerte';
 import * as migration_20260716_144856_add_de_localization from './20260716_144856_add_de_localization';
 import * as migration_20260717_000001_seed_de_content from './20260717_000001_seed_de_content';
+import * as migration_20260722_084049_add_seo_pages from './20260722_084049_add_seo_pages';
+import * as migration_20260722_084100_seed_de_seo_pages from './20260722_084100_seed_de_seo_pages';
 
 export const migrations = [
   {
@@ -47,11 +49,21 @@ export const migrations = [
   {
     up: migration_20260716_144856_add_de_localization.up,
     down: migration_20260716_144856_add_de_localization.down,
-    name: '20260716_144856_add_de_localization'
+    name: '20260716_144856_add_de_localization',
   },
   {
     up: migration_20260717_000001_seed_de_content.up,
     down: migration_20260717_000001_seed_de_content.down,
     name: '20260717_000001_seed_de_content',
+  },
+  {
+    up: migration_20260722_084049_add_seo_pages.up,
+    down: migration_20260722_084049_add_seo_pages.down,
+    name: '20260722_084049_add_seo_pages'
+  },
+  {
+    up: migration_20260722_084100_seed_de_seo_pages.up,
+    down: migration_20260722_084100_seed_de_seo_pages.down,
+    name: '20260722_084100_seed_de_seo_pages',
   },
 ];

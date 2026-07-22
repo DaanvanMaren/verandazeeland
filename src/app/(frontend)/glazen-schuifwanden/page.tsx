@@ -9,6 +9,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Glazen schuifwanden | Veranda Zeeland',
+  description:
+    'Glazen schuifwanden maken van uw veranda een tuinkamer: windvrij, licht en met vrij uitzicht. Bekijk glas, aluminium, lamellen en steellook uitvoeringen.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

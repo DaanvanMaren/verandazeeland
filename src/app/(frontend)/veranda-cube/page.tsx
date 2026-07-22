@@ -7,7 +7,11 @@ import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = { title: 'Cube veranda | Veranda Zeeland' }
+export const metadata = {
+  title: 'Cube veranda | Veranda Zeeland',
+  description:
+    'De Cube is het designtopmodel van Verasol: volledig vlak dak, kubistisch profiel en verborgen afwatering, vanaf € 7.149. Bekijk de details en mogelijkheden.',
+}
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

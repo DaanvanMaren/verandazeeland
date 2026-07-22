@@ -7,7 +7,11 @@ import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = { title: 'Tuinkamer met hellend dak | Veranda Zeeland' }
+export const metadata = {
+  title: 'Tuinkamer met hellend dak | Veranda Zeeland',
+  description:
+    'Tuinkamer met hellend dak: klassiek, licht en ruimtelijk, gebouwd op de Profiline-constructie. Op maat gemaakt en gemonteerd door ons eigen team in Zeeland.',
+}
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

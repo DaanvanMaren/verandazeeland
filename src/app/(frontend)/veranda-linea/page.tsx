@@ -7,7 +7,11 @@ import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = { title: 'Linea veranda | Veranda Zeeland' }
+export const metadata = {
+  title: 'Linea veranda | Veranda Zeeland',
+  description:
+    'De Linea veranda combineert een modern, optisch vlak dak met een rank aluminium profiel, vanaf € 5.469. Op maat gemaakt en gemonteerd door Veranda Zeeland.',
+}
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

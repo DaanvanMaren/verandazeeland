@@ -10,6 +10,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Aluminium schuifpui | Veranda Zeeland',
+  description:
+    'Aluminium schuifpuien: geïsoleerd, onderhoudsarm en in elke RAL-kleur. De luxe afsluiting van uw tuinkamer of veranda. Op maat gemaakt en gemonteerd.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

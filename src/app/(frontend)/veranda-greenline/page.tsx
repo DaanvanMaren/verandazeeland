@@ -7,7 +7,11 @@ import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = { title: 'Greenline veranda | Veranda Zeeland' }
+export const metadata = {
+  title: 'Greenline veranda | Veranda Zeeland',
+  description:
+    'De Greenline is de voordeligste Verasol-veranda, vanaf € 1.259. Sterk, strak en ook als zelfbouwpakket leverbaar. Bekijk de mogelijkheden en vraag een offerte aan.',
+}
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

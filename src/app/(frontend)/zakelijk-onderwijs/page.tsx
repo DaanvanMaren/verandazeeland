@@ -9,6 +9,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Veilig, comfortabel en inspirerend | Zakelijk | Veranda Zeeland',
+  description:
+    'Overkappingen voor onderwijs en scholen: overdekte pleinen, fietsenstallingen en buitenlokalen. Veilig, degelijk en op maat gemaakt door Veranda Zeeland.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

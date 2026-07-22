@@ -9,6 +9,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Tuinkamers | Veranda Zeeland',
+  description:
+    'Een tuinkamer van Veranda Zeeland: het hele jaar buiten zitten in een lichte, beschutte ruimte. Met hellend of vlak dak, volledig op maat inclusief montage.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

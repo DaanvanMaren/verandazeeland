@@ -10,6 +10,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Steellook schuifwanden | Veranda Zeeland',
+  description:
+    'Steellook schuifwanden: het industriële stalen-kozijnen-effect met het gemak van aluminium. Karaktervolle afsluiting van veranda of tuinkamer, op maat.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

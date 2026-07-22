@@ -7,7 +7,11 @@ import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = { title: 'Onderhoudsproducten | Veranda Zeeland' }
+export const metadata = {
+  title: 'Onderhoudsproducten | Veranda Zeeland',
+  description:
+    'Onderhoudsproducten voor veranda en schuifwanden: reinigers voor aluminium, glas en polycarbonaat. Zo blijft uw overkapping jarenlang als nieuw.',
+}
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

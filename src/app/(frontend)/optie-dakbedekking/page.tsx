@@ -9,6 +9,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Dakbedekking | Veranda Zeeland',
+  description:
+    'Dakbedekking voor uw veranda: helder of opaal polycarbonaat, gehard glas of geïsoleerde panelen. De voor- en nadelen per daktype op een rij.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>

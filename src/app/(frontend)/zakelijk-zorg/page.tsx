@@ -9,6 +9,8 @@ import { Header } from '../_components/Header'
 
 export const metadata = {
   title: 'Rust, comfort en veiligheid voorop | Zakelijk | Veranda Zeeland',
+  description:
+    'Overkappingen voor zorginstellingen: beschutte buitenruimtes waar bewoners veilig van buiten genieten. Doordacht maatwerk en montage door Veranda Zeeland.',
 }
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
