@@ -32,7 +32,7 @@ export default async function HomePage() {
   return (
     <div className="max-w-[1280px] mx-auto bg-cream">
       <Header />
-
+      {/*commentaar om nieuwe commit te pushen*/}
       {/* hero */}
       <div className="pt-[20px] px-[40px] pb-[40px] max-[600px]:px-[16px]">
         <div className="relative rounded-[26px] overflow-hidden min-h-[580px] flex items-end bg-navy">
