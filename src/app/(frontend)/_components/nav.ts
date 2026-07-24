@@ -66,6 +66,7 @@ export const nav: NavNode[] = [
       { label: 'Projectbouw & Ontwikkeling', href: '/zakelijk-projectbouw' },
     ],
   },
+  { label: 'Projecten', href: '/projecten' },
 ]
 
 // Pages that aren't in the menu but still need a breadcrumb label.

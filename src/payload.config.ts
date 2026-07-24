@@ -8,6 +8,7 @@ import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { Projects } from './collections/Projects'
 import { contentGlobals } from './content/globals'
 import { migrations } from './migrations'
 
@@ -21,7 +22,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Media, Users],
+  collections: [Media, Projects, Users],
   globals: contentGlobals,
   // Field-level i18n. nl is the design/default locale; de is the German
   // translation. fallback:true → any field not yet translated in de shows the

@@ -123,6 +123,9 @@ export async function Header() {
                 </div>
               </div>
             </div>
+            <div className="menu-item">
+              <a className="nav-a" href="/projecten">{t('Projecten')}</a>
+            </div>
           </nav>
           <a className="btn-n bg-navy text-white font-bold text-[14px] py-[13px] px-[22px] rounded-full" href="/offerte">
             {t('Offerte aanvragen')}

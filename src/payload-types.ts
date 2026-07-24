@@ -68,6 +68,7 @@ export interface Config {
   blocks: {};
   collections: {
     media: Media;
+    projects: Project;
     users: User;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
@@ -77,6 +78,7 @@ export interface Config {
   collectionsJoins: {};
   collectionsSelect: {
     media: MediaSelect<false> | MediaSelect<true>;
+    projects: ProjectsSelect<false> | ProjectsSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -223,6 +225,69 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects".
+ */
+export interface Project {
+  id: number;
+  /**
+   * Naam van het project, bv. "Profiline veranda Kamperland".
+   */
+  title: string;
+  /**
+   * URL-deel: /projecten/<slug>. Kleine letters, koppeltekens.
+   */
+  slug: string;
+  /**
+   * Plaats, bv. "Kamperland".
+   */
+  location?: string | null;
+  /**
+   * Productlijn van de veranda.
+   */
+  productLine?: ('Greenline' | 'Profiline' | 'Linea' | 'Cube' | 'Pergola') | null;
+  /**
+   * Jaar van oplevering (optioneel).
+   */
+  year?: string | null;
+  /**
+   * Korte omschrijving bovenaan de detailpagina (1–2 zinnen).
+   */
+  intro?: string | null;
+  /**
+   * Uitgebreide tekst over het project (koppen, alinea’s, opsommingen).
+   */
+  body?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Uitgelichte foto op de overzichtspagina. Leeg = eerste foto uit de galerij.
+   */
+  coverImage?: (number | null) | Media;
+  /**
+   * Alle foto’s van dit project. Sleep meerdere bestanden tegelijk om ze samen te uploaden.
+   */
+  images?: (number | Media)[] | null;
+  /**
+   * Uit = verborgen op de website.
+   */
+  published?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface User {
@@ -273,6 +338,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'projects';
+        value: number | Project;
       } | null)
     | ({
         relationTo: 'users';
@@ -337,6 +406,24 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects_select".
+ */
+export interface ProjectsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  location?: T;
+  productLine?: T;
+  year?: T;
+  intro?: T;
+  body?: T;
+  coverImage?: T;
+  images?: T;
+  published?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

@@ -29,6 +29,7 @@ export async function Footer() {
               <a className="nav-a" href="/zonwering">{t('Zonwering')}</a>
               <a className="nav-a" href="/accessoires">{t('Opties')}</a>
               <a className="nav-a" href="/zakelijk">{t('Zakelijk')}</a>
+              <a className="nav-a" href="/projecten">{t('Projecten')}</a>
             </div>
           </div>
           <div>
