@@ -13,6 +13,12 @@ export const nav: NavNode[] = [
       { label: 'Linea', href: '/veranda-linea' },
       { label: 'Cube', href: '/veranda-cube' },
       { label: 'Pergola-overkapping', href: '/veranda-pergola' },
+      { label: 'Palazzo', href: '/veranda-palazzo' },
+      { label: 'Palazzo Sqope', href: '/palazzo-sqope' },
+      { label: 'Palazzo Lamellendak', href: '/palazzo-lamellendak' },
+      { label: 'Pext', href: '/veranda-pext' },
+      { label: 'Pext houten veranda', href: '/pext-veranda' },
+      { label: 'Pext lichtstraat', href: '/pext-lichtstraat' },
     ],
   },
   {

@@ -49,24 +49,38 @@ export async function Header() {
             <img src="/uploads/logo-1783333745716.png" alt="Veranda Zeeland" className="h-[56px] w-auto block" />
           </a>
           <input type="checkbox" id="navtoggle" className="navtoggle" />
-          <label htmlFor="navtoggle" className="hamburger" aria-label="Menu openen">
-            ☰
-          </label>
           <nav className="mainnav flex gap-[24px] text-[15px] font-semibold items-center">
             <div className="menu-item">
+              <input type="checkbox" id="sm-veranda" className="submenu-toggle" />
               <a className="nav-a" href="/veranda-s">{t("Veranda's")}</a>
+              <label htmlFor="sm-veranda" className="submenu-caret" aria-label="Submenu"><span>▾</span></label>
               <div className="dropdown">
-                <div className="dropdown-inner">
-                  <a href="/veranda-greenline">Greenline</a>
-                  <a href="/veranda-profiline">Profiline</a>
-                  <a href="/veranda-linea">Linea</a>
-                  <a href="/veranda-cube">Cube</a>
-                  <a href="/veranda-pergola">{t('Pergola-overkapping')}</a>
+                <div className="dropdown-inner dropdown-mega">
+                  <div className="dropdown-col">
+                    <a className="dropdown-h" href="/veranda-s">Verasol</a>
+                    <a href="/veranda-greenline">Greenline</a>
+                    <a href="/veranda-profiline">Profiline</a>
+                    <a href="/veranda-linea">Linea</a>
+                    <a href="/veranda-cube">Cube</a>
+                    <a href="/veranda-pergola">{t('Pergola-overkapping')}</a>
+                  </div>
+                  <div className="dropdown-col">
+                    <a className="dropdown-h" href="/veranda-palazzo">Palazzo</a>
+                    <a href="/palazzo-sqope">Sqope</a>
+                    <a href="/palazzo-lamellendak">Lamellendak</a>
+                  </div>
+                  <div className="dropdown-col">
+                    <a className="dropdown-h" href="/veranda-pext">Pext</a>
+                    <a href="/pext-veranda">{t('Houten veranda')}</a>
+                    <a href="/pext-lichtstraat">{t('Lichtstraat')}</a>
+                  </div>
                 </div>
               </div>
             </div>
             <div className="menu-item">
+              <input type="checkbox" id="sm-tuinkamers" className="submenu-toggle" />
               <a className="nav-a" href="/tuinkamers">{t('Tuinkamers')}</a>
+              <label htmlFor="sm-tuinkamers" className="submenu-caret" aria-label="Submenu"><span>▾</span></label>
               <div className="dropdown">
                 <div className="dropdown-inner">
                   <a href="/tuinkamer-hellend-dak">{t('Tuinkamer met hellend dak')}</a>
@@ -75,7 +89,9 @@ export async function Header() {
               </div>
             </div>
             <div className="menu-item">
+              <input type="checkbox" id="sm-schuifwanden" className="submenu-toggle" />
               <a className="nav-a" href="/glazen-schuifwanden">{t('Schuifwanden')}</a>
+              <label htmlFor="sm-schuifwanden" className="submenu-caret" aria-label="Submenu"><span>▾</span></label>
               <div className="dropdown">
                 <div className="dropdown-inner">
                   <a href="/schuifwand-glas">{t('Glazen schuifwanden')}</a>
@@ -86,7 +102,9 @@ export async function Header() {
               </div>
             </div>
             <div className="menu-item">
+              <input type="checkbox" id="sm-zonwering" className="submenu-toggle" />
               <a className="nav-a" href="/zonwering">{t('Zonwering')}</a>
+              <label htmlFor="sm-zonwering" className="submenu-caret" aria-label="Submenu"><span>▾</span></label>
               <div className="dropdown">
                 <div className="dropdown-inner">
                   <a href="/zonwering-onderdak">{t('Onderdakzonwering')}</a>
@@ -97,7 +115,9 @@ export async function Header() {
               </div>
             </div>
             <div className="menu-item">
+              <input type="checkbox" id="sm-opties" className="submenu-toggle" />
               <a className="nav-a" href="/accessoires">{t('Opties')}</a>
+              <label htmlFor="sm-opties" className="submenu-caret" aria-label="Submenu"><span>▾</span></label>
               <div className="dropdown">
                 <div className="dropdown-inner">
                   <a href="/optie-wanden">{t('Voor- en zijwanden')}</a>
@@ -109,7 +129,9 @@ export async function Header() {
               </div>
             </div>
             <div className="menu-item">
+              <input type="checkbox" id="sm-zakelijk" className="submenu-toggle" />
               <a className="nav-a" href="/zakelijk">{t('Zakelijk')}</a>
+              <label htmlFor="sm-zakelijk" className="submenu-caret" aria-label="Submenu"><span>▾</span></label>
               {/* right-aligned so the wide submenu doesn't overflow the viewport;
                   inline style beats the unlayered .dropdown rule's left offset */}
               <div className="dropdown" style={{ left: 'auto', right: -14 }}>
@@ -127,9 +149,14 @@ export async function Header() {
               <a className="nav-a" href="/projecten">{t('Projecten')}</a>
             </div>
           </nav>
-          <a className="btn-n bg-navy text-white font-bold text-[14px] py-[13px] px-[22px] rounded-full" href="/offerte">
-            {t('Offerte aanvragen')}
-          </a>
+          <div className="flex items-center gap-[14px]">
+            <a className="btn-n bg-navy text-white font-bold text-[14px] py-[13px] px-[22px] rounded-full" href="/offerte">
+              {t('Offerte aanvragen')}
+            </a>
+            <label htmlFor="navtoggle" className="hamburger" aria-label="Menu openen">
+              ☰
+            </label>
+          </div>
         </div>
       </div>
     </>

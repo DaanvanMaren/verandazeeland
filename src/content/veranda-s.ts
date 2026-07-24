@@ -82,6 +82,22 @@ export const verandaS: GlobalConfig = {
           href: '/veranda-pergola',
           fallback: '/uploads/foto-water-suppen.jpg',
         },
+        {
+          name: 'Palazzo',
+          price: 'Prijs op aanvraag',
+          tag: 'Lamellendak',
+          desc: 'Roterend lamellendak: zelf zon en schaduw doseren, waterdicht bij regen. Ook als Sqope met glasdak.',
+          href: '/veranda-palazzo',
+          fallback: '/uploads/pallazzo-slide-top-veranda-zeeland.jpg',
+        },
+        {
+          name: 'Pext',
+          price: 'Prijs op aanvraag',
+          tag: 'Houten veranda',
+          desc: 'Warme houten veranda van Douglas- of larikshout met aluminium profielen. Geïsoleerd of ongeïsoleerd.',
+          href: '/veranda-pext',
+          fallback: '/uploads/pext-overkapping-slide-veranda-zeeland.jpg',
+        },
       ],
     },
 

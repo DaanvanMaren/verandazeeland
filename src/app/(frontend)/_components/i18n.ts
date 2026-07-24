@@ -56,6 +56,8 @@ export const deUI: Record<string, string> = {
   'Alle projecten': 'Alle Projekte',
   'Onze projecten': 'Unsere Projekte',
   'Bekijk project': 'Projekt ansehen',
+  'Houten veranda': 'Holz-Veranda',
+  Lichtstraat: 'Lichtband',
   'Over ons': 'Über uns',
   Showroom: 'Ausstellungsraum',
   'Alle producten →': 'Alle Produkte →',

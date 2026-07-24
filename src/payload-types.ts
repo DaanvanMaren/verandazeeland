@@ -97,6 +97,12 @@ export interface Config {
     'veranda-linea': VerandaLinea;
     'veranda-cube': VerandaCube;
     'veranda-pergola': VerandaPergola;
+    'veranda-palazzo': VerandaPalazzo;
+    'palazzo-sqope': PalazzoSqope;
+    'palazzo-lamellendak': PalazzoLamellendak;
+    'veranda-pext': VerandaPext;
+    'pext-veranda': PextVeranda;
+    'pext-lichtstraat': PextLichtstraat;
     tuinkamers: Tuinkamer;
     'tuinkamer-hellend-dak': TuinkamerHellendDak;
     'tuinkamer-vlak-dak': TuinkamerVlakDak;
@@ -139,6 +145,12 @@ export interface Config {
     'veranda-linea': VerandaLineaSelect<false> | VerandaLineaSelect<true>;
     'veranda-cube': VerandaCubeSelect<false> | VerandaCubeSelect<true>;
     'veranda-pergola': VerandaPergolaSelect<false> | VerandaPergolaSelect<true>;
+    'veranda-palazzo': VerandaPalazzoSelect<false> | VerandaPalazzoSelect<true>;
+    'palazzo-sqope': PalazzoSqopeSelect<false> | PalazzoSqopeSelect<true>;
+    'palazzo-lamellendak': PalazzoLamellendakSelect<false> | PalazzoLamellendakSelect<true>;
+    'veranda-pext': VerandaPextSelect<false> | VerandaPextSelect<true>;
+    'pext-veranda': PextVerandaSelect<false> | PextVerandaSelect<true>;
+    'pext-lichtstraat': PextLichtstraatSelect<false> | PextLichtstraatSelect<true>;
     tuinkamers: TuinkamersSelect<false> | TuinkamersSelect<true>;
     'tuinkamer-hellend-dak': TuinkamerHellendDakSelect<false> | TuinkamerHellendDakSelect<true>;
     'tuinkamer-vlak-dak': TuinkamerVlakDakSelect<false> | TuinkamerVlakDakSelect<true>;
@@ -967,6 +979,522 @@ export interface VerandaPergola {
   bandImageFallback?: string | null;
   relatedHeading?: string | null;
   related?:
+    | {
+        name?: string | null;
+        tag?: string | null;
+        href?: string | null;
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-palazzo".
+ */
+export interface VerandaPalazzo {
+  id: number;
+  heroBadge?: string | null;
+  heroPrice?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroCtaPrimary?: string | null;
+  heroCtaSecondary?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  specs?:
+    | {
+        value?: string | null;
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introBullets?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introImageFallback?: string | null;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ombouwLabel?: string | null;
+  ombouwTitle?: string | null;
+  ombouwText?: string | null;
+  ombouwCta?: string | null;
+  ombouwImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  ombouwImageFallback?: string | null;
+  galleryTitle?: string | null;
+  gallery?:
+    | {
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        alt?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  othersTitle?: string | null;
+  others?:
+    | {
+        name?: string | null;
+        tag?: string | null;
+        href?: string | null;
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "palazzo-sqope".
+ */
+export interface PalazzoSqope {
+  id: number;
+  heroBadge?: string | null;
+  heroPrice?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroCtaPrimary?: string | null;
+  heroCtaSecondary?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  specs?:
+    | {
+        value?: string | null;
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introBullets?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introImageFallback?: string | null;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ombouwLabel?: string | null;
+  ombouwTitle?: string | null;
+  ombouwText?: string | null;
+  ombouwCta?: string | null;
+  ombouwImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  ombouwImageFallback?: string | null;
+  galleryTitle?: string | null;
+  gallery?:
+    | {
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        alt?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  othersTitle?: string | null;
+  others?:
+    | {
+        name?: string | null;
+        tag?: string | null;
+        href?: string | null;
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "palazzo-lamellendak".
+ */
+export interface PalazzoLamellendak {
+  id: number;
+  heroBadge?: string | null;
+  heroPrice?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroCtaPrimary?: string | null;
+  heroCtaSecondary?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  specs?:
+    | {
+        value?: string | null;
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introBullets?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introImageFallback?: string | null;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ombouwLabel?: string | null;
+  ombouwTitle?: string | null;
+  ombouwText?: string | null;
+  ombouwCta?: string | null;
+  ombouwImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  ombouwImageFallback?: string | null;
+  galleryTitle?: string | null;
+  gallery?:
+    | {
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        alt?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  othersTitle?: string | null;
+  others?:
+    | {
+        name?: string | null;
+        tag?: string | null;
+        href?: string | null;
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-pext".
+ */
+export interface VerandaPext {
+  id: number;
+  heroBadge?: string | null;
+  heroPrice?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroCtaPrimary?: string | null;
+  heroCtaSecondary?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  specs?:
+    | {
+        value?: string | null;
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introBullets?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introImageFallback?: string | null;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ombouwLabel?: string | null;
+  ombouwTitle?: string | null;
+  ombouwText?: string | null;
+  ombouwCta?: string | null;
+  ombouwImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  ombouwImageFallback?: string | null;
+  galleryTitle?: string | null;
+  gallery?:
+    | {
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        alt?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  othersTitle?: string | null;
+  others?:
+    | {
+        name?: string | null;
+        tag?: string | null;
+        href?: string | null;
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pext-veranda".
+ */
+export interface PextVeranda {
+  id: number;
+  heroBadge?: string | null;
+  heroPrice?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroCtaPrimary?: string | null;
+  heroCtaSecondary?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  specs?:
+    | {
+        value?: string | null;
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introBullets?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introImageFallback?: string | null;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ombouwLabel?: string | null;
+  ombouwTitle?: string | null;
+  ombouwText?: string | null;
+  ombouwCta?: string | null;
+  ombouwImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  ombouwImageFallback?: string | null;
+  galleryTitle?: string | null;
+  gallery?:
+    | {
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        alt?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  othersTitle?: string | null;
+  others?:
+    | {
+        name?: string | null;
+        tag?: string | null;
+        href?: string | null;
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pext-lichtstraat".
+ */
+export interface PextLichtstraat {
+  id: number;
+  heroBadge?: string | null;
+  heroPrice?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroCtaPrimary?: string | null;
+  heroCtaSecondary?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  specs?:
+    | {
+        value?: string | null;
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introBullets?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introImageFallback?: string | null;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ombouwLabel?: string | null;
+  ombouwTitle?: string | null;
+  ombouwText?: string | null;
+  ombouwCta?: string | null;
+  ombouwImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  ombouwImageFallback?: string | null;
+  galleryTitle?: string | null;
+  gallery?:
+    | {
+        image?: (number | null) | Media;
+        /**
+         * Standaard-afbeelding (pad in /uploads)
+         */
+        fallback?: string | null;
+        alt?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  othersTitle?: string | null;
+  others?:
     | {
         name?: string | null;
         tag?: string | null;
@@ -2749,6 +3277,432 @@ export interface VerandaPergolaSelect<T extends boolean = true> {
   bandImageFallback?: T;
   relatedHeading?: T;
   related?:
+    | T
+    | {
+        name?: T;
+        tag?: T;
+        href?: T;
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-palazzo_select".
+ */
+export interface VerandaPalazzoSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroPrice?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroCtaPrimary?: T;
+  heroCtaSecondary?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  specs?:
+    | T
+    | {
+        value?: T;
+        label?: T;
+        id?: T;
+      };
+  introTitle?: T;
+  introText?: T;
+  introBullets?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introImageFallback?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ombouwLabel?: T;
+  ombouwTitle?: T;
+  ombouwText?: T;
+  ombouwCta?: T;
+  ombouwImage?: T;
+  ombouwImageFallback?: T;
+  galleryTitle?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        fallback?: T;
+        alt?: T;
+        id?: T;
+      };
+  othersTitle?: T;
+  others?:
+    | T
+    | {
+        name?: T;
+        tag?: T;
+        href?: T;
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "palazzo-sqope_select".
+ */
+export interface PalazzoSqopeSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroPrice?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroCtaPrimary?: T;
+  heroCtaSecondary?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  specs?:
+    | T
+    | {
+        value?: T;
+        label?: T;
+        id?: T;
+      };
+  introTitle?: T;
+  introText?: T;
+  introBullets?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introImageFallback?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ombouwLabel?: T;
+  ombouwTitle?: T;
+  ombouwText?: T;
+  ombouwCta?: T;
+  ombouwImage?: T;
+  ombouwImageFallback?: T;
+  galleryTitle?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        fallback?: T;
+        alt?: T;
+        id?: T;
+      };
+  othersTitle?: T;
+  others?:
+    | T
+    | {
+        name?: T;
+        tag?: T;
+        href?: T;
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "palazzo-lamellendak_select".
+ */
+export interface PalazzoLamellendakSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroPrice?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroCtaPrimary?: T;
+  heroCtaSecondary?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  specs?:
+    | T
+    | {
+        value?: T;
+        label?: T;
+        id?: T;
+      };
+  introTitle?: T;
+  introText?: T;
+  introBullets?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introImageFallback?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ombouwLabel?: T;
+  ombouwTitle?: T;
+  ombouwText?: T;
+  ombouwCta?: T;
+  ombouwImage?: T;
+  ombouwImageFallback?: T;
+  galleryTitle?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        fallback?: T;
+        alt?: T;
+        id?: T;
+      };
+  othersTitle?: T;
+  others?:
+    | T
+    | {
+        name?: T;
+        tag?: T;
+        href?: T;
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "veranda-pext_select".
+ */
+export interface VerandaPextSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroPrice?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroCtaPrimary?: T;
+  heroCtaSecondary?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  specs?:
+    | T
+    | {
+        value?: T;
+        label?: T;
+        id?: T;
+      };
+  introTitle?: T;
+  introText?: T;
+  introBullets?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introImageFallback?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ombouwLabel?: T;
+  ombouwTitle?: T;
+  ombouwText?: T;
+  ombouwCta?: T;
+  ombouwImage?: T;
+  ombouwImageFallback?: T;
+  galleryTitle?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        fallback?: T;
+        alt?: T;
+        id?: T;
+      };
+  othersTitle?: T;
+  others?:
+    | T
+    | {
+        name?: T;
+        tag?: T;
+        href?: T;
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pext-veranda_select".
+ */
+export interface PextVerandaSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroPrice?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroCtaPrimary?: T;
+  heroCtaSecondary?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  specs?:
+    | T
+    | {
+        value?: T;
+        label?: T;
+        id?: T;
+      };
+  introTitle?: T;
+  introText?: T;
+  introBullets?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introImageFallback?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ombouwLabel?: T;
+  ombouwTitle?: T;
+  ombouwText?: T;
+  ombouwCta?: T;
+  ombouwImage?: T;
+  ombouwImageFallback?: T;
+  galleryTitle?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        fallback?: T;
+        alt?: T;
+        id?: T;
+      };
+  othersTitle?: T;
+  others?:
+    | T
+    | {
+        name?: T;
+        tag?: T;
+        href?: T;
+        image?: T;
+        fallback?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pext-lichtstraat_select".
+ */
+export interface PextLichtstraatSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroPrice?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroCtaPrimary?: T;
+  heroCtaSecondary?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  specs?:
+    | T
+    | {
+        value?: T;
+        label?: T;
+        id?: T;
+      };
+  introTitle?: T;
+  introText?: T;
+  introBullets?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introImageFallback?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ombouwLabel?: T;
+  ombouwTitle?: T;
+  ombouwText?: T;
+  ombouwCta?: T;
+  ombouwImage?: T;
+  ombouwImageFallback?: T;
+  galleryTitle?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        fallback?: T;
+        alt?: T;
+        id?: T;
+      };
+  othersTitle?: T;
+  others?:
     | T
     | {
         name?: T;

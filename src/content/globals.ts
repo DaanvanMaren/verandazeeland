@@ -9,6 +9,10 @@ import { optieFundering } from './optie-fundering'
 import { optieLedverlichting } from './optie-ledverlichting'
 import { optieOnderhoud } from './optie-onderhoud'
 import { optieWanden } from './optie-wanden'
+import { palazzoLamellendak } from './palazzo-lamellendak'
+import { palazzoSqope } from './palazzo-sqope'
+import { pextLichtstraat } from './pext-lichtstraat'
+import { pextVeranda } from './pext-veranda'
 import { schuifwandAluminium } from './schuifwand-aluminium'
 import { schuifwandGlas } from './schuifwand-glas'
 import { schuifwandLamellen } from './schuifwand-lamellen'
@@ -22,7 +26,9 @@ import { verandaGreenline } from './veranda-greenline'
 import { verandaLatenPlaatsen } from './veranda-laten-plaatsen'
 import { verandaLinea } from './veranda-linea'
 import { verandaMiddelburg } from './veranda-middelburg'
+import { verandaPalazzo } from './veranda-palazzo'
 import { verandaPergola } from './veranda-pergola'
+import { verandaPext } from './veranda-pext'
 import { verandaPrijzen } from './veranda-prijzen'
 import { verandaProfiline } from './veranda-profiline'
 import { verandaS } from './veranda-s'
@@ -69,6 +75,12 @@ export const contentGlobals = [
   verandaLinea,
   verandaCube,
   verandaPergola,
+  verandaPalazzo,
+  palazzoSqope,
+  palazzoLamellendak,
+  verandaPext,
+  pextVeranda,
+  pextLichtstraat,
   tuinkamers,
   tuinkamerHellendDak,
   tuinkamerVlakDak,

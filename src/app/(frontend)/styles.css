@@ -50,6 +50,12 @@ body{margin:0;background:#f6f0e6;font-family:'Figtree',system-ui,sans-serif;colo
 .dropdown-inner{background:#fff;border-radius:14px;box-shadow:0 20px 44px -14px rgba(8,42,82,.3);padding:10px;display:flex;flex-direction:column;gap:2px;min-width:236px}
 .dropdown-inner a{padding:11px 14px;border-radius:9px;font-size:14.5px;font-weight:600;color:#082a52;white-space:nowrap;text-decoration:none}
 .dropdown-inner a:hover{background:#f3ede1;color:#0053a1}
+/* grouped mega-menu (Veranda's): brand columns each with a heading */
+.dropdown-mega{flex-direction:row;gap:6px;min-width:auto}
+.dropdown-col{display:flex;flex-direction:column;gap:2px;min-width:178px}
+.dropdown-col+.dropdown-col{border-left:1px solid #f0e8d8;padding-left:6px}
+.dropdown-inner a.dropdown-h{color:#0053a1;font-size:12px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;padding:10px 14px 6px;margin-bottom:2px;border-bottom:1px solid #f0e8d8;border-radius:0}
+.dropdown-inner a.dropdown-h:hover{background:transparent}
 .lift{transition:transform .3s,box-shadow .3s}
 .lift:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(8,42,82,.5)}
 .cat-img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
@@ -61,16 +67,33 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:#0053a1}
 label{font-weight:600;font-size:13.5px;margin-bottom:7px;display:block}
 
 /* --- mobile nav (pure CSS, checkbox toggle) --- */
-.navtoggle,.hamburger{display:none}
+.navtoggle,.hamburger,.submenu-toggle,.submenu-caret{display:none}
 .navbar-inner{position:relative}
 
 @media(max-width:900px){
   .hamburger{display:block;font-size:28px;line-height:1;cursor:pointer;color:#082a52;padding:4px 6px;user-select:none}
-  .mainnav{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0!important;background:#f6f0e6;padding:8px 40px 18px;box-shadow:0 22px 34px -22px rgba(8,42,82,.5);border-bottom:1px solid rgba(8,42,82,.1)}
+  .mainnav{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0!important;background:#f6f0e6;padding:8px 40px 18px;box-shadow:0 22px 34px -22px rgba(8,42,82,.5);border-bottom:1px solid rgba(8,42,82,.1);max-height:calc(100vh - 128px);max-height:calc(100dvh - 128px);overflow-y:auto;overscroll-behavior:contain}
   .navtoggle:checked~.mainnav{display:flex!important}
-  .mainnav .menu-item{display:block;width:100%}
-  .mainnav .nav-a{display:block;width:100%;padding:13px 0;font-size:17px;border-bottom:1px solid rgba(8,42,82,.07)}
-  .mainnav .dropdown{display:none!important}
+  /* each item is a row: title (link) + submenu wraps to a full line below */
+  .mainnav .menu-item{position:relative;display:flex;flex-wrap:wrap;align-items:center;width:100%;border-bottom:1px solid rgba(8,42,82,.07)}
+  .mainnav .nav-a{flex:1;width:auto;padding:13px 0;font-size:17px;border-bottom:none}
+  /* Two-tap items (those with a submenu): first tap expands (the caret label
+     overlays the whole row and is what gets tapped); once open the link takes
+     over so a second tap navigates to the section page. */
+  .mainnav .submenu-toggle~.nav-a{pointer-events:none}
+  .mainnav .submenu-toggle:checked~.nav-a{pointer-events:auto}
+  .mainnav .submenu-caret{display:flex;position:absolute;inset:0;align-items:flex-start;justify-content:flex-end;padding:16px 4px 0 0;font-size:13px;color:#082a52;cursor:pointer;user-select:none}
+  .mainnav .submenu-caret>span{transition:transform .2s}
+  .mainnav .submenu-toggle:checked~.submenu-caret{pointer-events:none}
+  .mainnav .submenu-toggle:checked~.submenu-caret>span{transform:rotate(180deg)}
+  /* accordion: submenu collapsed until the row's checkbox is checked */
+  .mainnav .dropdown{display:none!important;flex-basis:100%;width:100%;position:static;padding:0 0 8px}
+  .mainnav .submenu-toggle:checked~.dropdown{display:block!important}
+  .mainnav .dropdown-inner{flex-direction:column;background:transparent;box-shadow:none;border-radius:0;padding:0;gap:0;min-width:auto}
+  .mainnav .dropdown-col{min-width:auto}
+  .mainnav .dropdown-col+.dropdown-col{border-left:none;padding-left:0}
+  .mainnav .dropdown-inner a{display:block;width:100%;padding:11px 0 11px 18px;font-size:15px;white-space:normal;border-bottom:1px solid rgba(8,42,82,.05)}
+  .mainnav .dropdown-inner a.dropdown-h{padding:12px 0 6px;margin-top:4px;font-size:12px;border-bottom:1px solid rgba(8,42,82,.12)}
 }
 
 /* --- responsive type scaling. Grid stacking and mobile padding/margin used to
