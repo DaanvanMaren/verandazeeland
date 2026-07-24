@@ -116,6 +116,8 @@ export interface Config {
     'zonwering-bovendak': ZonweringBovendak;
     'zonwering-screens': ZonweringScreen;
     'zonwering-uitvalschermen': ZonweringUitvalscherman;
+    'zonwering-knikarmschermen': ZonweringKnikarmscherman;
+    'zonwering-rolluiken': ZonweringRolluiken;
     accessoires: Accessoire;
     'optie-wanden': OptieWanden;
     'optie-dakbedekking': OptieDakbedekking;
@@ -164,6 +166,8 @@ export interface Config {
     'zonwering-bovendak': ZonweringBovendakSelect<false> | ZonweringBovendakSelect<true>;
     'zonwering-screens': ZonweringScreensSelect<false> | ZonweringScreensSelect<true>;
     'zonwering-uitvalschermen': ZonweringUitvalschermenSelect<false> | ZonweringUitvalschermenSelect<true>;
+    'zonwering-knikarmschermen': ZonweringKnikarmschermenSelect<false> | ZonweringKnikarmschermenSelect<true>;
+    'zonwering-rolluiken': ZonweringRolluikenSelect<false> | ZonweringRolluikenSelect<true>;
     accessoires: AccessoiresSelect<false> | AccessoiresSelect<true>;
     'optie-wanden': OptieWandenSelect<false> | OptieWandenSelect<true>;
     'optie-dakbedekking': OptieDakbedekkingSelect<false> | OptieDakbedekkingSelect<true>;
@@ -904,18 +908,21 @@ export interface VerandaCube {
       }[]
     | null;
   othersTitle?: string | null;
-  others?:
-    | {
-        name?: string | null;
-        tag?: string | null;
-        href?: string | null;
-        image?: (number | null) | Media;
-        /**
-         * Standaard-afbeelding (pad in /uploads)
-         */
-        fallback?: string | null;
-        id?: string | null;
-      }[]
+  /**
+   * Laat leeg voor automatische vulling met andere modellen uit dezelfde categorie. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).
+   */
+  otherModels?:
+    | (
+        | 'veranda-greenline'
+        | 'veranda-profiline'
+        | 'veranda-linea'
+        | 'veranda-cube'
+        | 'veranda-pergola'
+        | 'palazzo-sqope'
+        | 'palazzo-lamellendak'
+        | 'pext-veranda'
+        | 'pext-lichtstraat'
+      )[]
     | null;
   ctaTitle?: string | null;
   ctaText?: string | null;
@@ -1064,18 +1071,21 @@ export interface VerandaPalazzo {
       }[]
     | null;
   othersTitle?: string | null;
-  others?:
-    | {
-        name?: string | null;
-        tag?: string | null;
-        href?: string | null;
-        image?: (number | null) | Media;
-        /**
-         * Standaard-afbeelding (pad in /uploads)
-         */
-        fallback?: string | null;
-        id?: string | null;
-      }[]
+  /**
+   * Laat leeg voor automatische vulling. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).
+   */
+  otherModels?:
+    | (
+        | 'veranda-greenline'
+        | 'veranda-profiline'
+        | 'veranda-linea'
+        | 'veranda-cube'
+        | 'veranda-pergola'
+        | 'palazzo-sqope'
+        | 'palazzo-lamellendak'
+        | 'pext-veranda'
+        | 'pext-lichtstraat'
+      )[]
     | null;
   ctaTitle?: string | null;
   ctaText?: string | null;
@@ -1150,18 +1160,21 @@ export interface PalazzoSqope {
       }[]
     | null;
   othersTitle?: string | null;
-  others?:
-    | {
-        name?: string | null;
-        tag?: string | null;
-        href?: string | null;
-        image?: (number | null) | Media;
-        /**
-         * Standaard-afbeelding (pad in /uploads)
-         */
-        fallback?: string | null;
-        id?: string | null;
-      }[]
+  /**
+   * Laat leeg voor automatische vulling met andere modellen uit dezelfde categorie. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).
+   */
+  otherModels?:
+    | (
+        | 'veranda-greenline'
+        | 'veranda-profiline'
+        | 'veranda-linea'
+        | 'veranda-cube'
+        | 'veranda-pergola'
+        | 'palazzo-sqope'
+        | 'palazzo-lamellendak'
+        | 'pext-veranda'
+        | 'pext-lichtstraat'
+      )[]
     | null;
   ctaTitle?: string | null;
   ctaText?: string | null;
@@ -1236,18 +1249,21 @@ export interface PalazzoLamellendak {
       }[]
     | null;
   othersTitle?: string | null;
-  others?:
-    | {
-        name?: string | null;
-        tag?: string | null;
-        href?: string | null;
-        image?: (number | null) | Media;
-        /**
-         * Standaard-afbeelding (pad in /uploads)
-         */
-        fallback?: string | null;
-        id?: string | null;
-      }[]
+  /**
+   * Laat leeg voor automatische vulling met andere modellen uit dezelfde categorie. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).
+   */
+  otherModels?:
+    | (
+        | 'veranda-greenline'
+        | 'veranda-profiline'
+        | 'veranda-linea'
+        | 'veranda-cube'
+        | 'veranda-pergola'
+        | 'palazzo-sqope'
+        | 'palazzo-lamellendak'
+        | 'pext-veranda'
+        | 'pext-lichtstraat'
+      )[]
     | null;
   ctaTitle?: string | null;
   ctaText?: string | null;
@@ -1322,18 +1338,21 @@ export interface VerandaPext {
       }[]
     | null;
   othersTitle?: string | null;
-  others?:
-    | {
-        name?: string | null;
-        tag?: string | null;
-        href?: string | null;
-        image?: (number | null) | Media;
-        /**
-         * Standaard-afbeelding (pad in /uploads)
-         */
-        fallback?: string | null;
-        id?: string | null;
-      }[]
+  /**
+   * Laat leeg voor automatische vulling. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).
+   */
+  otherModels?:
+    | (
+        | 'veranda-greenline'
+        | 'veranda-profiline'
+        | 'veranda-linea'
+        | 'veranda-cube'
+        | 'veranda-pergola'
+        | 'palazzo-sqope'
+        | 'palazzo-lamellendak'
+        | 'pext-veranda'
+        | 'pext-lichtstraat'
+      )[]
     | null;
   ctaTitle?: string | null;
   ctaText?: string | null;
@@ -1408,18 +1427,21 @@ export interface PextVeranda {
       }[]
     | null;
   othersTitle?: string | null;
-  others?:
-    | {
-        name?: string | null;
-        tag?: string | null;
-        href?: string | null;
-        image?: (number | null) | Media;
-        /**
-         * Standaard-afbeelding (pad in /uploads)
-         */
-        fallback?: string | null;
-        id?: string | null;
-      }[]
+  /**
+   * Laat leeg voor automatische vulling met andere modellen uit dezelfde categorie. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).
+   */
+  otherModels?:
+    | (
+        | 'veranda-greenline'
+        | 'veranda-profiline'
+        | 'veranda-linea'
+        | 'veranda-cube'
+        | 'veranda-pergola'
+        | 'palazzo-sqope'
+        | 'palazzo-lamellendak'
+        | 'pext-veranda'
+        | 'pext-lichtstraat'
+      )[]
     | null;
   ctaTitle?: string | null;
   ctaText?: string | null;
@@ -1494,18 +1516,21 @@ export interface PextLichtstraat {
       }[]
     | null;
   othersTitle?: string | null;
-  others?:
-    | {
-        name?: string | null;
-        tag?: string | null;
-        href?: string | null;
-        image?: (number | null) | Media;
-        /**
-         * Standaard-afbeelding (pad in /uploads)
-         */
-        fallback?: string | null;
-        id?: string | null;
-      }[]
+  /**
+   * Laat leeg voor automatische vulling met andere modellen uit dezelfde categorie. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).
+   */
+  otherModels?:
+    | (
+        | 'veranda-greenline'
+        | 'veranda-profiline'
+        | 'veranda-linea'
+        | 'veranda-cube'
+        | 'veranda-pergola'
+        | 'palazzo-sqope'
+        | 'palazzo-lamellendak'
+        | 'pext-veranda'
+        | 'pext-lichtstraat'
+      )[]
     | null;
   ctaTitle?: string | null;
   ctaText?: string | null;
@@ -2132,6 +2157,92 @@ export interface ZonweringUitvalscherman {
    */
   introFallback?: string | null;
   featuresHeading?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zonwering-knikarmschermen".
+ */
+export interface ZonweringKnikarmscherman {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introBullets?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introImageFallback?: string | null;
+  featuresTitle?: string | null;
+  features?:
+    | {
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButton?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zonwering-rolluiken".
+ */
+export interface ZonweringRolluiken {
+  id: number;
+  heroBadge?: string | null;
+  heroTitle: string;
+  heroText?: string | null;
+  heroPrimaryCta?: string | null;
+  heroSecondaryCta?: string | null;
+  heroImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  heroImageFallback?: string | null;
+  introTitle?: string | null;
+  introText?: string | null;
+  introBullets?:
+    | {
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introImage?: (number | null) | Media;
+  /**
+   * Standaard-afbeelding (pad in /uploads)
+   */
+  introImageFallback?: string | null;
+  featuresTitle?: string | null;
   features?:
     | {
         title?: string | null;
@@ -3214,16 +3325,7 @@ export interface VerandaCubeSelect<T extends boolean = true> {
         id?: T;
       };
   othersTitle?: T;
-  others?:
-    | T
-    | {
-        name?: T;
-        tag?: T;
-        href?: T;
-        image?: T;
-        fallback?: T;
-        id?: T;
-      };
+  otherModels?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
@@ -3347,16 +3449,7 @@ export interface VerandaPalazzoSelect<T extends boolean = true> {
         id?: T;
       };
   othersTitle?: T;
-  others?:
-    | T
-    | {
-        name?: T;
-        tag?: T;
-        href?: T;
-        image?: T;
-        fallback?: T;
-        id?: T;
-      };
+  otherModels?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
@@ -3418,16 +3511,7 @@ export interface PalazzoSqopeSelect<T extends boolean = true> {
         id?: T;
       };
   othersTitle?: T;
-  others?:
-    | T
-    | {
-        name?: T;
-        tag?: T;
-        href?: T;
-        image?: T;
-        fallback?: T;
-        id?: T;
-      };
+  otherModels?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
@@ -3489,16 +3573,7 @@ export interface PalazzoLamellendakSelect<T extends boolean = true> {
         id?: T;
       };
   othersTitle?: T;
-  others?:
-    | T
-    | {
-        name?: T;
-        tag?: T;
-        href?: T;
-        image?: T;
-        fallback?: T;
-        id?: T;
-      };
+  otherModels?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
@@ -3560,16 +3635,7 @@ export interface VerandaPextSelect<T extends boolean = true> {
         id?: T;
       };
   othersTitle?: T;
-  others?:
-    | T
-    | {
-        name?: T;
-        tag?: T;
-        href?: T;
-        image?: T;
-        fallback?: T;
-        id?: T;
-      };
+  otherModels?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
@@ -3631,16 +3697,7 @@ export interface PextVerandaSelect<T extends boolean = true> {
         id?: T;
       };
   othersTitle?: T;
-  others?:
-    | T
-    | {
-        name?: T;
-        tag?: T;
-        href?: T;
-        image?: T;
-        fallback?: T;
-        id?: T;
-      };
+  otherModels?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
@@ -3702,16 +3759,7 @@ export interface PextLichtstraatSelect<T extends boolean = true> {
         id?: T;
       };
   othersTitle?: T;
-  others?:
-    | T
-    | {
-        name?: T;
-        tag?: T;
-        href?: T;
-        image?: T;
-        fallback?: T;
-        id?: T;
-      };
+  otherModels?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
@@ -4235,6 +4283,80 @@ export interface ZonweringUitvalschermenSelect<T extends boolean = true> {
   introImage?: T;
   introFallback?: T;
   featuresHeading?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zonwering-knikarmschermen_select".
+ */
+export interface ZonweringKnikarmschermenSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  introTitle?: T;
+  introText?: T;
+  introBullets?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introImageFallback?: T;
+  featuresTitle?: T;
+  features?:
+    | T
+    | {
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaText?: T;
+  ctaButton?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zonwering-rolluiken_select".
+ */
+export interface ZonweringRolluikenSelect<T extends boolean = true> {
+  heroBadge?: T;
+  heroTitle?: T;
+  heroText?: T;
+  heroPrimaryCta?: T;
+  heroSecondaryCta?: T;
+  heroImage?: T;
+  heroImageFallback?: T;
+  introTitle?: T;
+  introText?: T;
+  introBullets?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  introImage?: T;
+  introImageFallback?: T;
+  featuresTitle?: T;
   features?:
     | T
     | {

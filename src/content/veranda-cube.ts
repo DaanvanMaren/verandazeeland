@@ -1,5 +1,7 @@
 import type { GlobalConfig } from 'payload'
 
+import { productOptions } from './products'
+
 // "Cube" product page. Text = editable fields with the design copy as
 // defaultValue; repeating things (spec bar, feature cards, gallery, other
 // models) = arrays. Read in src/app/(frontend)/veranda-cube/page.tsx. Images
@@ -116,21 +118,11 @@ export const verandaCube: GlobalConfig = {
     // other models
     { name: 'othersTitle', type: 'text', defaultValue: 'Andere modellen' },
     {
-      name: 'others',
-      type: 'array',
-      fields: [
-        { name: 'name', type: 'text' },
-        { name: 'tag', type: 'text' },
-        { name: 'href', type: 'text' },
-        { name: 'image', type: 'upload', relationTo: 'media' },
-        { name: 'fallback', type: 'text', admin: { description: 'Standaard-afbeelding (pad in /uploads)' } },
-      ],
-      defaultValue: [
-        { name: 'Greenline', tag: 'Voordelig & strak', href: '/veranda-greenline', fallback: '/uploads/Profiline_Ommeren_VS_20260529_237_LR.jpg' },
-        { name: 'Profiline', tag: 'Veelzijdig maatwerk', href: '/veranda-profiline', fallback: '/uploads/Profiline_Ommeren_VS_20260529_003_LR.jpg' },
-        { name: 'Linea', tag: 'Modern vlak dak', href: '/veranda-linea', fallback: '/uploads/DJI_20260527082041_0005_D.jpg' },
-        { name: 'Pergola', tag: 'Vrijstaand', href: '/veranda-pergola', fallback: '/uploads/foto-water-suppen.jpg' },
-      ],
+      name: 'otherModels',
+      type: 'select',
+      hasMany: true,
+      options: productOptions,
+      admin: { description: 'Laat leeg voor automatische vulling met andere modellen uit dezelfde categorie. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).' },
     },
 
     // CTA

@@ -1,5 +1,7 @@
 import type { GlobalConfig } from 'payload'
 
+import { productOptions } from './products'
+
 // "Pext" product page (houten veranda + lichtstraat). Same field shape as
 // veranda-cube so it reuses that route layout. Copy rewritten in the site's own
 // conversational "u"-tone from the current live page. Read in
@@ -115,21 +117,12 @@ export const verandaPext: GlobalConfig = {
     // other models
     { name: 'othersTitle', type: 'text', defaultValue: 'Andere modellen' },
     {
-      name: 'others',
-      type: 'array',
-      fields: [
-        { name: 'name', type: 'text' },
-        { name: 'tag', type: 'text' },
-        { name: 'href', type: 'text' },
-        { name: 'image', type: 'upload', relationTo: 'media' },
-        { name: 'fallback', type: 'text', admin: { description: 'Standaard-afbeelding (pad in /uploads)' } },
-      ],
-      defaultValue: [
-        { name: 'Pext houten veranda', tag: 'Douglas of lariks', href: '/pext-veranda', fallback: '/uploads/veranda-hout-pext-veranda-zeeland.jpg' },
-        { name: 'Pext lichtstraat', tag: 'Lessenaar, zadel of daklicht', href: '/pext-lichtstraat', fallback: '/uploads/lichtstraat-zadeldak-schuin-pext-veranda-zeeland.jpg' },
-        { name: 'Greenline', tag: 'Voordelig & strak', href: '/veranda-greenline', fallback: '/uploads/Profiline_Ommeren_VS_20260529_237_LR.jpg' },
-        { name: 'Cube', tag: 'Exclusief design', href: '/veranda-cube', fallback: '/uploads/cube-kerk.jpg' },
-      ],
+      name: 'otherModels',
+      type: 'select',
+      hasMany: true,
+      options: productOptions,
+      defaultValue: ['pext-veranda', 'pext-lichtstraat', 'veranda-greenline', 'veranda-cube'],
+      admin: { description: 'Laat leeg voor automatische vulling. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).' },
     },
 
     // CTA

@@ -1,5 +1,7 @@
 import type { GlobalConfig } from 'payload'
 
+import { productOptions } from './products'
+
 // Palazzo "Sqope" model (glasdak). Same field shape as veranda-cube → rendered by
 // the shared ProductPage. Copy rewritten from the live site in the site's tone.
 export const palazzoSqope: GlobalConfig = {
@@ -96,15 +98,11 @@ export const palazzoSqope: GlobalConfig = {
 
     { name: 'othersTitle', type: 'text', defaultValue: 'Andere modellen' },
     {
-      name: 'others',
-      type: 'array',
-      fields: [{ name: 'name', type: 'text' }, { name: 'tag', type: 'text' }, { name: 'href', type: 'text' }, { name: 'image', type: 'upload', relationTo: 'media' }, { name: 'fallback', type: 'text', admin: { description: 'Standaard-afbeelding (pad in /uploads)' } }],
-      defaultValue: [
-        { name: 'Palazzo Lamellendak', tag: 'Roterend lamellendak', href: '/palazzo-lamellendak', fallback: '/uploads/pallazzo-lamellendak-front-veranda-zeeland.jpg' },
-        { name: 'Profiline', tag: 'Veelzijdig maatwerk', href: '/veranda-profiline', fallback: '/uploads/Profiline_Ommeren_VS_20260529_003_LR.jpg' },
-        { name: 'Linea', tag: 'Modern vlak dak', href: '/veranda-linea', fallback: '/uploads/DJI_20260527082041_0005_D.jpg' },
-        { name: 'Cube', tag: 'Exclusief design', href: '/veranda-cube', fallback: '/uploads/cube-kerk.jpg' },
-      ],
+      name: 'otherModels',
+      type: 'select',
+      hasMany: true,
+      options: productOptions,
+      admin: { description: 'Laat leeg voor automatische vulling met andere modellen uit dezelfde categorie. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).' },
     },
 
     { name: 'ctaTitle', type: 'text', defaultValue: 'Interesse in een Palazzo Sqope?' },

@@ -44,6 +44,8 @@ import { zakelijkZorg } from './zakelijk-zorg'
 import { zonwering } from './zonwering'
 import { zonweringBovendak } from './zonwering-bovendak'
 import { zonweringOnderdak } from './zonwering-onderdak'
+import { zonweringKnikarmschermen } from './zonwering-knikarmschermen'
+import { zonweringRolluiken } from './zonwering-rolluiken'
 import { zonweringScreens } from './zonwering-screens'
 import { zonweringUitvalschermen } from './zonwering-uitvalschermen'
 
@@ -94,6 +96,8 @@ export const contentGlobals = [
   zonweringBovendak,
   zonweringScreens,
   zonweringUitvalschermen,
+  zonweringKnikarmschermen,
+  zonweringRolluiken,
   accessoires,
   optieWanden,
   optieDakbedekking,

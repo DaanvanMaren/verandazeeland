@@ -21,7 +21,9 @@ const OTHERS = {
 
 export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
   for (const [slug, others] of Object.entries(OTHERS)) {
-    await payload.updateGlobal({ slug: slug as 'veranda-palazzo', locale: 'nl', req, data: { others } })
+    // `others` was later replaced by `otherModels`; at THIS point in history the
+    // array table still exists, so the write is valid — cast past current types.
+    await payload.updateGlobal({ slug: slug as 'veranda-palazzo', locale: 'nl', req, data: { others } as never })
   }
 }
 

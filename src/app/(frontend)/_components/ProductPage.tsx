@@ -5,6 +5,7 @@ import type { Media } from '@/payload-types'
 import { Footer } from './Footer'
 import { Breadcrumbs } from './Breadcrumbs'
 import { Header } from './Header'
+import { RelatedModels } from './RelatedModels'
 
 // Shared layout for every single-veranda product page (Verasol Cube, Palazzo
 // Sqope/Lamellendak, Pext veranda/lichtstraat, …). All those content globals
@@ -39,7 +40,7 @@ export interface ProductContent {
   galleryTitle?: string | null
   gallery?: ({ image?: (number | null) | Media; fallback?: string | null; alt?: string | null } & Row)[] | null
   othersTitle?: string | null
-  others?: ({ name?: string | null; tag?: string | null; href?: string | null; image?: (number | null) | Media; fallback?: string | null } & Row)[] | null
+  otherModels?: (string | null)[] | null
   ctaTitle?: string | null
   ctaText?: string | null
   ctaButton?: string | null
@@ -50,7 +51,7 @@ const img = (f: (number | null) | Media | undefined, fallback: string) =>
 
 const cover = 'absolute inset-0 w-full h-full object-cover'
 
-export function ProductPage({ c, ombouwHref = '/accessoires' }: { c: ProductContent; ombouwHref?: string }) {
+export async function ProductPage({ c, slug, ombouwHref = '/accessoires' }: { c: ProductContent; slug: string; ombouwHref?: string }) {
   return (
     <div className="max-w-[1280px] mx-auto bg-cream">
       <Header />
@@ -147,25 +148,9 @@ export function ProductPage({ c, ombouwHref = '/accessoires' }: { c: ProductCont
         </div>
       )}
 
-      {/* other models */}
-      {c.others && c.others.length > 0 && (
-        <div className="pt-[20px] px-[40px] pb-[56px] max-[600px]:px-[16px]">
-          <h2 className="font-display font-extrabold text-[28px] mb-[24px] tracking-[-0.8px]">{c.othersTitle}</h2>
-          <div className="grid grid-cols-4 max-[820px]:grid-cols-1 gap-[18px]">
-            {c.others.map((row) => (
-              <a key={row.id} className="lift bg-panel rounded-[18px] overflow-hidden shadow-[0_8px_26px_-20px_rgba(8,42,82,0.4)] block" href={row.href ?? '#'}>
-                <div className="h-[150px] overflow-hidden bg-navy">
-                  <img src={img(row.image, row.fallback ?? '')} alt={row.name ?? ''} className="w-full h-full object-cover" />
-                </div>
-                <div className="py-[18px] px-[20px]">
-                  <h3 className="font-display font-extrabold text-[18px] mb-[4px]">{row.name}</h3>
-                  <p className="text-[13.5px] text-taupe m-0">{row.tag}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
+      {/* other models — shared, auto-filled block */}
+      <RelatedModels slug={slug} title={c.othersTitle} override={c.otherModels} />
+
 
       {/* CTA */}
       <div className="bg-gold p-[56px] max-[600px]:p-[26px] mb-[40px] mx-[40px] max-[600px]:mx-[16px] rounded-[26px] text-center">

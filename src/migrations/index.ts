@@ -16,6 +16,8 @@ import * as migration_20260724_084831_add_palazzo_pext from './20260724_084831_a
 import * as migration_20260724_084900_add_palazzo_pext_to_overview from './20260724_084900_add_palazzo_pext_to_overview';
 import * as migration_20260724_092304_add_palazzo_pext_models from './20260724_092304_add_palazzo_pext_models';
 import * as migration_20260724_092400_palazzo_pext_own_models from './20260724_092400_palazzo_pext_own_models';
+import * as migration_20260724_103439_related_models from './20260724_103439_related_models';
+import * as migration_20260724_104338_zonwering_knikarm_rolluiken from './20260724_104338_zonwering_knikarm_rolluiken';
 
 export const migrations = [
   {
@@ -107,5 +109,15 @@ export const migrations = [
     up: migration_20260724_092400_palazzo_pext_own_models.up,
     down: migration_20260724_092400_palazzo_pext_own_models.down,
     name: '20260724_092400_palazzo_pext_own_models',
+  },
+  {
+    up: migration_20260724_103439_related_models.up,
+    down: migration_20260724_103439_related_models.down,
+    name: '20260724_103439_related_models',
+  },
+  {
+    up: migration_20260724_104338_zonwering_knikarm_rolluiken.up,
+    down: migration_20260724_104338_zonwering_knikarm_rolluiken.down,
+    name: '20260724_104338_zonwering_knikarm_rolluiken'
   },
 ];

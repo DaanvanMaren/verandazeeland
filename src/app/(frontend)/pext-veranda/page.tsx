@@ -11,5 +11,5 @@ export const metadata = {
 
 export default async function PextVerandaPage() {
   const c = await getContent('pext-veranda')
-  return <ProductPage c={c} ombouwHref="/pext-lichtstraat" />
+  return <ProductPage c={c} slug="pext-veranda" ombouwHref="/pext-lichtstraat" />
 }

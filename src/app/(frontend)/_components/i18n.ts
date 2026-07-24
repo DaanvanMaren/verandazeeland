@@ -22,6 +22,8 @@ export const deUI: Record<string, string> = {
   Onderdakzonwering: 'Unterdach-Sonnenschutz',
   Bovendakzonwering: 'Aufdach-Sonnenschutz',
   Uitvalschermen: 'Fallarmmarkisen',
+  Knikarmschermen: 'Gelenkarmmarkisen',
+  Rolluiken: 'Rollläden',
   Opties: 'Optionen',
   'Voor- en zijwanden': 'Vorder- und Seitenwände',
   Dakbedekking: 'Dacheindeckung',

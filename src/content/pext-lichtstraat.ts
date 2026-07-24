@@ -1,5 +1,7 @@
 import type { GlobalConfig } from 'payload'
 
+import { productOptions } from './products'
+
 // Pext lichtstraat (3 uitvoeringen: lessenaardak, zadeldak, daklicht). Same field
 // shape as veranda-cube → rendered by the shared ProductPage; the three types
 // are the `features` cards. Daklicht has no photo yet → left empty (client vult).
@@ -94,15 +96,11 @@ export const pextLichtstraat: GlobalConfig = {
 
     { name: 'othersTitle', type: 'text', defaultValue: 'Andere modellen' },
     {
-      name: 'others',
-      type: 'array',
-      fields: [{ name: 'name', type: 'text' }, { name: 'tag', type: 'text' }, { name: 'href', type: 'text' }, { name: 'image', type: 'upload', relationTo: 'media' }, { name: 'fallback', type: 'text', admin: { description: 'Standaard-afbeelding (pad in /uploads)' } }],
-      defaultValue: [
-        { name: 'Pext houten veranda', tag: 'Douglas of lariks', href: '/pext-veranda', fallback: '/uploads/veranda-hout-pext-veranda-zeeland.jpg' },
-        { name: 'Greenline', tag: 'Voordelig & strak', href: '/veranda-greenline', fallback: '/uploads/Profiline_Ommeren_VS_20260529_237_LR.jpg' },
-        { name: 'Profiline', tag: 'Veelzijdig maatwerk', href: '/veranda-profiline', fallback: '/uploads/Profiline_Ommeren_VS_20260529_003_LR.jpg' },
-        { name: 'Cube', tag: 'Exclusief design', href: '/veranda-cube', fallback: '/uploads/cube-kerk.jpg' },
-      ],
+      name: 'otherModels',
+      type: 'select',
+      hasMany: true,
+      options: productOptions,
+      admin: { description: 'Laat leeg voor automatische vulling met andere modellen uit dezelfde categorie. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).' },
     },
 
     { name: 'ctaTitle', type: 'text', defaultValue: 'Interesse in een Pext lichtstraat?' },

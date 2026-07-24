@@ -111,6 +111,8 @@ export async function Header() {
                   <a href="/zonwering-bovendak">{t('Bovendakzonwering')}</a>
                   <a href="/zonwering-screens">Screens</a>
                   <a href="/zonwering-uitvalschermen">{t('Uitvalschermen')}</a>
+                  <a href="/zonwering-knikarmschermen">{t('Knikarmschermen')}</a>
+                  <a href="/zonwering-rolluiken">{t('Rolluiken')}</a>
                 </div>
               </div>
             </div>

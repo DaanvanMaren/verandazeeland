@@ -11,5 +11,5 @@ export const metadata = {
 
 export default async function PalazzoLamellendakPage() {
   const c = await getContent('palazzo-lamellendak')
-  return <ProductPage c={c} ombouwHref="/palazzo-sqope" />
+  return <ProductPage c={c} slug="palazzo-lamellendak" ombouwHref="/palazzo-sqope" />
 }

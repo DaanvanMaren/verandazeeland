@@ -1,5 +1,7 @@
 import type { GlobalConfig } from 'payload'
 
+import { productOptions } from './products'
+
 // "Palazzo" product page (lamellendak + Sqope glasdak). Same field shape as
 // veranda-cube so it reuses that route layout. Copy rewritten in the site's own
 // conversational "u"-tone from the current live page. Read in
@@ -116,21 +118,12 @@ export const verandaPalazzo: GlobalConfig = {
     // other models
     { name: 'othersTitle', type: 'text', defaultValue: 'Andere modellen' },
     {
-      name: 'others',
-      type: 'array',
-      fields: [
-        { name: 'name', type: 'text' },
-        { name: 'tag', type: 'text' },
-        { name: 'href', type: 'text' },
-        { name: 'image', type: 'upload', relationTo: 'media' },
-        { name: 'fallback', type: 'text', admin: { description: 'Standaard-afbeelding (pad in /uploads)' } },
-      ],
-      defaultValue: [
-        { name: 'Palazzo Sqope', tag: 'Strak glasdak', href: '/palazzo-sqope', fallback: '/uploads/pallazo-sqope-slide-veranda-zeeland.jpg' },
-        { name: 'Palazzo Lamellendak', tag: 'Roterend lamellendak', href: '/palazzo-lamellendak', fallback: '/uploads/pallazzo-lamellendak-front-veranda-zeeland.jpg' },
-        { name: 'Linea', tag: 'Modern vlak dak', href: '/veranda-linea', fallback: '/uploads/DJI_20260527082041_0005_D.jpg' },
-        { name: 'Cube', tag: 'Exclusief design', href: '/veranda-cube', fallback: '/uploads/cube-kerk.jpg' },
-      ],
+      name: 'otherModels',
+      type: 'select',
+      hasMany: true,
+      options: productOptions,
+      defaultValue: ['palazzo-sqope', 'palazzo-lamellendak', 'veranda-linea', 'veranda-cube'],
+      admin: { description: 'Laat leeg voor automatische vulling. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).' },
     },
 
     // CTA
