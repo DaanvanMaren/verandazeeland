@@ -70,7 +70,7 @@ label{font-weight:600;font-size:13.5px;margin-bottom:7px;display:block}
 .navtoggle,.hamburger,.submenu-toggle,.submenu-caret{display:none}
 .navbar-inner{position:relative}
 
-@media(max-width:900px){
+@media(max-width:1100px){
   .hamburger{display:block;font-size:28px;line-height:1;cursor:pointer;color:#082a52;padding:4px 6px;user-select:none}
   .mainnav{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0!important;background:#f6f0e6;padding:8px 40px 18px;box-shadow:0 22px 34px -22px rgba(8,42,82,.5);border-bottom:1px solid rgba(8,42,82,.1);max-height:calc(100vh - 128px);max-height:calc(100dvh - 128px);overflow-y:auto;overscroll-behavior:contain}
   .navtoggle:checked~.mainnav{display:flex!important}

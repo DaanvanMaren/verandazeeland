@@ -47,7 +47,7 @@ export default async function HomePage() {
             <h1>
               <SplitText
                 text={c.heroTitle}
-                className="font-display font-black text-[74px] leading-[0.95] mb-[20px] tracking-[-2px]"
+                className="font-display font-black text-[50px] sm:text-[74px] leading-[0.95] mb-[20px] tracking-[-2px]"
                 delay={50}
                 duration={1.25}
                 ease="power3.out"

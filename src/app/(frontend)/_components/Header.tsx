@@ -25,7 +25,7 @@ export async function Header() {
     <>
       <div className="fullbleed bg-navy text-[#c3d4e6] text-[12.5px]">
         <div className="bar-inner topbar-inner flex justify-between items-center py-[9px] px-[40px]">
-          <span>{t('Serooskerke · Showroom di t/m za 10.00–17.00u, bij voorkeur op afspraak')}</span>
+          <span className=" hidden sm:flex">{t('Serooskerke · Showroom di t/m za 10.00–17.00u, bij voorkeur op afspraak')}</span>
           <div className="flex gap-[18px] items-center">
             <span>
               <span className="text-gold">★★★★★</span> 9,2 / 327 {t('reviews')}
@@ -45,8 +45,8 @@ export async function Header() {
       </div>
       <div className="fullbleed bg-cream sticky top-0 z-20 border-b border-[rgba(8,42,82,0.08)]">
         <div className="bar-inner navbar-inner flex items-center justify-between py-[18px] px-[40px]">
-          <a href="/">
-            <img src="/uploads/logo-1783333745716.png" alt="Veranda Zeeland" className="h-[56px] w-auto block" />
+          <a href="/" className="bg-white">
+            <img src="/uploads/logo-1783333745716.png" alt="Veranda Zeeland" className="h-[80px] w-auto block" />
           </a>
           <input type="checkbox" id="navtoggle" className="navtoggle" />
           <nav className="mainnav flex gap-[24px] text-[15px] font-semibold items-center">
@@ -155,7 +155,7 @@ export async function Header() {
             </div>
           </nav>
           <div className="flex items-center gap-[14px]">
-            <a className="btn-n bg-navy text-white font-bold text-[14px] py-[13px] px-[22px] rounded-full" href="/offerte">
+            <a className="btn-n  hidden sm:flex bg-navy text-white font-bold text-[14px] py-[13px] px-[22px] rounded-full" href="/offerte">
               {t('Offerte aanvragen')}
             </a>
             <label htmlFor="navtoggle" className="hamburger" aria-label="Menu openen">
