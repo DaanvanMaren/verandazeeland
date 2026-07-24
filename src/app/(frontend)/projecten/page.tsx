@@ -53,7 +53,7 @@ export default async function ProjectenPage() {
       </div>
 
       {/* grid */}
-      <div className="px-[40px] pb-[56px] max-[600px]:px-[16px] bg-white pt-[40px]">
+      <div className="px-[40px] pb-[56px] max-[600px]:px-[16px] pt-[40px]">
         {projects.length === 0 ? (
           <p className="text-taupe text-[16px]">{t('Binnenkort meer projecten.')}</p>
         ) : (
