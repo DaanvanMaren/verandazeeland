@@ -150,6 +150,9 @@ export async function Header() {
             <div className="menu-item">
               <a className="nav-a" href="/projecten">{t('Projecten')}</a>
             </div>
+            <div className="menu-item">
+              <a className="nav-a" href="/contact">{t('Contact')}</a>
+            </div>
           </nav>
           <div className="flex items-center gap-[14px]">
             <a className="btn-n bg-navy text-white font-bold text-[14px] py-[13px] px-[22px] rounded-full" href="/offerte">
