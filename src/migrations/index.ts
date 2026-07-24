@@ -20,6 +20,8 @@ import * as migration_20260724_103439_related_models from './20260724_103439_rel
 import * as migration_20260724_104338_zonwering_knikarm_rolluiken from './20260724_104338_zonwering_knikarm_rolluiken';
 import * as migration_20260724_124530_show_other_models_toggle from './20260724_124530_show_other_models_toggle';
 import * as migration_20260724_125056_drop_bespoke_related_blocks from './20260724_125056_drop_bespoke_related_blocks';
+import * as migration_20260724_130000_seed_de_new_pages from './20260724_130000_seed_de_new_pages';
+import * as migration_20260724_131000_hyphenate_terrassenueberdachung from './20260724_131000_hyphenate_terrassenueberdachung';
 
 export const migrations = [
   {
@@ -131,5 +133,15 @@ export const migrations = [
     up: migration_20260724_125056_drop_bespoke_related_blocks.up,
     down: migration_20260724_125056_drop_bespoke_related_blocks.down,
     name: '20260724_125056_drop_bespoke_related_blocks'
+  },
+  {
+    up: migration_20260724_130000_seed_de_new_pages.up,
+    down: migration_20260724_130000_seed_de_new_pages.down,
+    name: '20260724_130000_seed_de_new_pages',
+  },
+  {
+    up: migration_20260724_131000_hyphenate_terrassenueberdachung.up,
+    down: migration_20260724_131000_hyphenate_terrassenueberdachung.down,
+    name: '20260724_131000_hyphenate_terrassenueberdachung',
   },
 ];

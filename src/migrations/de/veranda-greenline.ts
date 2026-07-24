@@ -42,13 +42,6 @@ const data = {
     { fallback: '/uploads/greenline-detail.jpg', alt: 'Greenline Detail' },
     { fallback: '/uploads/IMG_9393.jpg', alt: 'Greenline mit Holzwand' },
   ],
-  otherTitle: 'Andere Modelle',
-  otherModels: [
-    { name: 'Profiline', tag: 'Vielseitige Maßarbeit', href: '/veranda-profiline', fallback: '/uploads/Profiline_Ommeren_VS_20260529_003_LR.jpg' },
-    { name: 'Linea', tag: 'Modernes Flachdach', href: '/veranda-linea', fallback: '/uploads/DJI_20260527082041_0005_D.jpg' },
-    { name: 'Cube', tag: 'Exklusives Design', href: '/veranda-cube', fallback: '/uploads/Lamellen_Verasol_tegels02.jpg' },
-    { name: 'Pergola', tag: 'Freistehend', href: '/veranda-pergola', fallback: '/uploads/foto-water-suppen.jpg' },
-  ],
   ctaTitle: 'Interesse an der Greenline?',
   ctaText:
     'Fordern Sie unverbindlich ein maßgeschneidertes Angebot an oder kommen Sie in unserem Showroom in Serooskerke vorbei.',

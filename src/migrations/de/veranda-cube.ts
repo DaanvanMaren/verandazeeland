@@ -43,13 +43,6 @@ const data = {
     { fallback: '/uploads/Cube_Zaltbommel_VS_20260511_085_LR.jpg', alt: 'Cube im Garten' },
     { fallback: '/uploads/Cube_Zaltbommel_VS_20260511_114_LR.jpg', alt: 'Cube Überdachung' },
   ],
-  othersTitle: 'Andere Modelle',
-  others: [
-    { name: 'Greenline', tag: 'Günstig & schlicht', href: '/veranda-greenline', fallback: '/uploads/Profiline_Ommeren_VS_20260529_237_LR.jpg' },
-    { name: 'Profiline', tag: 'Vielseitige Maßarbeit', href: '/veranda-profiline', fallback: '/uploads/Profiline_Ommeren_VS_20260529_003_LR.jpg' },
-    { name: 'Linea', tag: 'Modernes Flachdach', href: '/veranda-linea', fallback: '/uploads/DJI_20260527082041_0005_D.jpg' },
-    { name: 'Pergola', tag: 'Freistehend', href: '/veranda-pergola', fallback: '/uploads/foto-water-suppen.jpg' },
-  ],
   ctaTitle: 'Interesse an der Cube?',
   ctaText:
     'Fordern Sie unverbindlich ein maßgeschneidertes Angebot an oder kommen Sie in unserem Showroom in Serooskerke vorbei.',

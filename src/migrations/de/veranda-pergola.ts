@@ -35,13 +35,6 @@ const data = {
   bandText:
     'Wählen Sie Abmessungen, Farbe und Art des Sonnenschutzes und ergänzen Sie diese mit Screens, Beleuchtung und Heizung für ein vollwertiges Außenzimmer.',
   bandCta: 'Alle Optionen ansehen →',
-  relatedHeading: 'Andere Modelle',
-  related: [
-    { name: 'Greenline', tag: 'Günstig & klar', href: '/veranda-greenline', fallback: '/uploads/Profiline_Ommeren_VS_20260529_237_LR.jpg' },
-    { name: 'Profiline', tag: 'Vielseitige Maßanfertigung', href: '/veranda-profiline', fallback: '/uploads/Profiline_Ommeren_VS_20260529_003_LR.jpg' },
-    { name: 'Linea', tag: 'Modernes flaches Dach', href: '/veranda-linea', fallback: '/uploads/DJI_20260527082041_0005_D.jpg' },
-    { name: 'Cube', tag: 'Exklusives Design', href: '/veranda-cube', fallback: '/uploads/Lamellen_Verasol_tegels02.jpg' },
-  ],
   ctaTitle: 'Interesse an der Pergola?',
   ctaText:
     'Fordern Sie unverbindlich ein maßgeschneidertes Angebot an oder besuchen Sie unseren Showroom in Serooskerke.',

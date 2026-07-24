@@ -39,8 +39,10 @@ export const deUI: Record<string, string> = {
   'Projectbouw & Ontwikkeling': 'Projektbau & Entwicklung',
 
   // SEO landing pages (breadcrumbs + footer links)
-  'Veranda prijzen': 'Preise Terrassenüberdachung',
-  'Veranda vergunning': 'Genehmigung Terrassenüberdachung',
+  // ­ = soft hyphen: lets the long compound break at the German-correct seam
+  // (Terrassen‧überdachung) on narrow/mobile screens; invisible otherwise.
+  'Veranda prijzen': 'Preise Terrassen­überdachung',
+  'Veranda vergunning': 'Genehmigung Terrassen­überdachung',
   'Veranda laten plaatsen': 'Überdachung montieren lassen',
   'Veranda Middelburg': 'Überdachung Middelburg',
   'Veranda Goes': 'Überdachung Goes',
@@ -57,6 +59,14 @@ export const deUI: Record<string, string> = {
   Projecten: 'Projekte',
   'Alle projecten': 'Alle Projekte',
   'Onze projecten': 'Unsere Projekte',
+  'Uitgevoerde projecten': 'Ausgeführte Projekte',
+  'Een greep uit de veranda’s, tuinkamers en overkappingen die wij in heel Zeeland en daarbuiten realiseerden. Volledig op maat, inclusief inmeten en montage door ons eigen team.':
+    'Ein Auszug aus den Veranden, Gartenzimmern und Überdachungen, die wir in ganz Zeeland und darüber hinaus realisiert haben. Vollständig maßgefertigt, inklusive Aufmaß und Montage durch unser eigenes Team.',
+  'Binnenkort meer projecten.': 'Demnächst mehr Projekte.',
+  'Foto’s volgen binnenkort.': 'Fotos folgen in Kürze.',
+  'Zelf zo’n project?': 'Selbst so ein Projekt?',
+  'Vraag vrijblijvend een offerte op maat aan of kom langs in onze showroom in Serooskerke.':
+    'Fordern Sie unverbindlich ein maßgeschneidertes Angebot an oder besuchen Sie unseren Showroom in Serooskerke.',
   'Andere modellen': 'Andere Modelle',
   'Bekijk project': 'Projekt ansehen',
   'Houten veranda': 'Holz-Veranda',

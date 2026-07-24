@@ -42,13 +42,6 @@ const data = {
     { fallback: '/uploads/linea-tuinkamer-b.jpg', alt: 'Linea Gartenzimmer mit Ausblick' },
   ],
   galleryTitle: 'Linea in der Praxis',
-  relatedTitle: 'Andere Modelle',
-  related: [
-    { name: 'Greenline', tag: 'Günstig & klar', href: '/veranda-greenline', fallback: '/uploads/Profiline_Ommeren_VS_20260529_237_LR.jpg' },
-    { name: 'Profiline', tag: 'Vielseitige Maßanfertigung', href: '/veranda-profiline', fallback: '/uploads/Profiline_Ommeren_VS_20260529_003_LR.jpg' },
-    { name: 'Cube', tag: 'Exklusives Design', href: '/veranda-cube', fallback: '/uploads/Lamellen_Verasol_tegels02.jpg' },
-    { name: 'Pergola', tag: 'Freistehend', href: '/veranda-pergola', fallback: '/uploads/foto-water-suppen.jpg' },
-  ],
   ctaTitle: 'Interesse an der Linea?',
   ctaText:
     'Fordern Sie unverbindlich ein maßgeschneidertes Angebot an oder besuchen Sie unseren Showroom in Serooskerke.',
