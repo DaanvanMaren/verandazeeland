@@ -205,7 +205,7 @@ export default async function HomePage() {
           </h2>
           <p className="text-[17px] text-slate-dark max-w-[520px]">{c.ctaText}</p>
         </div>
-        <a className="btn-n bg-navy text-white font-extrabold text-[16px] py-[19px] px-[34px] rounded-full whitespace-nowrap" href="/contact">
+        <a className="btn-n bg-navy text-white font-extrabold text-[16px] py-[19px] px-[34px] rounded-full whitespace-nowrap" href="/offerte">
           {c.ctaButton}
         </a>
       </div>
