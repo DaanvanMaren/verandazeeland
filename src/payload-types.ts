@@ -661,20 +661,10 @@ export interface VerandaGreenline {
         id?: string | null;
       }[]
     | null;
-  otherTitle?: string | null;
-  otherModels?:
-    | {
-        name?: string | null;
-        tag?: string | null;
-        href?: string | null;
-        image?: (number | null) | Media;
-        /**
-         * Standaard-afbeelding (pad in /uploads)
-         */
-        fallback?: string | null;
-        id?: string | null;
-      }[]
-    | null;
+  /**
+   * Toont automatisch de andere modellen uit dezelfde lijn (foto, titel en tag komen van die pagina).
+   */
+  showOtherModels?: boolean | null;
   ctaTitle?: string | null;
   ctaText?: string | null;
   ctaButton?: string | null;
@@ -735,20 +725,10 @@ export interface VerandaProfiline {
    * Standaard-afbeelding (pad in /uploads)
    */
   maatImageFallback?: string | null;
-  modelsTitle?: string | null;
-  models?:
-    | {
-        name?: string | null;
-        tag?: string | null;
-        href?: string | null;
-        image?: (number | null) | Media;
-        /**
-         * Standaard-afbeelding (pad in /uploads)
-         */
-        fallback?: string | null;
-        id?: string | null;
-      }[]
-    | null;
+  /**
+   * Toont automatisch de andere modellen uit dezelfde lijn (foto, titel en tag komen van die pagina).
+   */
+  showOtherModels?: boolean | null;
   ctaTitle?: string | null;
   ctaText?: string | null;
   ctaButton?: string | null;
@@ -821,20 +801,10 @@ export interface VerandaLinea {
         id?: string | null;
       }[]
     | null;
-  relatedTitle?: string | null;
-  related?:
-    | {
-        name?: string | null;
-        tag?: string | null;
-        href?: string | null;
-        image?: (number | null) | Media;
-        /**
-         * Standaard-afbeelding (pad in /uploads)
-         */
-        fallback?: string | null;
-        id?: string | null;
-      }[]
-    | null;
+  /**
+   * Toont automatisch de andere modellen uit dezelfde lijn (foto, titel en tag komen van die pagina).
+   */
+  showOtherModels?: boolean | null;
   ctaTitle?: string | null;
   ctaText?: string | null;
   ctaButton?: string | null;
@@ -907,23 +877,10 @@ export interface VerandaCube {
         id?: string | null;
       }[]
     | null;
-  othersTitle?: string | null;
   /**
-   * Laat leeg voor automatische vulling met andere modellen uit dezelfde categorie. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).
+   * Toont automatisch de andere modellen uit dezelfde lijn (foto, titel en tag komen van die pagina).
    */
-  otherModels?:
-    | (
-        | 'veranda-greenline'
-        | 'veranda-profiline'
-        | 'veranda-linea'
-        | 'veranda-cube'
-        | 'veranda-pergola'
-        | 'palazzo-sqope'
-        | 'palazzo-lamellendak'
-        | 'pext-veranda'
-        | 'pext-lichtstraat'
-      )[]
-    | null;
+  showOtherModels?: boolean | null;
   ctaTitle?: string | null;
   ctaText?: string | null;
   ctaButton?: string | null;
@@ -984,20 +941,10 @@ export interface VerandaPergola {
    * Standaard-afbeelding (pad in /uploads)
    */
   bandImageFallback?: string | null;
-  relatedHeading?: string | null;
-  related?:
-    | {
-        name?: string | null;
-        tag?: string | null;
-        href?: string | null;
-        image?: (number | null) | Media;
-        /**
-         * Standaard-afbeelding (pad in /uploads)
-         */
-        fallback?: string | null;
-        id?: string | null;
-      }[]
-    | null;
+  /**
+   * Toont automatisch de andere modellen uit dezelfde lijn (foto, titel en tag komen van die pagina).
+   */
+  showOtherModels?: boolean | null;
   ctaTitle?: string | null;
   ctaText?: string | null;
   ctaButton?: string | null;
@@ -1070,23 +1017,10 @@ export interface VerandaPalazzo {
         id?: string | null;
       }[]
     | null;
-  othersTitle?: string | null;
   /**
-   * Laat leeg voor automatische vulling. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).
+   * Toont automatisch de andere modellen uit dezelfde lijn (foto, titel en tag komen van die pagina).
    */
-  otherModels?:
-    | (
-        | 'veranda-greenline'
-        | 'veranda-profiline'
-        | 'veranda-linea'
-        | 'veranda-cube'
-        | 'veranda-pergola'
-        | 'palazzo-sqope'
-        | 'palazzo-lamellendak'
-        | 'pext-veranda'
-        | 'pext-lichtstraat'
-      )[]
-    | null;
+  showOtherModels?: boolean | null;
   ctaTitle?: string | null;
   ctaText?: string | null;
   ctaButton?: string | null;
@@ -1159,23 +1093,10 @@ export interface PalazzoSqope {
         id?: string | null;
       }[]
     | null;
-  othersTitle?: string | null;
   /**
-   * Laat leeg voor automatische vulling met andere modellen uit dezelfde categorie. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).
+   * Toont automatisch de andere modellen uit dezelfde lijn (foto, titel en tag komen van die pagina).
    */
-  otherModels?:
-    | (
-        | 'veranda-greenline'
-        | 'veranda-profiline'
-        | 'veranda-linea'
-        | 'veranda-cube'
-        | 'veranda-pergola'
-        | 'palazzo-sqope'
-        | 'palazzo-lamellendak'
-        | 'pext-veranda'
-        | 'pext-lichtstraat'
-      )[]
-    | null;
+  showOtherModels?: boolean | null;
   ctaTitle?: string | null;
   ctaText?: string | null;
   ctaButton?: string | null;
@@ -1248,23 +1169,10 @@ export interface PalazzoLamellendak {
         id?: string | null;
       }[]
     | null;
-  othersTitle?: string | null;
   /**
-   * Laat leeg voor automatische vulling met andere modellen uit dezelfde categorie. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).
+   * Toont automatisch de andere modellen uit dezelfde lijn (foto, titel en tag komen van die pagina).
    */
-  otherModels?:
-    | (
-        | 'veranda-greenline'
-        | 'veranda-profiline'
-        | 'veranda-linea'
-        | 'veranda-cube'
-        | 'veranda-pergola'
-        | 'palazzo-sqope'
-        | 'palazzo-lamellendak'
-        | 'pext-veranda'
-        | 'pext-lichtstraat'
-      )[]
-    | null;
+  showOtherModels?: boolean | null;
   ctaTitle?: string | null;
   ctaText?: string | null;
   ctaButton?: string | null;
@@ -1337,23 +1245,10 @@ export interface VerandaPext {
         id?: string | null;
       }[]
     | null;
-  othersTitle?: string | null;
   /**
-   * Laat leeg voor automatische vulling. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).
+   * Toont automatisch de andere modellen uit dezelfde lijn (foto, titel en tag komen van die pagina).
    */
-  otherModels?:
-    | (
-        | 'veranda-greenline'
-        | 'veranda-profiline'
-        | 'veranda-linea'
-        | 'veranda-cube'
-        | 'veranda-pergola'
-        | 'palazzo-sqope'
-        | 'palazzo-lamellendak'
-        | 'pext-veranda'
-        | 'pext-lichtstraat'
-      )[]
-    | null;
+  showOtherModels?: boolean | null;
   ctaTitle?: string | null;
   ctaText?: string | null;
   ctaButton?: string | null;
@@ -1426,23 +1321,10 @@ export interface PextVeranda {
         id?: string | null;
       }[]
     | null;
-  othersTitle?: string | null;
   /**
-   * Laat leeg voor automatische vulling met andere modellen uit dezelfde categorie. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).
+   * Toont automatisch de andere modellen uit dezelfde lijn (foto, titel en tag komen van die pagina).
    */
-  otherModels?:
-    | (
-        | 'veranda-greenline'
-        | 'veranda-profiline'
-        | 'veranda-linea'
-        | 'veranda-cube'
-        | 'veranda-pergola'
-        | 'palazzo-sqope'
-        | 'palazzo-lamellendak'
-        | 'pext-veranda'
-        | 'pext-lichtstraat'
-      )[]
-    | null;
+  showOtherModels?: boolean | null;
   ctaTitle?: string | null;
   ctaText?: string | null;
   ctaButton?: string | null;
@@ -1515,23 +1397,10 @@ export interface PextLichtstraat {
         id?: string | null;
       }[]
     | null;
-  othersTitle?: string | null;
   /**
-   * Laat leeg voor automatische vulling met andere modellen uit dezelfde categorie. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).
+   * Toont automatisch de andere modellen uit dezelfde lijn (foto, titel en tag komen van die pagina).
    */
-  otherModels?:
-    | (
-        | 'veranda-greenline'
-        | 'veranda-profiline'
-        | 'veranda-linea'
-        | 'veranda-cube'
-        | 'veranda-pergola'
-        | 'palazzo-sqope'
-        | 'palazzo-lamellendak'
-        | 'pext-veranda'
-        | 'pext-lichtstraat'
-      )[]
-    | null;
+  showOtherModels?: boolean | null;
   ctaTitle?: string | null;
   ctaText?: string | null;
   ctaButton?: string | null;
@@ -3120,17 +2989,7 @@ export interface VerandaGreenlineSelect<T extends boolean = true> {
         alt?: T;
         id?: T;
       };
-  otherTitle?: T;
-  otherModels?:
-    | T
-    | {
-        name?: T;
-        tag?: T;
-        href?: T;
-        image?: T;
-        fallback?: T;
-        id?: T;
-      };
+  showOtherModels?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
@@ -3182,17 +3041,7 @@ export interface VerandaProfilineSelect<T extends boolean = true> {
   maatCta?: T;
   maatImage?: T;
   maatImageFallback?: T;
-  modelsTitle?: T;
-  models?:
-    | T
-    | {
-        name?: T;
-        tag?: T;
-        href?: T;
-        image?: T;
-        fallback?: T;
-        id?: T;
-      };
+  showOtherModels?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
@@ -3253,17 +3102,7 @@ export interface VerandaLineaSelect<T extends boolean = true> {
         alt?: T;
         id?: T;
       };
-  relatedTitle?: T;
-  related?:
-    | T
-    | {
-        name?: T;
-        tag?: T;
-        href?: T;
-        image?: T;
-        fallback?: T;
-        id?: T;
-      };
+  showOtherModels?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
@@ -3324,8 +3163,7 @@ export interface VerandaCubeSelect<T extends boolean = true> {
         alt?: T;
         id?: T;
       };
-  othersTitle?: T;
-  otherModels?: T;
+  showOtherModels?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
@@ -3377,17 +3215,7 @@ export interface VerandaPergolaSelect<T extends boolean = true> {
   bandCta?: T;
   bandImage?: T;
   bandImageFallback?: T;
-  relatedHeading?: T;
-  related?:
-    | T
-    | {
-        name?: T;
-        tag?: T;
-        href?: T;
-        image?: T;
-        fallback?: T;
-        id?: T;
-      };
+  showOtherModels?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
@@ -3448,8 +3276,7 @@ export interface VerandaPalazzoSelect<T extends boolean = true> {
         alt?: T;
         id?: T;
       };
-  othersTitle?: T;
-  otherModels?: T;
+  showOtherModels?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
@@ -3510,8 +3337,7 @@ export interface PalazzoSqopeSelect<T extends boolean = true> {
         alt?: T;
         id?: T;
       };
-  othersTitle?: T;
-  otherModels?: T;
+  showOtherModels?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
@@ -3572,8 +3398,7 @@ export interface PalazzoLamellendakSelect<T extends boolean = true> {
         alt?: T;
         id?: T;
       };
-  othersTitle?: T;
-  otherModels?: T;
+  showOtherModels?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
@@ -3634,8 +3459,7 @@ export interface VerandaPextSelect<T extends boolean = true> {
         alt?: T;
         id?: T;
       };
-  othersTitle?: T;
-  otherModels?: T;
+  showOtherModels?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
@@ -3696,8 +3520,7 @@ export interface PextVerandaSelect<T extends boolean = true> {
         alt?: T;
         id?: T;
       };
-  othersTitle?: T;
-  otherModels?: T;
+  showOtherModels?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;
@@ -3758,8 +3581,7 @@ export interface PextLichtstraatSelect<T extends boolean = true> {
         alt?: T;
         id?: T;
       };
-  othersTitle?: T;
-  otherModels?: T;
+  showOtherModels?: T;
   ctaTitle?: T;
   ctaText?: T;
   ctaButton?: T;

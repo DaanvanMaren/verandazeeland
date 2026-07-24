@@ -45,7 +45,7 @@ export async function Header() {
       </div>
       <div className="fullbleed bg-cream sticky top-0 z-20 border-b border-[rgba(8,42,82,0.08)]">
         <div className="bar-inner navbar-inner flex items-center justify-between py-[18px] px-[40px]">
-          <a href="/" className="bg-white">
+          <a href="/" className="bg-white p-[10px] rounded-sm">
             <img src="/uploads/logo-1783333745716.png" alt="Veranda Zeeland" className="h-[80px] w-auto block" />
           </a>
           <input type="checkbox" id="navtoggle" className="navtoggle" />

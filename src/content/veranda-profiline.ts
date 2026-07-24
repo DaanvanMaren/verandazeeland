@@ -96,24 +96,7 @@ export const verandaProfiline: GlobalConfig = {
     { name: 'maatImageFallback', type: 'text', admin: { description: 'Standaard-afbeelding (pad in /uploads)' }, defaultValue: '/uploads/Profiline_Veenendaal_VS_20250611_434_LR.jpg' },
 
     // other models
-    { name: 'modelsTitle', type: 'text', defaultValue: 'Andere modellen' },
-    {
-      name: 'models',
-      type: 'array',
-      fields: [
-        { name: 'name', type: 'text' },
-        { name: 'tag', type: 'text' },
-        { name: 'href', type: 'text' },
-        { name: 'image', type: 'upload', relationTo: 'media' },
-        { name: 'fallback', type: 'text', admin: { description: 'Standaard-afbeelding (pad in /uploads)' } },
-      ],
-      defaultValue: [
-        { name: 'Greenline', tag: 'Voordelig & strak', href: '/veranda-greenline', fallback: '/uploads/Profiline_Ommeren_VS_20260529_237_LR.jpg' },
-        { name: 'Linea', tag: 'Modern vlak dak', href: '/veranda-linea', fallback: '/uploads/DJI_20260527082041_0005_D.jpg' },
-        { name: 'Cube', tag: 'Exclusief design', href: '/veranda-cube', fallback: '/uploads/Lamellen_Verasol_tegels02.jpg' },
-        { name: 'Pergola', tag: 'Vrijstaand', href: '/veranda-pergola', fallback: '/uploads/foto-water-suppen.jpg' },
-      ],
-    },
+    { name: 'showOtherModels', type: 'checkbox', defaultValue: true, label: 'Toon "Andere modellen"-blok', admin: { description: 'Toont automatisch de andere modellen uit dezelfde lijn (foto, titel en tag komen van die pagina).' } },
 
     // CTA
     { name: 'ctaTitle', type: 'text', defaultValue: 'Interesse in de Profiline?' },

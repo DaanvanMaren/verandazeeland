@@ -39,8 +39,7 @@ export interface ProductContent {
   ombouwImageFallback?: string | null
   galleryTitle?: string | null
   gallery?: ({ image?: (number | null) | Media; fallback?: string | null; alt?: string | null } & Row)[] | null
-  othersTitle?: string | null
-  otherModels?: (string | null)[] | null
+  showOtherModels?: boolean | null
   ctaTitle?: string | null
   ctaText?: string | null
   ctaButton?: string | null
@@ -148,8 +147,8 @@ export async function ProductPage({ c, slug, ombouwHref = '/accessoires' }: { c:
         </div>
       )}
 
-      {/* other models — shared, auto-filled block */}
-      <RelatedModels slug={slug} title={c.othersTitle} override={c.otherModels} />
+      {/* other models — shared, auto-filled per brand */}
+      <RelatedModels slug={slug} show={c.showOtherModels} />
 
 
       {/* CTA */}

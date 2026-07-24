@@ -1,6 +1,5 @@
 import type { GlobalConfig } from 'payload'
 
-import { productOptions } from './products'
 
 // Palazzo "Lamellendak" model (roterend lamellendak). Same field shape as
 // veranda-cube → rendered by the shared ProductPage.
@@ -94,14 +93,7 @@ export const palazzoLamellendak: GlobalConfig = {
       ],
     },
 
-    { name: 'othersTitle', type: 'text', defaultValue: 'Andere modellen' },
-    {
-      name: 'otherModels',
-      type: 'select',
-      hasMany: true,
-      options: productOptions,
-      admin: { description: 'Laat leeg voor automatische vulling met andere modellen uit dezelfde categorie. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).' },
-    },
+    { name: 'showOtherModels', type: 'checkbox', defaultValue: true, label: 'Toon "Andere modellen"-blok', admin: { description: 'Toont automatisch de andere modellen uit dezelfde lijn (foto, titel en tag komen van die pagina).' } },
 
     { name: 'ctaTitle', type: 'text', defaultValue: 'Interesse in een Palazzo lamellendak?' },
     { name: 'ctaText', type: 'textarea', defaultValue: 'Vraag vrijblijvend een offerte op maat aan of kom langs in onze showroom in Serooskerke.' },

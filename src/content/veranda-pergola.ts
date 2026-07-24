@@ -89,24 +89,7 @@ export const verandaPergola: GlobalConfig = {
     { name: 'bandImage', type: 'upload', relationTo: 'media' },
     { name: 'bandImageFallback', type: 'text', admin: { description: 'Standaard-afbeelding (pad in /uploads)' }, defaultValue: '/uploads/banner-verasol-pergola-verasol.jpg' },
 
-    { name: 'relatedHeading', type: 'text', defaultValue: 'Andere modellen' },
-    {
-      name: 'related',
-      type: 'array',
-      fields: [
-        { name: 'name', type: 'text' },
-        { name: 'tag', type: 'text' },
-        { name: 'href', type: 'text' },
-        { name: 'image', type: 'upload', relationTo: 'media' },
-        { name: 'fallback', type: 'text', admin: { description: 'Standaard-afbeelding (pad in /uploads)' } },
-      ],
-      defaultValue: [
-        { name: 'Greenline', tag: 'Voordelig & strak', href: '/veranda-greenline', fallback: '/uploads/Profiline_Ommeren_VS_20260529_237_LR.jpg' },
-        { name: 'Profiline', tag: 'Veelzijdig maatwerk', href: '/veranda-profiline', fallback: '/uploads/Profiline_Ommeren_VS_20260529_003_LR.jpg' },
-        { name: 'Linea', tag: 'Modern vlak dak', href: '/veranda-linea', fallback: '/uploads/DJI_20260527082041_0005_D.jpg' },
-        { name: 'Cube', tag: 'Exclusief design', href: '/veranda-cube', fallback: '/uploads/Lamellen_Verasol_tegels02.jpg' },
-      ],
-    },
+    { name: 'showOtherModels', type: 'checkbox', defaultValue: true, label: 'Toon "Andere modellen"-blok', admin: { description: 'Toont automatisch de andere modellen uit dezelfde lijn (foto, titel en tag komen van die pagina).' } },
 
     { name: 'ctaTitle', type: 'text', defaultValue: 'Interesse in de Pergola?' },
     {

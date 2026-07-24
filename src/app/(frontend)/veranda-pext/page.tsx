@@ -113,7 +113,7 @@ export default async function VerandaPextPage() {
       </div>
 
       {/* other models — shared, auto-filled block */}
-      <RelatedModels slug="veranda-pext" title={c.othersTitle} override={c.otherModels} />
+      <RelatedModels slug="veranda-pext" show={c.showOtherModels} />
 
       {/* CTA */}
       <div className="bg-gold p-[56px] max-[600px]:p-[26px] mb-[40px] mx-[40px] max-[600px]:mx-[16px] rounded-[26px] text-center">

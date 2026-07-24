@@ -6,6 +6,7 @@ import type { Media } from '@/payload-types'
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
+import { RelatedModels } from '../_components/RelatedModels'
 
 export const metadata = {
   title: 'Linea veranda | Veranda Zeeland',
@@ -122,23 +123,8 @@ export default async function VerandaLineaPage() {
         </div>
       </div>
 
-      {/* related models */}
-      <div className="pt-[20px] px-[40px] pb-[56px] max-[600px]:px-[16px]">
-        <h2 className="font-display font-extrabold text-[28px] mb-[24px] tracking-[-0.8px]">{c.relatedTitle}</h2>
-        <div className="grid grid-cols-4 max-[820px]:grid-cols-1 gap-[18px]">
-          {c.related?.map((row) => (
-            <a key={row.id} className="lift bg-panel rounded-[18px] overflow-hidden shadow-[0_8px_26px_-20px_rgba(8,42,82,0.4)] block" href={row.href ?? '#'}>
-              <div className="h-[150px] overflow-hidden bg-navy">
-                <img src={img(row.image, row.fallback ?? '')} alt={row.name ?? ''} className="w-full h-full object-cover" />
-              </div>
-              <div className="py-[18px] px-[20px]">
-                <h3 className="font-display font-extrabold text-[18px] mb-[4px]">{row.name}</h3>
-                <p className="text-[13.5px] text-taupe m-0">{row.tag}</p>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
+      {/* other models — shared, auto-filled per brand */}
+      <RelatedModels slug="veranda-linea" show={c.showOtherModels} />
 
       {/* CTA */}
       <div className="bg-gold p-[56px] max-[600px]:p-[26px] mb-[40px] mx-[40px] max-[600px]:mx-[16px] rounded-[26px] text-center">

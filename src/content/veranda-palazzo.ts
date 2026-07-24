@@ -1,6 +1,5 @@
 import type { GlobalConfig } from 'payload'
 
-import { productOptions } from './products'
 
 // "Palazzo" product page (lamellendak + Sqope glasdak). Same field shape as
 // veranda-cube so it reuses that route layout. Copy rewritten in the site's own
@@ -116,15 +115,7 @@ export const verandaPalazzo: GlobalConfig = {
     },
 
     // other models
-    { name: 'othersTitle', type: 'text', defaultValue: 'Andere modellen' },
-    {
-      name: 'otherModels',
-      type: 'select',
-      hasMany: true,
-      options: productOptions,
-      defaultValue: ['palazzo-sqope', 'palazzo-lamellendak', 'veranda-linea', 'veranda-cube'],
-      admin: { description: 'Laat leeg voor automatische vulling. Of kies zelf welke pagina’s als kaart verschijnen (afbeelding = hoofdafbeelding van die pagina, tekstje = de badge).' },
-    },
+    { name: 'showOtherModels', type: 'checkbox', defaultValue: true, label: 'Toon "Andere modellen"-blok', admin: { description: 'Toont automatisch de andere modellen uit dezelfde lijn (foto, titel en tag komen van die pagina).' } },
 
     // CTA
     { name: 'ctaTitle', type: 'text', defaultValue: 'Interesse in een Palazzo veranda?' },
