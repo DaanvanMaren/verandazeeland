@@ -47,7 +47,7 @@ export default async function ProjectenPage() {
         </h1>
         <p className="text-[18px] leading-[1.65] text-slate max-w-[720px]">
           {t(
-            'Een greep uit de veranda’s, tuinkamers en overkappingen die wij in heel Zeeland en daarbuiten realiseerden. Volledig op maat, inclusief inmeten en montage door ons eigen team.',
+            'Bekijk een selectie veranda’s, tuinkamers en overkappingen die we in Zeeland en daarbuiten hebben gerealiseerd. Van modern tot landelijk en van compact tot royaal: ieder project is afgestemd op de woning en wensen van de klant.',
           )}
         </p>
       </div>
