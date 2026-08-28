@@ -25,7 +25,7 @@ export async function Header() {
     <>
       <div className="fullbleed bg-navy text-[#c3d4e6] text-[12.5px]">
         <div className="bar-inner topbar-inner flex justify-between items-center py-[9px] px-[40px]">
-          <span className=" hidden sm:flex">{t('Serooskerke · Showroom di t/m za 10.00–17.00u, bij voorkeur op afspraak')}</span>
+          <span className=" hidden sm:flex">{t('Serooskerke  ·  Showroom di t/m za 10.00–17.00u,  bij voorkeur op afspraak')}</span>
           <div className="flex gap-[18px] items-center">
             <span>
               <span className="text-gold">★★★★★</span> 9,2 / 327 {t('reviews')}
