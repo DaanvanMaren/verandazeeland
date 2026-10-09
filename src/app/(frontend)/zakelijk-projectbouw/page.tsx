@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Series op maat voor uw project | Zakelijk | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: "Veranda's en overkappingen voor projectbouw",
   description:
-    'Overkappingen voor projectbouw en ontwikkeling: veranda’s en tuinkamers projectmatig meegeleverd in nieuwbouw of renovatie. Partner voor bouwers in Zeeland.',
-}
+    "Voor woningbouw- en nieuwbouwprojecten leveren we series veranda's, tuinkamers, carports en zonwering, op maat gemaakt en afgestemd op uw planning.",
+  path: '/zakelijk-projectbouw',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

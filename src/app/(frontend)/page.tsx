@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { getContent, Rich, currentLocale } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from './_components/Footer'
@@ -9,8 +10,15 @@ import { tr } from './_components/i18n'
 import SplitText from "@/components/SplitText";
 import CountUp from "@/components/CountUp";
 
+// Home: geen '| Veranda Zeeland'-template, de merknaam staat al vooraan.
 export const metadata = {
-  title: "Veranda Zeeland · Veranda's, tuinkamers & glaswanden in Serooskerke",
+  ...seoMetadata(null, {
+    title: "Veranda Zeeland | Veranda's & tuinkamers op maat in Zeeland",
+    description:
+      "Veranda's, tuinkamers en glasschuifwanden van Duitse topkwaliteit, op maat gemaakt en gemonteerd door Veranda Zeeland. Bezoek onze showroom in Serooskerke.",
+    path: '/',
+  }),
+  title: { absolute: "Veranda Zeeland | Veranda's & tuinkamers op maat in Zeeland" },
 }
 
 // url of the uploaded image, or the design fallback shipped in public/uploads.

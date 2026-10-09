@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Rolluiken | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Rolluiken op maat: isolerend en inbraakwerend',
   description:
-    'Rolluiken: rust, privacy en veiligheid met één druk op de knop. Isolerend, verkoelend en inbraakwerend, tot 4 meter breed en Smart Home & Solar Ready.',
-}
+    'Rolluiken voor rust, privacy en veiligheid: isolerend in de winter, verkoelend in de zomer en inbraakwerend. Tot 4 meter breed, in vele RAL-kleuren.',
+  path: '/zonwering-rolluiken',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

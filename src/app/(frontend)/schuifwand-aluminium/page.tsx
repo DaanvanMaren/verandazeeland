@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { getContent, currentLocale } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import { tr } from '../_components/i18n'
 import type { Media } from '@/payload-types'
 
@@ -8,11 +9,12 @@ import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Aluminium schuifpui | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Aluminium schuifpui voor veranda of tuinkamer',
   description:
-    'Aluminium schuifpuien: geïsoleerd, onderhoudsarm en in elke RAL-kleur. De luxe afsluiting van uw tuinkamer of veranda. Op maat gemaakt en gemonteerd.',
-}
+    'De aluminium schuifpui: glas in een strak aluminium kozijn, extra stevig en goed te isoleren. In dezelfde kleur als uw veranda en volledig op maat gemaakt.',
+  path: '/schuifwand-aluminium',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

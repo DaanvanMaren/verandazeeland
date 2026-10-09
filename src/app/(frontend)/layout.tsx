@@ -1,6 +1,8 @@
+import type { Metadata } from 'next'
 import React from 'react'
 import './styles.css'
 import { currentLocale } from '@/content'
+import { siteUrl } from '@/content/seo'
 
 // Pages render static design markup (no DB at request time), but the Payload
 // admin shares this app, so keep the frontend dynamic (no build-time DB access).
@@ -8,11 +10,13 @@ export const dynamic = 'force-dynamic'
 
 const BASE = 'https://www.verandazeeland.nl'
 
-export const metadata = {
-  metadataBase: new URL(BASE),
-  // relative canonical: resolved against the CURRENT route per page (Next ≥14)
-  alternates: { canonical: './' },
-  title: "Veranda Zeeland · Veranda's, tuinkamers & glaswanden in Serooskerke",
+export const metadata: Metadata = {
+  // SITE_URL (het echte domein) of de Railway-URL; canonical per pagina via seoMetadata().
+  metadataBase: siteUrl,
+  title: {
+    default: "Veranda Zeeland | Veranda's & tuinkamers op maat in Zeeland",
+    template: '%s | Veranda Zeeland',
+  },
   description:
     "Veranda's, tuinkamers en glasschuifwanden van Duitse topkwaliteit, op maat gemaakt en gemonteerd door Veranda Zeeland in Serooskerke.",
   openGraph: {

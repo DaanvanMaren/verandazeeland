@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Knikarmschermen | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Knikarmschermen: schaduw op het terras zonder palen',
   description:
-    'Knikarmschermen: schaduw precies waar u het wilt, zonder steunpalen. Tot 7,5 meter breed, met windsensor en Smart Home-bediening, op maat voor terras en gevel.',
-}
+    'Knikarmschermen rollen schaduw uit waar u het wilt, zonder palen: tot 7,5 meter breed en 3,5 meter diep. Met windsensor en Smart Home Ready.',
+  path: '/zonwering-knikarmschermen',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

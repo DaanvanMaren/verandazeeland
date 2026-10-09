@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Tuinkamer met vlak dak | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Tuinkamer met vlak dak: strak en modern design',
   description:
-    'Tuinkamer met vlak dak: strak en modern, op basis van de Linea of Cube. Een volwaardige extra leefruimte, volledig op maat inclusief montage in Zeeland.',
-}
+    'Een tuinkamer met vlak dak geeft een strakke, kubistische uitstraling. Op basis van de Linea of Cube, af te sluiten met glazen schuifwanden.',
+  path: '/tuinkamer-vlak-dak',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback
@@ -86,7 +88,7 @@ export default async function TuinkamerVlakDakPage() {
               key={row.id}
               className={`relative rounded-[18px] overflow-hidden bg-navy${i === 0 ? ' row-span-2' : ''}${i === 3 ? ' col-span-2 max-[820px]:col-auto' : ''}`}
             >
-              <img src={img(row.image, row.fallback ?? '')} alt="Project" className={cover} />
+              <img src={img(row.image, row.fallback ?? '')} alt={(typeof row.image === 'object' && row.image?.alt) || `Tuinkamer met vlak dak, projectfoto ${i + 1}`} className={cover} />
             </div>
           ))}
         </div>

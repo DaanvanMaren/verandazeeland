@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
@@ -8,11 +9,12 @@ import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 import { RelatedModels } from '../_components/RelatedModels'
 
-export const metadata = {
-  title: 'Cube veranda | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Cube veranda: kubistisch design met vlak dak',
   description:
-    'De Cube is het designtopmodel van Verasol: volledig vlak dak, kubistisch profiel en verborgen afwatering, vanaf € 7.149. Bekijk de details en mogelijkheden.',
-}
+    'De Cube veranda: strak en kubistisch, met een volledig vlak dak, extra brede staanders en onzichtbare dakhelling. Tot 7 meter breed, vanaf € 7.149.',
+  path: '/veranda-cube',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

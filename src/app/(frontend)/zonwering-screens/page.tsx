@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Screens | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Screens: windvaste verticale zonwering voor veranda',
   description:
-    'Verticale screens: doorzicht naar buiten, geen inkijk en geen felle zon. Windvast en elektrisch bedienbaar, op maat voor veranda, tuinkamer of gevel.',
-}
+    'Screens zijn verticale ritsdoeken met sterke zijgeleiding: windvast, en ze houden zon, inkijk en insecten buiten. Ideaal als zij- of voorwand.',
+  path: '/zonwering-screens',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

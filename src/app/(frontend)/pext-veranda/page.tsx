@@ -1,13 +1,15 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import { ProductPage } from '../_components/ProductPage'
 
-export const metadata = {
-  title: 'Pext houten veranda — Douglas & lariks | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Pext houten veranda van Douglas- of larikshout',
   description:
-    'De Pext houten veranda combineert robuust Douglas- of larikshout met aluminium beglazingsprofielen. Glas of polycarbonaat, geïsoleerd of ongeïsoleerd, in meerdere kleuren.',
-}
+    'De Pext houten veranda combineert Douglas- of larikshout met slanke aluminium beglazingsprofielen. Met glas of polycarbonaat, geïsoleerd of ongeïsoleerd.',
+  path: '/pext-veranda',
+})
 
 export default async function PextVerandaPage() {
   const c = await getContent('pext-veranda')

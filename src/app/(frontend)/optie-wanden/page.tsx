@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Voor- en zijwanden | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Voor- en zijwanden: van veranda naar tuinkamer',
   description:
-    'Voor- en zijwanden voor uw veranda: van borstwering tot volledig glas. Meer beschutting en comfort, later altijd uit te breiden. Op maat gemaakt in Zeeland.',
-}
+    'Maak van uw veranda een tuinkamer met voor- en zijwanden. Combineer glazen schuifwanden, aluminium kozijnen, deuren en ramen tot de indeling die past.',
+  path: '/optie-wanden',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Comfort dat gasten waarderen | Zakelijk | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: "Veranda's en overkappingen voor vakantieparken",
   description:
-    'Veranda’s en tuinkamers voor vakantieparken en recreatie: langer verhuurseizoen en hogere bezetting. Projectmatige uitrol door Veranda Zeeland.',
-}
+    'Overdekte terrassen voor vakantieparken en recreatie: robuuste, onderhoudsarme aluminium systemen, in series in dezelfde stijl en kleur over het hele park.',
+  path: '/zakelijk-vakantieparken',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

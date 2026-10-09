@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { getContent, currentLocale } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import { tr } from '../_components/i18n'
 import type { Media } from '@/payload-types'
 
@@ -8,11 +9,12 @@ import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: "Veranda's — Greenline, Profiline, Linea & Cube | Veranda Zeeland",
+export const metadata = seoMetadata(null, {
+  title: "Aluminium veranda's op maat: vijf productlijnen",
   description:
-    'Vijf productlijnen aluminium veranda’s van Verasol: Greenline, Profiline, Linea, Cube en Pergola. Op maat gemaakt, inclusief inmeten en montage in heel Zeeland.',
-}
+    "Aluminium veranda's van Verasol, gemaakt in Duitsland: Greenline, Profiline, Linea, Cube en Pergola. Op maat, inclusief inmeten en montage in Zeeland.",
+  path: '/veranda-s',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

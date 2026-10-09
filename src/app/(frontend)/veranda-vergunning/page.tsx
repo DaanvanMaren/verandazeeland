@@ -1,14 +1,16 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 
 import { SeoLanding } from '../_components/SeoLanding'
 
-export const metadata = {
-  title: 'Veranda vergunning nodig? De regels op een rij | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Veranda vergunning nodig? De regels op een rij',
   description:
-    'Heeft u een omgevingsvergunning nodig voor een veranda? Lees wanneer u vergunningsvrij mag bouwen, wanneer niet, en hoe Veranda Zeeland u helpt bij de aanvraag.',
-}
+    'Heeft u een omgevingsvergunning nodig voor een veranda? Lees wanneer u vergunningsvrij mag bouwen, wanneer niet, en hoe wij helpen bij de aanvraag.',
+  path: '/veranda-vergunning',
+})
 
 export default async function VerandaVergunningPage() {
   return (

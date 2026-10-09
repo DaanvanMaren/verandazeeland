@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Bovendakzonwering | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Bovendakzonwering voor veranda en tuinkamer',
   description:
-    'Bovendakzonwering: de meest effectieve warmtewering, gemonteerd bóven het verandadak. Zonlicht tegenhouden voordat het glas raakt. Op maat gemaakt in Zeeland.',
-}
+    "Bovendakzonwering vangt de zon op vóór die het glas bereikt, zodat het onder uw veranda merkbaar koeler blijft. Voor alle Verasol-veranda's, op maat.",
+  path: '/zonwering-bovendak',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

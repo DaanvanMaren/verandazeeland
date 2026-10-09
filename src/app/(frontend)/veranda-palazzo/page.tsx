@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
@@ -8,11 +9,12 @@ import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 import { RelatedModels } from '../_components/RelatedModels'
 
-export const metadata = {
-  title: 'Palazzo veranda | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Palazzo veranda met roterend lamellendak',
   description:
-    'De Palazzo veranda met roterend lamellendak: zelf zon en schaduw doseren, waterdicht bij regen en een strak kubistisch design. Ook leverbaar als Sqope met glasdak.',
-}
+    'De Palazzo veranda met lamellendak: draai de lamellen open voor licht of dicht voor schaduw en regen. Strak kubistisch design, ook als Sqope met glasdak.',
+  path: '/veranda-palazzo',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

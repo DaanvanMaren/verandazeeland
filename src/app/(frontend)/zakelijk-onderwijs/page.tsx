@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Veilig, comfortabel en inspirerend | Zakelijk | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Overkappingen en zonwering voor scholen',
   description:
-    'Overkappingen voor onderwijs en scholen: overdekte pleinen, fietsenstallingen en buitenlokalen. Veilig, degelijk en op maat gemaakt door Veranda Zeeland.',
-}
+    'Overkappingen en zonwering voor scholen: warmtewering voor klaslokalen, beschutting op het schoolplein en robuuste systemen. Van inmeten tot montage.',
+  path: '/zakelijk-onderwijs',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

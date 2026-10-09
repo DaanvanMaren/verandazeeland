@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Glazen schuifwanden | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Schuifwanden op maat: glas, aluminium, lamellen, steellook',
   description:
-    'Glazen schuifwanden maken van uw veranda een tuinkamer: windvrij, licht en met vrij uitzicht. Bekijk glas, aluminium, lamellen en steellook uitvoeringen.',
-}
+    'Schuifwanden van Verasol op maat: frameloos glas, aluminium schuifpui, lamellen of steellook. Passend op vrijwel elke veranda, glas vanaf € 285 per meter.',
+  path: '/glazen-schuifwanden',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback
@@ -71,7 +73,7 @@ export default async function GlazenSchuifwandenPage() {
               key={row.id}
               className={`relative rounded-[18px] overflow-hidden bg-navy${i === 0 ? ' row-span-2' : ''}`}
             >
-              <img src={img(row.image, row.fallback ?? '')} alt="Project" className={cover} />
+              <img src={img(row.image, row.fallback ?? '')} alt={(typeof row.image === 'object' && row.image?.alt) || `Veranda met schuifwanden, projectfoto ${i + 1}`} className={cover} />
             </div>
           ))}
         </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { getContent, currentLocale } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import { tr } from '../_components/i18n'
 import type { Media } from '@/payload-types'
 
@@ -8,11 +9,12 @@ import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Steellook schuifwanden | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Steellook schuifwanden in onderhoudsarm aluminium',
   description:
-    'Steellook schuifwanden: het industriële stalen-kozijnen-effect met het gemak van aluminium. Karaktervolle afsluiting van veranda of tuinkamer, op maat.',
-}
+    'Steellook schuifwanden: slanke zwarte profielen met glasverdeling voor een industriële uitstraling, onderhoudsarm in aluminium. Op maat gemaakt.',
+  path: '/schuifwand-steellook',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

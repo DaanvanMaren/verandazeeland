@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
@@ -8,11 +9,12 @@ import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 import { RelatedModels } from '../_components/RelatedModels'
 
-export const metadata = {
-  title: 'Linea veranda | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Linea veranda: modern met optisch vlak dak',
   description:
-    'De Linea veranda combineert een modern, optisch vlak dak met een rank aluminium profiel, vanaf € 5.469. Op maat gemaakt en gemonteerd door Veranda Zeeland.',
-}
+    'De Linea veranda: strakke lijnen, een optisch vlak dak en een rank aluminium profiel, vanaf € 5.469. Modern design in een zachtere prijsklasse dan de Cube.',
+  path: '/veranda-linea',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

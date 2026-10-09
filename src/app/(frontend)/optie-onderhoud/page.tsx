@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Onderhoudsproducten | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Onderhoudsproducten voor veranda en schuifwanden',
   description:
-    'Onderhoudsproducten voor veranda en schuifwanden: reinigers voor aluminium, glas en polycarbonaat. Zo blijft uw overkapping jarenlang als nieuw.',
-}
+    'Houd uw veranda jarenlang mooi met reinigers voor aluminium, glas en polycarbonaat. Onderhoudsarm, maar niet onderhoudsvrij: wij adviseren u graag.',
+  path: '/optie-onderhoud',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

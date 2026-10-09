@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Fundering | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Fundering voor uw veranda of tuinkamer',
   description:
-    'Een goede fundering onder uw veranda of tuinkamer: puntfundering of ringbalk, door ons verzorgd. Stevig, vorstvrij en geschikt voor elke ondergrond.',
-}
+    'De juiste fundering voor uw veranda of tuinkamer, van betonpoeren tot verstelbare schroefpalen. Zo staat uw overkapping jarenlang stabiel en waterpas.',
+  path: '/optie-fundering',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

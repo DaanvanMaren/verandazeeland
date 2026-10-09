@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Meer terras, langer seizoen | Zakelijk | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Terrasoverkapping voor horeca: langer terrasseizoen',
   description:
-    'Terrasoverkappingen voor horeca en leisure: langer seizoen, meer couverts en een beschut terras bij elk weer. Maatwerk en montage door Veranda Zeeland.',
-}
+    'Terrasoverkappingen voor horeca en leisure: een overdekt terras van vroeg in het voorjaar tot laat in de herfst. Met glaswanden, zonwering en verwarming.',
+  path: '/zakelijk-horeca',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

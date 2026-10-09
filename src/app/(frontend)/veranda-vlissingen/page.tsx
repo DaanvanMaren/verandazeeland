@@ -1,14 +1,16 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 
 import { SeoLanding } from '../_components/SeoLanding'
 
-export const metadata = {
-  title: 'Veranda kopen in Vlissingen | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Veranda kopen in Vlissingen, bestand tegen kustklimaat',
   description:
-    'Veranda kopen in Vlissingen? Aluminium Verasol-veranda’s, bestand tegen het kustklimaat. Gratis inmeten, montage door eigen team en showroom op een kwartier rijden.',
-}
+    "Veranda kopen in Vlissingen? Aluminium Verasol-veranda's, onderhoudsarm en gepoedercoat voor het kustklimaat. Gratis inmeten, showroom op een kwartier.",
+  path: '/veranda-vlissingen',
+})
 
 export default async function VerandaVlissingenPage() {
   return (

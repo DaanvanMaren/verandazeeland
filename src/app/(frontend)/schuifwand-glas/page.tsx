@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { getContent, currentLocale } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import { tr } from '../_components/i18n'
 import type { Media } from '@/payload-types'
 
@@ -8,11 +9,12 @@ import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Glazen schuifwand voor uw veranda | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Frameloze glazen schuifwand voor uw veranda',
   description:
-    'Glazen schuifwanden op maat: heldere panelen die vrijwel volledig opzij schuiven. Windvrij zitten met vrij uitzicht op de tuin. Inclusief montage in Zeeland.',
-}
+    'Frameloze glazen schuifwanden van 8 tot 10 mm veiligheidsglas, met een onderrail van slechts 17 mm. Vrij uitzicht op de tuin, vanaf € 285 per meter.',
+  path: '/schuifwand-glas',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

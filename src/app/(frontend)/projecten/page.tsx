@@ -3,6 +3,7 @@ import { getPayload } from 'payload'
 
 import config from '@/payload.config'
 import { currentLocale } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
@@ -10,11 +11,12 @@ import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 import { tr } from '../_components/i18n'
 
-export const metadata = {
-  title: 'Projecten — uitgevoerde veranda’s & tuinkamers | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: "Projecten: uitgevoerde veranda's en tuinkamers",
   description:
-    'Bekijk uitgevoerde projecten van Veranda Zeeland: veranda’s, tuinkamers en overkappingen in heel Zeeland. Greenline, Profiline, Linea en Cube op maat gemaakt en gemonteerd.',
-}
+    "Bekijk uitgevoerde projecten van Veranda Zeeland: veranda's, tuinkamers en overkappingen in heel Zeeland, op maat en gemonteerd door ons eigen team.",
+  path: '/projecten',
+})
 
 const img = (m: number | Media | null | undefined, fallback: string) =>
   m && typeof m === 'object' && m.url ? m.url : fallback

@@ -1,13 +1,15 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import { ProductPage } from '../_components/ProductPage'
 
-export const metadata = {
-  title: 'Pext lichtstraat — lessenaardak, zadeldak & daklicht | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Pext lichtstraat: lessenaardak, zadeldak of daklicht',
   description:
-    'De Pext lichtstraat haalt volop daglicht naar binnen. Verkrijgbaar als lessenaardak, zadeldak of daklicht, geïsoleerd of ongeïsoleerd, met een dakhelling van 10°.',
-}
+    'Een Pext lichtstraat haalt volop daglicht naar binnen. Kies lessenaardak, zadeldak of daklicht met een dakhelling van 10°, geïsoleerd of ongeïsoleerd.',
+  path: '/pext-lichtstraat',
+})
 
 export default async function PextLichtstraatPage() {
   const c = await getContent('pext-lichtstraat')

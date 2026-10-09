@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
@@ -8,11 +9,12 @@ import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 import { RelatedModels } from '../_components/RelatedModels'
 
-export const metadata = {
-  title: 'Pext veranda | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Pext veranda: houten overkapping met aluminium',
   description:
-    'De Pext houten veranda combineert robuust Douglas- of larikshout met slanke aluminium beglazingsprofielen. Geïsoleerd of ongeïsoleerd, en uit te breiden met een lichtstraat.',
-}
+    'De Pext veranda: de warme uitstraling van hout met het gemak van aluminium. Van tuinkamer tot open overkapping, uit te breiden met een lichtstraat.',
+  path: '/veranda-pext',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

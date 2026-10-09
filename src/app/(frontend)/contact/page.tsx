@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { getContent, currentLocale } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import { tr } from '../_components/i18n'
 import type { Media } from '@/payload-types'
 
@@ -8,11 +9,12 @@ import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Contact & offerte | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Contact en showroom in Serooskerke',
   description:
     'Neem contact op met Veranda Zeeland: showroom De Stekelweie 2 in Serooskerke, di t/m za 10.00–17.00 uur. Bel 0118-853055 of stuur een bericht.',
-}
+  path: '/contact',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

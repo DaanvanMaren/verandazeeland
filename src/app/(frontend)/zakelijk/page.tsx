@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Zakelijk | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Zakelijke overkappingen en terrasoplossingen in Zeeland',
   description:
-    'Zakelijke overkappingen en terrasoplossingen: voor horeca, kantoren, onderwijs, zorg, vakantieparken en projectbouw. Advies, maatwerk en montage in Zeeland.',
-}
+    'Overkappingen voor uw onderneming: horeca, kantoren, onderwijs, zorg, vakantieparken en projectbouw. Duitse degelijkheid met een persoonlijke aanpak.',
+  path: '/zakelijk',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

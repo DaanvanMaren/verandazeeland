@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Rust, comfort en veiligheid voorop | Zakelijk | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Overkappingen en zonwering voor zorginstellingen',
   description:
-    'Overkappingen voor zorginstellingen: beschutte buitenruimtes waar bewoners veilig van buiten genieten. Doordacht maatwerk en montage door Veranda Zeeland.',
-}
+    'Overkappingen, glaswanden en zonwering voor zorginstellingen: beschutte buitenruimtes voor bewoners, met een extreem lage rail voor rolstoel of rollator.',
+  path: '/zakelijk-zorg',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

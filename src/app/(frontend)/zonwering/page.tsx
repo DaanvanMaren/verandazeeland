@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Zonwering | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Zonwering voor veranda en tuinkamer in Zeeland',
   description:
-    'Zonwering voor veranda en tuinkamer: onderdak- en bovendakzonwering, screens en uitvalschermen. Elektrisch bedienbaar, op maat gemaakt en gemonteerd in Zeeland.',
-}
+    "Zonwering speciaal voor veranda's en tuinkamers: onderdak- en bovendakzonwering, screens en uitvalschermen. Houd de warmte buiten, bedien alles op afstand.",
+  path: '/zonwering',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback
@@ -68,7 +70,7 @@ export default async function ZonweringPage() {
         <div className="grid grid-cols-[2fr_1fr_1fr] max-[820px]:grid-cols-1 auto-rows-[200px] gap-[16px]">
           {c.projects?.map((row, i) => (
             <div key={row.id} className={`relative rounded-[18px] overflow-hidden bg-navy${i === 0 ? ' row-span-2 max-[820px]:row-auto' : ''}`}>
-              <img src={img(row.image, row.fallback ?? '')} alt="Project" className={cover} />
+              <img src={img(row.image, row.fallback ?? '')} alt={(typeof row.image === 'object' && row.image?.alt) || `Veranda met zonwering, projectfoto ${i + 1}`} className={cover} />
             </div>
           ))}
         </div>

@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Tuinkamer met hellend dak | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Tuinkamer met hellend dak: ruimtelijk en licht',
   description:
-    'Tuinkamer met hellend dak: klassiek, licht en ruimtelijk, gebouwd op de Profiline-constructie. Op maat gemaakt en gemonteerd door ons eigen team in Zeeland.',
-}
+    'Een tuinkamer met hellend dak: ruimtelijk, veel daglicht en natuurlijke afwatering. Op basis van de Greenline of Profiline, af te sluiten met schuifwanden.',
+  path: '/tuinkamer-hellend-dak',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback
@@ -86,7 +88,7 @@ export default async function TuinkamerHellendDakPage() {
               key={row.id}
               className={`relative rounded-[18px] overflow-hidden bg-navy${i === 0 ? ' row-span-2' : ''}${i === 3 ? ' col-span-2 max-[820px]:col-auto' : ''}`}
             >
-              <img src={img(row.image, row.fallback ?? '')} alt="Project" className={cover} />
+              <img src={img(row.image, row.fallback ?? '')} alt={(typeof row.image === 'object' && row.image?.alt) || `Tuinkamer met hellend dak, projectfoto ${i + 1}`} className={cover} />
             </div>
           ))}
         </div>

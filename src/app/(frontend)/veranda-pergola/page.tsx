@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
@@ -8,11 +9,12 @@ import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 import { RelatedModels } from '../_components/RelatedModels'
 
-export const metadata = {
-  title: 'Pergola-overkapping veranda | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Pergola-overkapping: vrijstaande veranda',
   description:
-    'De Pergola-overkapping: zonwering op een vrijstaande constructie, ideaal voor grote terrassen zonder gevelmontage, vanaf € 5.791. Op maat voor heel Zeeland.',
-}
+    'De Pergola-overkapping staat vrij op minimaal vier staanders, zonder gevelmontage. Ideaal voor grote terrassen, zonwering én overkapping. Vanaf € 5.791.',
+  path: '/veranda-pergola',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

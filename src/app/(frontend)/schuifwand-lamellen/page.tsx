@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { getContent, currentLocale } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import { tr } from '../_components/i18n'
 import type { Media } from '@/payload-types'
 
@@ -8,11 +9,12 @@ import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Lamellen schuifwanden | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Lamellen schuifwanden voor schaduw en privacy',
   description:
-    'Lamellen schuifwanden: regelbare houtlook- of aluminium lamellen voor privacy, zon- en windregulering. Stijlvol en op maat voor uw veranda of terras.',
-}
+    'Lamellen schuifwanden met verstelbare lamellen voor schaduw, privacy en ventilatie. In een strakke of houtlook-uitvoering die aansluit op uw veranda.',
+  path: '/schuifwand-lamellen',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

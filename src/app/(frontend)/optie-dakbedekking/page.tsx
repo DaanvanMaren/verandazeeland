@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Dakbedekking | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Dakbedekking voor uw veranda: glas of polycarbonaat',
   description:
-    'Dakbedekking voor uw veranda: helder of opaal polycarbonaat, gehard glas of geïsoleerde panelen. De voor- en nadelen per daktype op een rij.',
-}
+    'Kies de dakbedekking voor uw veranda: helder, warmtewerend of opaal polycarbonaat, of gelaagd veiligheidsglas. Wij adviseren u over licht en warmte.',
+  path: '/optie-dakbedekking',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

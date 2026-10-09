@@ -1,13 +1,15 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import { ProductPage } from '../_components/ProductPage'
 
-export const metadata = {
-  title: 'Palazzo Lamellendak — roterend lamellendak | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Palazzo lamellendak: zelf zon en schaduw regelen',
   description:
-    'Het Palazzo lamellendak: draai de lamellen open of dicht en doseer zelf zon en schaduw. Waterdicht bij regen, met natuurlijke ventilatie en een strak design.',
-}
+    'Het Palazzo lamellendak: draai de lamellen open voor licht of dicht voor schaduw. Gesloten voeren ze regen af naar de goten. Strak, kubistisch design.',
+  path: '/palazzo-lamellendak',
+})
 
 export default async function PalazzoLamellendakPage() {
   const c = await getContent('palazzo-lamellendak')

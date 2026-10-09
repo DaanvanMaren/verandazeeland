@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
@@ -8,11 +9,12 @@ import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 import { RelatedModels } from '../_components/RelatedModels'
 
-export const metadata = {
-  title: 'Profiline veranda | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Profiline veranda: tot 7 meter overspanning',
   description:
-    'De Profiline veranda: veelzijdig maatwerk met overspanningen tot 7 meter, vanaf € 2.059. Uit te bouwen tot complete tuinkamer. Inclusief montage in heel Zeeland.',
-}
+    'De Profiline veranda: overspanningen tot 7 meter op slechts twee staanders, vanaf € 2.059. Volledig op maat en uit te bouwen tot een complete tuinkamer.',
+  path: '/veranda-profiline',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

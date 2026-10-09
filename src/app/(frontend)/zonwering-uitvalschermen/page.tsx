@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Uitvalschermen | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Uitvalschermen: zonwering voor ramen en gevels',
   description:
-    'Uitvalschermen: klassieke zonwering voor ramen en gevels, in vele doekkleuren. Effectief tegen zon en warmte, op maat gemaakt en gemonteerd in heel Zeeland.',
-}
+    'Uitvalschermen geven gerichte schaduw op ramen en gevels, ook op de verdieping. Strak weggewerkt in een cassette en op maat leverbaar in vele kleuren.',
+  path: '/zonwering-uitvalschermen',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Haal meer uit je bedrijfspand | Zakelijk | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Overkappingen en carports voor kantoren en bedrijfspanden',
   description:
-    'Overkappingen voor kantoren en commercieel vastgoed: buitenwerkplekken, rookruimtes en representatieve entrees. Zakelijk maatwerk van Veranda Zeeland.',
-}
+    'Overkappingen voor kantoren en commercieel vastgoed: representatieve entrees, beschutte buitenruimtes voor personeel en carports voor uw wagenpark.',
+  path: '/zakelijk-kantoren',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

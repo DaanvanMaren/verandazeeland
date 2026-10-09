@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { getContent, currentLocale } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
@@ -8,11 +9,12 @@ import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 import { tr } from '../_components/i18n'
 
-export const metadata = {
-  title: 'Offerte aanvragen | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Offerte aanvragen voor veranda, tuinkamer of zonwering',
   description:
-    'Vraag een vrijblijvende offerte aan voor uw veranda, tuinkamer, schuifwand of zonwering. Gratis inmeten aan huis, heldere prijs inclusief montage.',
-}
+    'Vraag vrijblijvend een offerte op maat aan voor uw veranda, tuinkamer, schuifwand of zonwering. Gratis inmeten aan huis en montage door ons eigen team.',
+  path: '/offerte',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback

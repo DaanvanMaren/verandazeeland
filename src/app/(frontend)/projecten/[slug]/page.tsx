@@ -4,6 +4,7 @@ import { getPayload } from 'payload'
 
 import config from '@/payload.config'
 import { currentLocale, Rich } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../../_components/Footer'
@@ -30,14 +31,21 @@ async function getProject(slug: string, locale: 'nl' | 'de') {
   return docs[0] ?? null
 }
 
+// Max ± 155 tekens voor Google; knip op een woordgrens.
+const clip = (s: string, n = 155) => (s.length <= n ? s : s.slice(0, s.lastIndexOf(' ', n - 1)) + '…')
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const p = await getProject(slug, 'nl')
-  if (!p) return { title: 'Project | Veranda Zeeland' }
-  return {
-    title: `${p.title} | Veranda Zeeland`,
-    description: p.intro ?? `${p.title}${p.location ? ` in ${p.location}` : ''} — uitgevoerd project van Veranda Zeeland.`,
-  }
+  if (!p) return { title: 'Project niet gevonden' }
+  return seoMetadata(null, {
+    title: `${p.title}: uitgevoerd project`,
+    description: clip(
+      p.intro ||
+        `${p.title}${p.location && !p.title.includes(p.location) ? ` in ${p.location}` : ''}, uitgevoerd door Veranda Zeeland: volledig op maat, inclusief inmeten en montage door ons eigen team.`,
+    ),
+    path: `/projecten/${p.slug}`,
+  })
 }
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {

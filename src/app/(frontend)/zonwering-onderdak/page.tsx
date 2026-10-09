@@ -1,17 +1,19 @@
 import React from 'react'
 
 import { getContent } from '@/content'
+import { seoMetadata } from '@/content/seo'
 import type { Media } from '@/payload-types'
 
 import { Footer } from '../_components/Footer'
 import { Breadcrumbs } from '../_components/Breadcrumbs'
 import { Header } from '../_components/Header'
 
-export const metadata = {
-  title: 'Onderdakzonwering | Veranda Zeeland',
+export const metadata = seoMetadata(null, {
+  title: 'Onderdakzonwering voor veranda en tuinkamer',
   description:
-    'Onderdakzonwering: elegant weggewerkt onder het verandadak, houdt warmte buiten en is elektrisch bedienbaar. Op maat voor elke veranda, inclusief montage.',
-}
+    'Onderdakzonwering wordt onder het verandadak gemonteerd, zodat het doek beschermd blijft tegen regen. Elektrisch bediend via schakelaar of handzender.',
+  path: '/zonwering-onderdak',
+})
 
 const img = (f: number | Media | null | undefined, fallback: string) =>
   f && typeof f === 'object' && f.url ? f.url : fallback
